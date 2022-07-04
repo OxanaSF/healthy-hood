@@ -1,40 +1,39 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const HomeDisplay = () => {
   return (
     <HomeDisplayStyled>
       <div className="categories-container">
-        <div className="box box1">
+        <Link to="/nutritions" className="box box1">
           <img
             src={`${process.env.PUBLIC_URL}/images/nutritions.jpeg`}
             alt="nutritions"
           />
           <div class="text-over text-over-nutritions">Nutritions</div>
-        </div>
+        </Link>
 
-        <div className="box box3">
-          <img src={`${process.env.PUBLIC_URL}/images/air.jpeg`} 
-          alt="air" 
-          />
-          <div class="text-over">Clear air</div>
-        </div>
+        <Link to="/clean-air" className="box box2">
+          <img src={`${process.env.PUBLIC_URL}/images/air.jpeg`} alt="air" />
+          <div class="text-over">Clean air</div>
+        </Link>
 
-        <div className="box box2">
+        <Link to="/fitness" className="box box3">
           <img
             src={`${process.env.PUBLIC_URL}/images/fitness.jpeg`}
             alt="fitness"
           />
           <div class="text-over">Fitness</div>
-        </div>
-
-       
+        </Link>
       </div>
     </HomeDisplayStyled>
   );
 };
 
 const HomeDisplayStyled = styled.section`
+  min-height: 30vh;
   margin: 16rem 0;
+
   h2 {
     text-align: center;
     margin-bottom: 6rem;
@@ -51,21 +50,14 @@ const HomeDisplayStyled = styled.section`
 
   .box {
     height: 28rem;
-    /* background-color: rgb(62, 50, 85); */
-    border: 5px solid rgb(62, 50, 85);
     border: 5px solid rgb(254, 233, 218);
-   
 
     border-radius: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-  }
 
-  .box1,
-  .box2,
-  .box3 {
     background-color: white;
     background-color: rgb(62, 50, 85);
     background-color: rgb(254, 233, 218);
@@ -86,14 +78,9 @@ const HomeDisplayStyled = styled.section`
     font-weight: 800;
     top: 2rem;
     left: 2rem;
-    /* -webkit-text-stroke: 2px white; */
     font-family: arial;
     color: rgb(62, 50, 85);
   }
-
-  /* .text-over-nutritions {
-      -webkit-text-stroke: 2px white;
-  } */
 `;
 
 export default HomeDisplay;

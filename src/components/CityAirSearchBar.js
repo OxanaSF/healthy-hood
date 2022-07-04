@@ -1,0 +1,67 @@
+import styled from 'styled-components';
+import { useState, useEffect } from 'react';
+import { Link, useParams, Outlet } from 'react-router-dom';
+import { useNavigate } from 'react-router';
+import { FaSearch } from 'react-icons/fa';
+
+
+const CityAirSearchBar = () => {
+  const [input, setInput] = useState('');
+  const navigate = useNavigate();
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    navigate(input);
+    setInput('');
+  };
+
+ 
+  return (
+    <div>
+      <h2>Type a City Name:</h2>
+
+      <FormStyled onSubmit={onSubmitHandler}>
+        <FaSearch className="search-icon" />
+        <input
+          onChange={(e) => setInput(e.target.value)}
+          type="text"
+          value={input}
+        />
+      </FormStyled>
+      <Outlet />
+
+    </div>
+  );
+};
+
+const FormStyled = styled.form`
+  padding-top: 5rem;
+  margin: auto;
+  position: relative;
+  width: 65%;
+
+  .search-icon {
+    position: absolute;
+    top: 6.1rem;
+    left: 1.6rem;
+    font-size: 2rem;
+    color: #999999;
+    margin-right: 2rem;
+    font-weight: 100;
+  }
+
+  input {
+    border: 1px solid #999999;
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    outline: none;
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: center;
+    color: #999999;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+`;
+
+export default CityAirSearchBar;

@@ -1,9 +1,8 @@
 import { BrowserRouter } from 'react-router-dom';
 import GlobalStyles from './components/GlobalStyles';
-import Nav from './components/Nav'
-import Home from './components/Home';
-import Pages from './pages/Pages'
-
+import Nav from './components/Nav';
+import Pages from './pages/Pages';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -13,6 +12,7 @@ function App() {
       <BrowserRouter>
         <Nav />
         <Pages />
+        <Footer />
       </BrowserRouter>
     </div>
   );
