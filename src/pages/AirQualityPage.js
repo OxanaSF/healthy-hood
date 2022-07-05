@@ -7,7 +7,7 @@ const AirQualityPage = () => {
     <AirQualityPageStyled>
       <header className="air-quality-page-header">
         <h2>
-          This is an Air Quality Page that is going to be created by Oxana!
+          This is an Air Quality Page that I am working on now.
         </h2>
       </header>
 
