@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import { useState, useEffect } from 'react';
-import { Link, useParams, Outlet } from 'react-router-dom';
+import { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import { useNavigate } from 'react-router';
 import { FaSearch } from 'react-icons/fa';
-
 
 const CityAirSearchBar = () => {
   const [input, setInput] = useState('');
@@ -15,7 +14,6 @@ const CityAirSearchBar = () => {
     setInput('');
   };
 
- 
   return (
     <div>
       <h2>Type a City Name:</h2>
@@ -29,7 +27,6 @@ const CityAirSearchBar = () => {
         />
       </FormStyled>
       <Outlet />
-
     </div>
   );
 };
@@ -38,7 +35,7 @@ const FormStyled = styled.form`
   padding-top: 5rem;
   margin: auto;
   position: relative;
-  width: 65%;
+  width: 25%;
 
   .search-icon {
     position: absolute;

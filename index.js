@@ -9,13 +9,9 @@ const app = express();
 
 app.use(cors());
 
-
-
-
 app.get('/', (req, res) => {
   res.json('hi, I am backend');
 });
-
 
 // API Request - search by a city name to get Air info for the city
 
@@ -30,6 +26,8 @@ app.get('/search', (req, res) => {
   console.log('**********************');
   console.log('**********************');
 
+
+  
   const options = {
     method: 'GET',
     url: 'https://airvisual1.p.rapidapi.com/v2/auto-complete',

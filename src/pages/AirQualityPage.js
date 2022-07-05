@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 
 import { Link, Outlet } from 'react-router-dom';
@@ -32,16 +31,14 @@ const AirQualityPageStyled = styled.section`
     font-size: 2rem;
   }
 
-
-    nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 5rem;
-      margin: 10rem;
-      font-size: 3rem;
-    }
-
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    margin: 10rem;
+    font-size: 3rem;
+  }
 `;
 
 export default AirQualityPage;
