@@ -4,7 +4,6 @@ const NutritionsPage = () => {
   return (
     <NutritionsPageStyled>
         <h2>This is a Nutritions Page that is going to be created by Mike!</h2>
-        <p>I am working on this now</p>
     </NutritionsPageStyled>
   )
 }
