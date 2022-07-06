@@ -28,7 +28,7 @@ const CityAirInfoFetched = (props) => {
         setDate(
           response.data.data.cities[0].currentMeasurement.ts.slice(0, 10)
         );
-        setQius(response.data.data.cities[0].currentMeasurement.aqius);
+        setAqius(response.data.data.cities[0].currentMeasurement.aqius);
         setImg(response.data.data.news[0].contributors.picture)
       })
       .catch((error) => {
