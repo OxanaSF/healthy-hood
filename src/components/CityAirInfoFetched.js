@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 const CityAirInfoFetched = (props) => {
   const [cityWeatherInfo, setCityWeatherInfo] = useState([]);
   const [date, setDate] = useState('');
-  const [aqius, setaQius] = useState(0);
+  const [aqius, setQius] = useState(0);
   const [img, setImg] = useState('')
 
   let params = useParams();
@@ -28,7 +28,7 @@ const CityAirInfoFetched = (props) => {
         setDate(
           response.data.data.cities[0].currentMeasurement.ts.slice(0, 10)
         );
-        setaQius(response.data.data.cities[0].currentMeasurement.aqius);
+        setQius(response.data.data.cities[0].currentMeasurement.aqius);
         setImg(response.data.data.news[0].contributors.picture)
       })
       .catch((error) => {
