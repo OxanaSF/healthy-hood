@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 const CityAirInfoFetched = (props) => {
   const [cityWeatherInfo, setCityWeatherInfo] = useState([]);
   const [date, setDate] = useState('');
-  const [aqius, setQius] = useState(0);
+  const [aqius, setAqius] = useState(0);
   const [img, setImg] = useState('')
 
   let params = useParams();
