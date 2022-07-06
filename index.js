@@ -40,6 +40,7 @@ app.get("/search", (req, res) => {
     .request(options)
     .then((response) => {
       res.json(response.data);
+      console.log("QUERY!!!!: ", response.data);
     })
     .catch((error) => {
       console.error(error);
@@ -55,7 +56,7 @@ app.get("/bodypart", (req, res) => {
     params: { bodypart: muscle },
 
     headers: {
-      "X-RapidAPI-Key": "e951adc5f4msh6b381ff752324a3p1d054ajsn22a2c583f766",
+      "X-RapidAPI-Key": process.env.REACT_APP_API_KEY_2,
       "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
     },
   };
