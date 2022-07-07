@@ -31,24 +31,42 @@ const NavStyled = styled.nav`
   .nav-links {
     margin-right: 5rem;
     display: flex;
-    gap: 2.5rem;
+    gap: 2rem;
+    font-size: 2rem;
+    cursor: pointer;
 
-    a{
+    a {
       color: #8c777c;
-      font-size: 2rem;
-      font-weight: 500;
-      letter-spacing: 0.1rem;
     }
-
-    a.active {
-
-    }
-
   }
 
   img {
     width: 7rem;
     margin: 1rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    img {
+      width: 3rem;
+      margin: 1rem;
+    }
+
+    .nav-links {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    img {
+      width: 4rem;
+      margin: 1rem;
+    }
+
+    .nav-links {
+      font-size: 0.8rem;
+      gap: 1rem;
+      margin-right: 2rem;
+    }
   }
 `;
 

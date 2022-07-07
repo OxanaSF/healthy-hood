@@ -25,6 +25,11 @@ const Hero = () => {
 };
 
 const HeroStyled = styled.section`
+
+
+
+
+
   min-height: 35vh;
   background-color: rgb(254, 233, 218);
   display: flex;
@@ -51,8 +56,39 @@ const HeroStyled = styled.section`
       height: 180px;
       transform: rotateY(180deg);
     }
+  }
+
+  @media only screen and (max-width: 900px) {
+    min-height: 45vh;
+
+    h1 {
+      font-size: 2.8rem;
+    }
+
+    .shape-fill {
+      fill: lightblue;
+    }
+  }
+
+  @media only screen and (min-width: 900px) {
+    h1 {
+      font-size: 4rem;
+    }
+
     .shape-fill {
       fill: #ffffff;
+    }
+  }
+
+  @media only screen and (min-width: 1350px) {
+    h1 {
+      font-size: 5rem;
+    }
+  }
+
+  @media only screen and (min-width: 1450px) {
+    h1 {
+      font-size: 7rem;
     }
   }
 `;

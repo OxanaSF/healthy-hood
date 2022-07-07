@@ -16,7 +16,6 @@ const CityAirSearchBar = () => {
 
   return (
     <div>
-      <h2>Type a City Name:</h2>
 
       <FormStyled onSubmit={onSubmitHandler}>
         <FaSearch className="search-icon" />
@@ -24,6 +23,7 @@ const CityAirSearchBar = () => {
           onChange={(e) => setInput(e.target.value)}
           type="text"
           value={input}
+          placeholder="Get air quality data in your city"
         />
       </FormStyled>
       <Outlet />
