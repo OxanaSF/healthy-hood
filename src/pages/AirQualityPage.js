@@ -1,27 +1,43 @@
 import styled from 'styled-components';
 
 import { NavLink, Outlet } from 'react-router-dom';
-import AnimatedPage from '../components/AnimatedPage';
+import { motion } from 'framer-motion';
+
+import {
+  slidesFromLeftLeaveToLeft,
+  slidesFromRightftLeaveToRight,
+} from '../animations/animation';
+import AnimatedPage from '../animations/AnimatedPageTransition';
 
 const AirQualityPage = () => {
   return (
     <AnimatedPage>
       <AirQualityPageStyled>
-        <div className="section">
-          <img
+        <motion.div className="section">
+          <motion.img
             src={`${process.env.PUBLIC_URL}/images/family-outside-no-bg.jpeg`}
-            alt=""
+            alt="family-outside"
+            
+            variants={slidesFromLeftLeaveToLeft}
+            initial="hidden"
+            animate="show"
+            exit="exit"
           />
 
-          <p>
+          <motion.p
+            variants={slidesFromRightftLeaveToRight}
+            initial="hidden"
+            animate="show"
+            exit="exit"
+          >
             Air Quality Index (AQI) & Health Millions of people live in areas
             where air pollution can cause serious health problems. Local air
             quality can affect our daily lives. Like the weather, it can change
             from day to day. EPA developed the Air Quality Index, or AQI, to
             make information available about the health effects of the five most
             common air pollutants, and how to avoid those effects.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <div className="air-quality-page-main">
           <nav className="air-quality-page-nav">

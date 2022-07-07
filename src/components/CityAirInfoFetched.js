@@ -23,7 +23,7 @@ const CityAirInfoFetched = (props) => {
     axios
       .request(options)
       .then((response) => {
-        // console.log('Cities: ', response.data)
+        console.log('Cities: ', response.data)
         setCityWeatherInfo(response.data.data.cities[0]);
         setDate(
           response.data.data.cities[0].currentMeasurement.ts.slice(0, 10)

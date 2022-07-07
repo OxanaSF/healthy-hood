@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import AnimatedPage from '../components/AnimatedPage';
+import AnimatedPageTransition from '../animations/AnimatedPageTransition';
 
 const FitnessPage = () => {
   return (
-    <AnimatedPage>
+    <AnimatedPageTransition>
       <FitnessPageStyled>
         <h2>This is a Fitness Page that is going to be created by Johnson!</h2>
       </FitnessPageStyled>
-    </AnimatedPage>
+    </AnimatedPageTransition>
   );
 };
 

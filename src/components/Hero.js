@@ -25,11 +25,6 @@ const Hero = () => {
 };
 
 const HeroStyled = styled.section`
-
-
-
-
-
   min-height: 35vh;
   background-color: rgb(254, 233, 218);
   display: flex;

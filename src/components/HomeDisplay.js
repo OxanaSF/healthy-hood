@@ -1,10 +1,19 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+import { slidesFromLeftLeaveToRight } from '../animations/animation';
 
 const HomeDisplay = () => {
   return (
     <HomeDisplayStyled>
-      <div className="categories-container">
+      <motion.div
+        className="categories-container"
+        variants={slidesFromLeftLeaveToRight}
+        initial="hidden"
+        animate="show"
+        exit="exit"
+      >
         <Link to="/nutritions" className="box box1">
           <img
             src={`${process.env.PUBLIC_URL}/images/nutritions.jpeg`}
@@ -25,7 +34,7 @@ const HomeDisplay = () => {
           />
           <div class="text-over">Fitness</div>
         </Link>
-      </div>
+      </motion.div>
     </HomeDisplayStyled>
   );
 };
@@ -82,9 +91,6 @@ const HomeDisplayStyled = styled.section`
     color: rgb(62, 50, 85);
   }
 
-
-
-
   @media only screen and (max-width: 900px) {
     margin: 0;
     background-color: lightblue;
@@ -101,8 +107,6 @@ const HomeDisplayStyled = styled.section`
       left: 4rem;
     }
   }
-
-
 
   @media only screen and (max-width: 900px) {
     margin: 0;
@@ -129,8 +133,6 @@ const HomeDisplayStyled = styled.section`
     }
   }
 
-
-
   @media only screen and (min-width: 1300px) {
     background-color: white;
 
@@ -138,7 +140,6 @@ const HomeDisplayStyled = styled.section`
       background-color: white;
       grid-template-columns: 1fr 1fr 1fr;
     }
-    
   }
 `;
 
