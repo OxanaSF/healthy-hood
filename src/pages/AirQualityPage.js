@@ -5,15 +5,12 @@ import { Link, Outlet } from 'react-router-dom';
 const AirQualityPage = () => {
   return (
     <AirQualityPageStyled>
-     
-      <div className="section1">
+      <div className="section">
         <img
           src={`${process.env.PUBLIC_URL}/images/family-outside-no-bg.jpeg`}
           alt=""
         />
-      </div>
 
-      <div className="section2">
         <p>
           Air Quality Index (AQI) & Health Millions of people live in areas
           where air pollution can cause serious health problems. Local air
@@ -30,7 +27,6 @@ const AirQualityPage = () => {
           <Link to="/clean-air/list"> List </Link>
           <Link to="/clean-air/list"> List </Link>
           <Link to="/clean-air/list"> List </Link>
-       
         </nav>
 
         <Outlet />
@@ -40,33 +36,21 @@ const AirQualityPage = () => {
 };
 
 const AirQualityPageStyled = styled.section`
-  .section1 {
-    width: 80%;
-    margin: 5rem auto;
-    height: 25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+  .section {
+    /* width: 80%; */
+    margin: 5rem 10rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1.6fr;
+    gap: 5rem;
 
-    border-radius: 3rem;
-    background-color: lightblue;
-
-    img {
-      background-color: rgb(254, 233, 218);
-      background-color: lightblue;
-      height: 100%;
-      width: 100%;
-      border-radius: 3rem;
-      object-fit: cover;
-    }
-  }
-
-  .section2 {
-    width: 80%;
-    margin: 5rem auto;
     p {
+      margin-top: 10rem;
       border-radius: 3rem;
-      height: 20rem;
-      color: #8c777c;
       color: #243966;
-      border: 10px solid #ffbebf;
+
       border: 10px solid lightblue;
       background-color: white;
 
@@ -74,6 +58,22 @@ const AirQualityPageStyled = styled.section`
       height: 100%;
       font-size: 1.2rem;
       padding: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.9;
+    }
+
+    img {
+      background-color: lightblue;
+      width: 100%;
+      height: 24rem;
+      width: 24rem;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 3rem;
+      margin-bottom: 2rem;
     }
   }
 
@@ -96,7 +96,6 @@ const AirQualityPageStyled = styled.section`
       display: flex;
       justify-content: center;
       align-items: center;
-
     }
   }
 `;
