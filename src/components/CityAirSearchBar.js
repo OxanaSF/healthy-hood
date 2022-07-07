@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useNavigate } from 'react-router';
 import { FaSearch } from 'react-icons/fa';
-// import AnimatedPage from './AnimatedPage';
+import AnimatedPage from './AnimatedPage';
 
 const CityAirSearchBar = () => {
   const [input, setInput] = useState('');
@@ -16,7 +16,7 @@ const CityAirSearchBar = () => {
   };
 
   return (
-    <div >
+    <AnimatedPage >
 
       <FormStyled onSubmit={onSubmitHandler}>
         <FaSearch className="search-icon" />
@@ -28,7 +28,7 @@ const CityAirSearchBar = () => {
         />
       </FormStyled>
       <Outlet />
-    </div>
+    </AnimatedPage>
   );
 };
 

@@ -1,44 +1,52 @@
 import styled from 'styled-components';
 
 import { NavLink, Outlet } from 'react-router-dom';
-import { motion } from "framer-motion" 
 import AnimatedPage from '../components/AnimatedPage';
 
 const AirQualityPage = () => {
   return (
-    // <AnimatedPage>
-    <AirQualityPageStyled>
-      <div className="section">
-        <img
-          src={`${process.env.PUBLIC_URL}/images/family-outside-no-bg.jpeg`}
-          alt=""
-        />
+    <AnimatedPage>
+      <AirQualityPageStyled>
+        <div className="section">
+          <img
+            src={`${process.env.PUBLIC_URL}/images/family-outside-no-bg.jpeg`}
+            alt=""
+          />
 
-        <p>
-          Air Quality Index (AQI) & Health Millions of people live in areas
-          where air pollution can cause serious health problems. Local air
-          quality can affect our daily lives. Like the weather, it can change
-          from day to day. EPA developed the Air Quality Index, or AQI, to make
-          information available about the health effects of the five most common
-          air pollutants, and how to avoid those effects.
-        </p>
-      </div>
+          <p>
+            Air Quality Index (AQI) & Health Millions of people live in areas
+            where air pollution can cause serious health problems. Local air
+            quality can affect our daily lives. Like the weather, it can change
+            from day to day. EPA developed the Air Quality Index, or AQI, to
+            make information available about the health effects of the five most
+            common air pollutants, and how to avoid those effects.
+          </p>
+        </div>
 
-      <div className="air-quality-page-main">
-        <nav className="air-quality-page-nav">
-          <NavLink to="/clean-air/search" className='circle1'>
-            {' '}
-            <p>Get AQI in your city</p>{' '}
-          </NavLink>
-          <NavLink to="/clean-air/list" className='circle2'> List </NavLink>
-          <NavLink to="/clean-air/list" className='circle3'> List </NavLink>
-          <NavLink to="/clean-air/list" className='circle4'> List </NavLink>
-        </nav>
+        <div className="air-quality-page-main">
+          <nav className="air-quality-page-nav">
+            <NavLink to="/clean-air/search" className="circle1">
+              {' '}
+              <p>Get AQI in your city</p>{' '}
+            </NavLink>
+            <NavLink to="/clean-air/list" className="circle2">
+              {' '}
+              List{' '}
+            </NavLink>
+            <NavLink to="/clean-air/list" className="circle3">
+              {' '}
+              List{' '}
+            </NavLink>
+            <NavLink to="/clean-air/list" className="circle4">
+              {' '}
+              List{' '}
+            </NavLink>
+          </nav>
 
-        <Outlet />
-      </div>
-    </AirQualityPageStyled>
-    //  </AnimatedPage>
+          <Outlet />
+        </div>
+      </AirQualityPageStyled>
+    </AnimatedPage>
   );
 };
 
@@ -106,8 +114,6 @@ const AirQualityPageStyled = styled.section`
       justify-content: center;
       align-items: center;
       text-align: center;
-
-
     }
 
     .circle1 {
@@ -139,7 +145,6 @@ const AirQualityPageStyled = styled.section`
       width: 12rem;
     }
 
-
     @keyframes circle1 {
       0% {
         clip-path: circle(75%);
@@ -151,7 +156,6 @@ const AirQualityPageStyled = styled.section`
         clip-path: circle(75%);
       }
     }
-
 
     @keyframes circle2 {
       0% {
@@ -165,7 +169,6 @@ const AirQualityPageStyled = styled.section`
       }
     }
 
-
     @keyframes circle3 {
       0% {
         clip-path: circle(75%);
@@ -177,7 +180,6 @@ const AirQualityPageStyled = styled.section`
         clip-path: circle(75%);
       }
     }
-
 
     @keyframes circle4 {
       0% {
