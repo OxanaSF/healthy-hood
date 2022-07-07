@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link, NavLink } from 'react-router-dom';
 
+
 const Nav = () => {
   return (
     <NavStyled>
@@ -11,6 +12,7 @@ const Nav = () => {
         />
       </Link>
       <div className="nav-links">
+        <NavLink to="/">home</NavLink>
         <NavLink to="/nutritions">nutritions</NavLink>
         <NavLink to="/fitness">fitness</NavLink>
         <NavLink to="/clean-air">clean-air</NavLink>
@@ -37,6 +39,10 @@ const NavStyled = styled.nav`
 
     a {
       color: #8c777c;
+    }
+    
+    a.active {
+      border-bottom: 5px solid lightblue;
     }
   }
 

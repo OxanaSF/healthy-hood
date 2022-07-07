@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
+import { motion } from "framer-motion" 
+import AnimatedPage from '../components/AnimatedPage';
 
 const AirQualityPage = () => {
   return (
+    // <AnimatedPage>
     <AirQualityPageStyled>
       <div className="section">
         <img
@@ -23,24 +26,29 @@ const AirQualityPage = () => {
 
       <div className="air-quality-page-main">
         <nav className="air-quality-page-nav">
-          <Link to="/clean-air/search"> Search </Link>
-          <Link to="/clean-air/list"> List </Link>
-          <Link to="/clean-air/list"> List </Link>
-          <Link to="/clean-air/list"> List </Link>
+          <NavLink to="/clean-air/search" className='circle1'>
+            {' '}
+            <p>Get AQI in your city</p>{' '}
+          </NavLink>
+          <NavLink to="/clean-air/list" className='circle2'> List </NavLink>
+          <NavLink to="/clean-air/list" className='circle3'> List </NavLink>
+          <NavLink to="/clean-air/list" className='circle4'> List </NavLink>
         </nav>
 
         <Outlet />
       </div>
     </AirQualityPageStyled>
+    //  </AnimatedPage>
   );
 };
 
 const AirQualityPageStyled = styled.section`
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 10rem;
+
   .section {
-    /* width: 80%; */
     margin: 5rem 10rem;
     display: grid;
     grid-template-columns: 1.2fr 1.6fr;
@@ -81,21 +89,106 @@ const AirQualityPageStyled = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
+    gap: 6rem;
     margin: 2rem 10rem;
     font-size: 3rem;
+    position: relative;
 
     a {
       color: #243966;
       background-color: lightblue;
-      padding: 1rem;
-      font-size: 1.8rem;
-      width: 10rem;
-      height: 10rem;
+      padding: 2.5rem;
+      font-size: 1.2rem;
+      width: 12rem;
+      height: 12rem;
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
+      text-align: center;
+
+
+    }
+
+    .circle1 {
+      animation: circle1 3s;
+      /* background: orange; */
+      clip-path: circle(75%);
+      height: 12rem;
+      width: 12rem;
+    }
+    .circle2 {
+      animation: circle2 4s;
+      /* background: orange; */
+      clip-path: circle(75%);
+      height: 12rem;
+      width: 12rem;
+    }
+    .circle3 {
+      animation: circle3 5s;
+      /* background: orange; */
+      clip-path: circle(75%);
+      height: 12rem;
+      width: 12rem;
+    }
+    .circle4 {
+      animation: circle4 6s;
+      /* background: orange; */
+      clip-path: circle(75%);
+      height: 12rem;
+      width: 12rem;
+    }
+
+
+    @keyframes circle1 {
+      0% {
+        clip-path: circle(75%);
+      }
+      50% {
+        clip-path: circle(25%);
+      }
+      100% {
+        clip-path: circle(75%);
+      }
+    }
+
+
+    @keyframes circle2 {
+      0% {
+        clip-path: circle(75%);
+      }
+      50% {
+        clip-path: circle(25%);
+      }
+      100% {
+        clip-path: circle(75%);
+      }
+    }
+
+
+    @keyframes circle3 {
+      0% {
+        clip-path: circle(75%);
+      }
+      50% {
+        clip-path: circle(25%);
+      }
+      100% {
+        clip-path: circle(75%);
+      }
+    }
+
+
+    @keyframes circle4 {
+      0% {
+        clip-path: circle(75%);
+      }
+      50% {
+        clip-path: circle(25%);
+      }
+      100% {
+        clip-path: circle(75%);
+      }
     }
   }
 `;
