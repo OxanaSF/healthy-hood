@@ -38,4 +38,4 @@ align-items: center;
   }
 `
 
-export default NutritionsPage
+export default NutritionsPage;
