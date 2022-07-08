@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import styled from 'styled-components';
 import AnimatedPageTransition from '../animations/AnimatedPageTransition';
+=======
+import styled from "styled-components";
+import AnimatedPageTransition from "../animations/AnimatedPageTransition";
+>>>>>>> 32e8bc6f643b4ba51a3c43ebb92373b05fd92c7b
 
 const FitnessPage = () => {
   return (
