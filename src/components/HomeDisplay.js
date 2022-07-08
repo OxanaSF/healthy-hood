@@ -1,12 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
-import { motion } from 'framer-motion';
-import { slidesFromLeftLeaveToRight } from '../animations/animation';
-=======
 import { motion } from "framer-motion";
 import { slidesFromLeftLeaveToRight } from "../animations/animation";
->>>>>>> 32e8bc6f643b4ba51a3c43ebb92373b05fd92c7b
 
 const HomeDisplay = () => {
   return (
