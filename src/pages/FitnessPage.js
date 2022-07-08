@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import AnimatedPageTransition from "../animations/AnimatedPageTransition";
-import { Link, Outlet } from "react-router-dom";
+import styled from 'styled-components';
+import AnimatedPageTransition from '../animations/AnimatedPageTransition';
+import { Link, Outlet } from 'react-router-dom';
 
 const FitnessPage = () => {
   return (
