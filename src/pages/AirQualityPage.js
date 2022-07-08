@@ -3,6 +3,12 @@ import styled from 'styled-components';
 import { NavLink, Outlet } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
+import ClockLoader from 'react-spinners/ClockLoader';
+
+
+
+
+
 import {
   slidesFromLeftLeaveToLeft,
   slidesFromRightftLeaveToRight,
@@ -13,22 +19,22 @@ const AirQualityPage = () => {
   return (
     <AnimatedPage>
       <AirQualityPageStyled>
-        <motion.div className="section">
+        <div className="section">
+        
           <motion.img
             src={`${process.env.PUBLIC_URL}/images/family-outside-no-bg.jpeg`}
             alt="family-outside"
-            
             variants={slidesFromLeftLeaveToLeft}
             initial="hidden"
             animate="show"
-            exit="exit"
+            // exit="exit"
           />
 
           <motion.p
             variants={slidesFromRightftLeaveToRight}
             initial="hidden"
             animate="show"
-            exit="exit"
+            // exit="exit"
           >
             Air Quality Index (AQI) & Health Millions of people live in areas
             where air pollution can cause serious health problems. Local air
@@ -37,29 +43,23 @@ const AirQualityPage = () => {
             make information available about the health effects of the five most
             common air pollutants, and how to avoid those effects.
           </motion.p>
-        </motion.div>
+          
+        </div>
 
         <div className="air-quality-page-main">
+         
           <nav className="air-quality-page-nav">
             <NavLink to="/clean-air/search" className="circle1">
-              {' '}
-              <p>Get AQI in your city</p>{' '}
+              <p>Get AQI in your city</p>
             </NavLink>
             <NavLink to="/clean-air/list" className="circle2">
-              {' '}
-              List{' '}
-            </NavLink>
-            <NavLink to="/clean-air/list" className="circle3">
-              {' '}
-              List{' '}
-            </NavLink>
-            <NavLink to="/clean-air/list" className="circle4">
-              {' '}
-              List{' '}
+              <p>Wildfire Tracker</p>
             </NavLink>
           </nav>
 
-          <Outlet />
+          <div>
+            <Outlet />
+          </div>
         </div>
       </AirQualityPageStyled>
     </AnimatedPage>
@@ -67,25 +67,21 @@ const AirQualityPage = () => {
 };
 
 const AirQualityPageStyled = styled.section`
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   gap: 10rem;
 
   .section {
-    margin: 5rem 10rem;
+    margin: 5rem 10rem 0 10rem;
     display: grid;
     grid-template-columns: 1.2fr 1.6fr;
     gap: 5rem;
 
     p {
-      margin-top: 10rem;
       border-radius: 3rem;
       color: #243966;
-
       border: 10px solid lightblue;
-      background-color: white;
-
       width: 100%;
       height: 100%;
       font-size: 1.2rem;
@@ -99,67 +95,54 @@ const AirQualityPageStyled = styled.section`
     img {
       background-color: lightblue;
       width: 100%;
-      height: 24rem;
-      width: 24rem;
-      width: 100%;
       height: 100%;
       object-fit: cover;
       border-radius: 3rem;
-      margin-bottom: 2rem;
     }
+  }
+
+  .air-quality-page-main {
+   display: grid;
+   grid-template-columns: 1fr;
+ 
   }
 
   nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 6rem;
-    margin: 2rem 10rem;
+    gap: 5rem;
     font-size: 3rem;
     position: relative;
-
+    transform: translateY(-8rem);
+   
     a {
       color: #243966;
       background-color: lightblue;
       padding: 2.5rem;
       font-size: 1.2rem;
-      width: 12rem;
-      height: 12rem;
-      border-radius: 50%;
+      border-radius: 3rem;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
+
     }
 
     .circle1 {
       animation: circle1 3s;
-      /* background: orange; */
       clip-path: circle(75%);
-      height: 12rem;
-      width: 12rem;
+      height: 10rem;
+      width: 20rem;
     }
     .circle2 {
       animation: circle2 4s;
       /* background: orange; */
       clip-path: circle(75%);
-      height: 12rem;
-      width: 12rem;
+      height: 10rem;
+      width: 20rem;
     }
-    .circle3 {
-      animation: circle3 5s;
-      /* background: orange; */
-      clip-path: circle(75%);
-      height: 12rem;
-      width: 12rem;
-    }
-    .circle4 {
-      animation: circle4 6s;
-      /* background: orange; */
-      clip-path: circle(75%);
-      height: 12rem;
-      width: 12rem;
-    }
+ 
 
     @keyframes circle1 {
       0% {
@@ -185,29 +168,7 @@ const AirQualityPageStyled = styled.section`
       }
     }
 
-    @keyframes circle3 {
-      0% {
-        clip-path: circle(75%);
-      }
-      50% {
-        clip-path: circle(25%);
-      }
-      100% {
-        clip-path: circle(75%);
-      }
-    }
-
-    @keyframes circle4 {
-      0% {
-        clip-path: circle(75%);
-      }
-      50% {
-        clip-path: circle(25%);
-      }
-      100% {
-        clip-path: circle(75%);
-      }
-    }
+  
   }
 `;
 

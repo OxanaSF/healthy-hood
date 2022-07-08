@@ -19,12 +19,12 @@ const HomeDisplay = () => {
             src={`${process.env.PUBLIC_URL}/images/nutritions.jpeg`}
             alt="nutritions"
           />
-          <div class="text-over text-over-nutritions">Nutritions</div>
+          <div className="text-over text-over-nutritions">Nutritions</div>
         </Link>
 
         <Link to="/clean-air" className="box box2">
           <img src={`${process.env.PUBLIC_URL}/images/air.jpeg`} alt="air" />
-          <div class="text-over">Clean air</div>
+          <div className="text-over">Clean air</div>
         </Link>
 
         <Link to="/fitness" className="box box3">
@@ -32,7 +32,7 @@ const HomeDisplay = () => {
             src={`${process.env.PUBLIC_URL}/images/fitness.jpeg`}
             alt="fitness"
           />
-          <div class="text-over">Fitness</div>
+          <div className="text-over">Fitness</div>
         </Link>
       </motion.div>
     </HomeDisplayStyled>

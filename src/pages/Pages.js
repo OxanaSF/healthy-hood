@@ -3,9 +3,9 @@ import Home from './Home';
 import NutritionsPage from './NutritionsPage';
 import FitnessPage from './FitnessPage';
 import AirQualityPage from './AirQualityPage';
-import CityAirSearchBar from '../components/CityAirSearchBar';
-import CitiesList from '../components/CitiesList';
-import CityAirInfoFetched from '../components/CityAirInfoFetched.js';
+import CityAirSearchBar from '../components/AirQuality/CityAirSearchBar';
+import CitiesList from '../components/AirQuality/CitiesList';
+import CityAirInfoFetched from '../components/AirQuality/CityAirInfoFetched';
 import { AnimatePresence } from 'framer-motion';
 
 const Pages = () => {
@@ -13,7 +13,7 @@ const Pages = () => {
 
   return (
     <AnimatePresence exitBeforeEnter>
-      <Routes location={location} key={location.pathname}>
+      <Routes location={location} key={location.pathname.split('/')[1]}>
         <Route path="/" element={<Home />} />
         <Route path="/nutritions" element={<NutritionsPage />} />
         <Route path="/fitness" element={<FitnessPage />} />
