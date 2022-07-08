@@ -1,29 +1,29 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { data } from "../../data";
 
 const FitnessList = (props) => {
-  const [muscle, setMuscle] = useState([]);
   const [img, setImg] = useState("");
+  const [results, setResults] = useState(data);
 
   let params = useParams();
 
   const getFitnessInfo = (muscleName) => {
-    const axios = require("axios");
-
-    const options = {
-      method: "GET",
-      url: `http://localhost:8000/exercises?bodypart=${params.name}`,
-    };
-    axios
-      .request(options)
-      .then((response) => {
-        console.log("Body: ", response.data);
-        setMuscle(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    // const axios = require("axios");
+    // const options = {
+    //   method: "GET",
+    //   url: `http://localhost:8000/exercises?bodypart=${params.name}`,
+    // };
+    // axios
+    //   .request(options)
+    //   .then((response) => {
+    //     console.log("Body: ", response.data);
+    //     setMuscle(response.data);
+    //   })
+    //   .catch((error) => {
+    //     console.error(error);
+    //   });
   };
 
   useEffect(() => {
@@ -33,8 +33,8 @@ const FitnessList = (props) => {
 
   return (
     <FitnessListStyled>
-      {muscle.map((part) => (
-        <div>{part["target"]} </div>
+      {results.map((part, i) => (
+        <div key={i}>{part["target"]} </div>
       ))}
       <img src={img} alt="" />
     </FitnessListStyled>

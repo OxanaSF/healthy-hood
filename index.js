@@ -47,34 +47,34 @@ app.get("/search", (req, res) => {
     });
 });
 
-app.get("/exercises", (req, res) => {
-  const muscle = req.query.bodypart;
-  console.log("**********************");
-  console.log("**********************");
-  console.log("**********************");
-  console.log("BACK END MUSCLE", muscle);
-  console.log("**********************");
-  console.log("**********************");
-  console.log("**********************");
-  const options = {
-    method: "GET",
-    url: `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${muscle}`,
-    headers: {
-      "X-RapidAPI-Key": "a57ecdb4e2msh405c17881f44407p1d957ajsn957f8ba9af49",
-      "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
-    },
-  };
-  console.log(options.url);
+// app.get("/exercises", (req, res) => {
+//   const muscle = req.query.bodypart;
+//   console.log("**********************");
+//   console.log("**********************");
+//   console.log("**********************");
+//   console.log("BACK END MUSCLE", muscle);
+//   console.log("**********************");
+//   console.log("**********************");
+//   console.log("**********************");
+//   const options = {
+//     method: "GET",
+//     url: `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${muscle}`,
+//     headers: {
+//       "X-RapidAPI-Key": process.env.REACT_APP_API_KEY_2,
+//       "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
+//     },
+//   };
+//   console.log(options.url);
 
-  axios
-    .request(options)
-    .then(function (response) {
-      res.json(response.data);
-      console.log("CHECK MUSCLE", response.data);
-    })
-    .catch(function (error) {
-      console.error(error);
-    });
-});
+//   axios
+//     .request(options)
+//     .then(function (response) {
+//       res.json(response.data);
+//       console.log("CHECK MUSCLE", response.data);
+//     })
+//     .catch(function (error) {
+//       console.error(error);
+//     });
+// });
 
 app.listen(8000, () => console.log(`Server is running on port ${PORT}`));
