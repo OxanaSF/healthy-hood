@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import AnimatedPageTransition from "../animations/AnimatedPageTransition";
 import { Outlet } from "react-router-dom";
-import FitnessSearchBar from "../components/fitness/FitnessSearch";
+import FitnessSearchBar from "../components/Fitness/FitnessSearch";
 
 const FitnessPage = () => {
   return (

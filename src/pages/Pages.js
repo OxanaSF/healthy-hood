@@ -7,8 +7,7 @@ import CityAirSearchBar from "../components/AirQuality/CityAirSearchBar";
 import CitiesList from "../components/AirQuality/CitiesList";
 import CityAirInfoFetched from "../components/AirQuality/CityAirInfoFetched";
 import { AnimatePresence } from "framer-motion";
-import FitnessList from "../components/fitness/FitnessList";
-import FitnessSearchBar from "../components/fitness/FitnessSearch";
+import FitnessList from "../components/Fitness/FitnessList";
 import RecipeVideos from "../components/RecipeVideos";
 import SearchNutritionValue from "../components/SearchNutritionValue";
 
