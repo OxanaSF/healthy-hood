@@ -43,7 +43,7 @@ const AirQualityPage = () => {
             <NavLink to="/clean-air/search" className="circle1">
               <p>Get AQI in your city</p>
             </NavLink>
-            <NavLink to="/clean-air/list" className="circle2">
+            <NavLink to="/clean-air/wildfires" className="circle2">
               <p>Wildfire Tracker</p>
             </NavLink>
           </nav>
