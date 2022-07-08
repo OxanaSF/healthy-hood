@@ -4,20 +4,21 @@ import NutritionsPage from "./NutritionsPage";
 import FitnessPage from "./FitnessPage";
 import AirQualityPage from "./AirQualityPage";
 import CityAirSearchBar from "../components/AirQuality/CityAirSearchBar";
-import CitiesList from "../components/AirQuality/CitiesList";
 import CityAirInfoFetched from "../components/AirQuality/CityAirInfoFetched";
-import { AnimatePresence } from "framer-motion";
 import FitnessList from "../components/fitness/FitnessList";
-import FitnessSearchBar from "../components/fitness/FitnessSearch";
 import RecipeVideos from "../components/Nutrition/RecipeVideos";
 import SearchNutritionValue from "../components/Nutrition/SearchNutritionValue";
+import Wildfires from '../components/AirQuality/Wildfires';
+
+
+import { AnimatePresence } from "framer-motion";
 
 const Pages = () => {
   const location = useLocation();
 
   return (
     <AnimatePresence exitBeforeEnter>
-      <Routes location={location} key={location.pathname.split("/")[1]}>
+      <Routes location={location} key={location.pathname.split('/')[1]}>
         <Route path="/" element={<Home />} />
         <Route path="/nutritions" element={<NutritionsPage />}>
           <Route path="recipe-videos" element={<RecipeVideos />} />
@@ -33,7 +34,7 @@ const Pages = () => {
           <Route path="search" element={<CityAirSearchBar />}>
             <Route path=":name" element={<CityAirInfoFetched />} />
           </Route>
-          <Route path="list" element={<CitiesList />} />
+          <Route path="wildfires" element={<Wildfires />} />
         </Route>
       </Routes>
     </AnimatePresence>
