@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ClockLoader from 'react-spinners/ClockLoader';
 
-
 const CityAirInfoFetched = (props) => {
   const [loading, setLoading] = useState(true);
   const [color, setColor] = useState('lightblue');
@@ -28,7 +27,7 @@ const CityAirInfoFetched = (props) => {
     };
     axios
       .request(options)
-     
+
       .then((response) => {
         // console.log('Cities: ', response.data);
         setCityWeatherInfo(response.data.data.cities[0]);
@@ -56,13 +55,11 @@ const CityAirInfoFetched = (props) => {
     }, 5000);
   }, []);
 
-
-  console.log(aqius)
+  console.log(aqius);
 
   return (
     <RequestDisplayStyled>
-   
-      <img  src={`${process.env.PUBLIC_URL}/images/aqi_level.jpeg`} alt="" />
+      <img src={`${process.env.PUBLIC_URL}/images/aqi_level.jpeg`} alt="" />
       {loading ? (
         <ClockLoaderStyled>
           <ClockLoader
@@ -132,7 +129,7 @@ const CityAirInfoFetched = (props) => {
                     }
               }
             >
-            AQI: {aqius}
+              AQI: {aqius}
             </div>{' '}
           </div>
         </CityAirInfoFetchedStyled>
@@ -151,12 +148,11 @@ const RequestDisplayStyled = styled.div`
     border-radius: 3rem;
     border: 10px solid lightblue;
     padding: 3rem;
-   
   }
 
   img:hover {
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%);
+    filter: grayscale(100%);
   }
 `;
 

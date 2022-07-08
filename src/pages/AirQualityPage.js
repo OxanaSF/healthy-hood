@@ -5,10 +5,6 @@ import { motion } from 'framer-motion';
 
 import ClockLoader from 'react-spinners/ClockLoader';
 
-
-
-
-
 import {
   slidesFromLeftLeaveToLeft,
   slidesFromRightftLeaveToRight,
@@ -20,7 +16,6 @@ const AirQualityPage = () => {
     <AnimatedPage>
       <AirQualityPageStyled>
         <div className="section">
-        
           <motion.img
             src={`${process.env.PUBLIC_URL}/images/family-outside-no-bg.jpeg`}
             alt="family-outside"
@@ -43,11 +38,9 @@ const AirQualityPage = () => {
             make information available about the health effects of the five most
             common air pollutants, and how to avoid those effects.
           </motion.p>
-          
         </div>
 
         <div className="air-quality-page-main">
-         
           <nav className="air-quality-page-nav">
             <NavLink to="/clean-air/search" className="circle1">
               <p>Get AQI in your city</p>
@@ -102,9 +95,8 @@ const AirQualityPageStyled = styled.section`
   }
 
   .air-quality-page-main {
-   display: grid;
-   grid-template-columns: 1fr;
- 
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
   nav {
@@ -115,7 +107,7 @@ const AirQualityPageStyled = styled.section`
     font-size: 3rem;
     position: relative;
     transform: translateY(-8rem);
-   
+
     a {
       color: #243966;
       background-color: lightblue;
@@ -126,7 +118,6 @@ const AirQualityPageStyled = styled.section`
       justify-content: center;
       align-items: center;
       text-align: center;
-
     }
 
     .circle1 {
@@ -142,7 +133,6 @@ const AirQualityPageStyled = styled.section`
       height: 10rem;
       width: 20rem;
     }
- 
 
     @keyframes circle1 {
       0% {
@@ -167,8 +157,6 @@ const AirQualityPageStyled = styled.section`
         clip-path: circle(75%);
       }
     }
-
-  
   }
 `;
 
