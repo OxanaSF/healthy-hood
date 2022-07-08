@@ -9,8 +9,8 @@ import CityAirInfoFetched from "../components/AirQuality/CityAirInfoFetched";
 import { AnimatePresence } from "framer-motion";
 import FitnessList from "../components/fitness/FitnessList";
 import FitnessSearchBar from "../components/fitness/FitnessSearch";
-import RecipeVideos from "../components/RecipeVideos";
-import SearchNutritionValue from "../components/SearchNutritionValue";
+import RecipeVideos from "../components/Nutrition/RecipeVideos";
+import SearchNutritionValue from "../components/Nutrition/SearchNutritionValue";
 
 const Pages = () => {
   const location = useLocation();
