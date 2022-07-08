@@ -1,15 +1,15 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import { NavLink, Outlet } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { NavLink, Outlet } from "react-router-dom";
+import { motion } from "framer-motion";
 
-import ClockLoader from 'react-spinners/ClockLoader';
+import ClockLoader from "react-spinners/ClockLoader";
 
 import {
   slidesFromLeftLeaveToLeft,
   slidesFromRightftLeaveToRight,
-} from '../animations/animation';
-import AnimatedPage from '../animations/AnimatedPageTransition';
+} from "../animations/animation";
+import AnimatedPage from "../animations/AnimatedPageTransition";
 
 const AirQualityPage = () => {
   return (
