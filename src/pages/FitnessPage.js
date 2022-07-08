@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import styled from "styled-components";
 // import FitnessList from "../components/FitnessList";
 
@@ -14,6 +15,18 @@ const FitnessPage = () => {
         <Outlet />
       </div>
     </FitnessPageStyled>
+=======
+import styled from 'styled-components';
+import AnimatedPageTransition from '../animations/AnimatedPageTransition';
+
+const FitnessPage = () => {
+  return (
+    <AnimatedPageTransition>
+      <FitnessPageStyled>
+        <h2>This is a Fitness Page that is going to be created by Johnson!</h2>
+      </FitnessPageStyled>
+    </AnimatedPageTransition>
+>>>>>>> 96421d33eff7ea1ee859c6d65b23e271a9a67d44
   );
 };
 

@@ -1,10 +1,24 @@
+<<<<<<< HEAD
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+=======
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+import { slidesFromLeftLeaveToRight } from '../animations/animation';
+>>>>>>> 96421d33eff7ea1ee859c6d65b23e271a9a67d44
 
 const HomeDisplay = () => {
   return (
     <HomeDisplayStyled>
-      <div className="categories-container">
+      <motion.div
+        className="categories-container"
+        variants={slidesFromLeftLeaveToRight}
+        initial="hidden"
+        animate="show"
+        exit="exit"
+      >
         <Link to="/nutritions" className="box box1">
           <img
             src={`${process.env.PUBLIC_URL}/images/nutritions.jpeg`}
@@ -25,7 +39,7 @@ const HomeDisplay = () => {
           />
           <div className="text-over">Fitness</div>
         </Link>
-      </div>
+      </motion.div>
     </HomeDisplayStyled>
   );
 };
@@ -45,7 +59,7 @@ const HomeDisplayStyled = styled.section`
     display: grid;
     gap: 2rem;
 
-    grid-template-columns: repeat(auto-fit, minmax(37rem, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .box {
@@ -80,6 +94,57 @@ const HomeDisplayStyled = styled.section`
     left: 2rem;
     font-family: arial;
     color: rgb(62, 50, 85);
+  }
+
+  @media only screen and (max-width: 900px) {
+    margin: 0;
+    background-color: lightblue;
+
+    .categories-container {
+      background-color: lightblue;
+      grid-template-columns: 1fr;
+      padding-bottom: 5rem;
+    }
+
+    .text-over {
+      font-size: 2.5rem;
+      top: 2rem;
+      left: 4rem;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    margin: 0;
+    background-color: lightblue;
+
+    .categories-container {
+      background-color: lightblue;
+      grid-template-columns: 1fr;
+      padding-bottom: 5rem;
+    }
+
+    .text-over {
+      font-size: 2.5rem;
+      top: 2rem;
+      left: 4rem;
+    }
+  }
+
+  @media only screen and (max-width: 1350px) {
+    .text-over {
+      font-size: 2.5rem;
+      top: 2rem;
+      left: 3.5rem;
+    }
+  }
+
+  @media only screen and (min-width: 1300px) {
+    background-color: white;
+
+    .categories-container {
+      background-color: white;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 `;
 
