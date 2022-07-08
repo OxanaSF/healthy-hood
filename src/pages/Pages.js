@@ -1,12 +1,12 @@
-import { Route, Routes, useLocation } from 'react-router-dom';
-import Home from './Home';
-import NutritionsPage from './NutritionsPage';
-import FitnessPage from './FitnessPage';
-import AirQualityPage from './AirQualityPage';
-import CityAirSearchBar from '../components/AirQuality/CityAirSearchBar';
-import CitiesList from '../components/AirQuality/CitiesList';
-import CityAirInfoFetched from '../components/AirQuality/CityAirInfoFetched';
-import { AnimatePresence } from 'framer-motion';
+import { Route, Routes, useLocation } from "react-router-dom";
+import Home from "./Home";
+import NutritionsPage from "./NutritionsPage";
+import FitnessPage from "./FitnessPage";
+import AirQualityPage from "./AirQualityPage";
+import CityAirSearchBar from "../components/AirQuality/CityAirSearchBar";
+import CitiesList from "../components/AirQuality/CitiesList";
+import CityAirInfoFetched from "../components/AirQuality/CityAirInfoFetched";
+import { AnimatePresence } from "framer-motion";
 
 const Pages = () => {
   const location = useLocation();
@@ -14,7 +14,7 @@ const Pages = () => {
   return (
 
     <AnimatePresence exitBeforeEnter>
-      <Routes location={location} key={location.pathname.split('/')[1]}>
+      <Routes location={location} key={location.pathname.split("/")[1]}>
         <Route path="/" element={<Home />} />
         <Route path="/nutritions" element={<NutritionsPage />} />
         <Route path="/fitness" element={<FitnessPage />} />

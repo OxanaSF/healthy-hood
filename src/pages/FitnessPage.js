@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import AnimatedPageTransition from '../animations/AnimatedPageTransition';
+import styled from "styled-components";
+import AnimatedPageTransition from "../animations/AnimatedPageTransition";
 
 const FitnessPage = () => {
   return (
