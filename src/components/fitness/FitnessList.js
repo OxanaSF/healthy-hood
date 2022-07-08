@@ -1,29 +1,29 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { data } from "../../data";
 
 const FitnessList = (props) => {
   const [img, setImg] = useState("");
-  const [results, setResults] = useState(data);
+  const [results, setResults] = useState();
 
   let params = useParams();
 
   const getFitnessInfo = (muscleName) => {
-    // const axios = require("axios");
-    // const options = {
-    //   method: "GET",
-    //   url: `http://localhost:8000/exercises?bodypart=${params.name}`,
-    // };
-    // axios
-    //   .request(options)
-    //   .then((response) => {
-    //     console.log("Body: ", response.data);
-    //     setMuscle(response.data);
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //   });
+    const axios = require("axios");
+
+    const options = {
+      method: "GET",
+      url: `http://localhost:8000/exercises?bodypart=${params.name}`,
+    };
+    axios
+      .request(options)
+      .then((response) => {
+        console.log("Body: ", response.data);
+        setResults(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   useEffect(() => {

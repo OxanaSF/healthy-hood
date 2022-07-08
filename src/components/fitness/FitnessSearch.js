@@ -2,12 +2,15 @@ import styled from "styled-components";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { useNavigate } from "react-router";
-import { FaSearch } from "react-icons/fa";
 import AnimatedPage from "../../animations/AnimatedPageTransition";
+import { data } from "./data";
 
 const FitnessSearchBar = (props) => {
   const [input, setInput] = useState("");
   const navigate = useNavigate();
+
+  const [option, setOption] = useState({});
+  console.log(option);
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
@@ -15,20 +18,22 @@ const FitnessSearchBar = (props) => {
     setInput("");
   };
 
+  const handleChange = (e) => {
+    setOption(data[+e.target.value]);
+  };
+
   return (
     <AnimatedPage>
       <FormSectionStyled>
-        <h3>What bodypart do you want to exercise?</h3>
-        <div className="container">
-          <FormStyled onSubmit={onSubmitHandler}>
-            <FaSearch className="search-icon" />
-            <input
-              onChange={(e) => setInput(e.target.value)}
-              type="text"
-              value={input}
-            />
-          </FormStyled>
-        </div>
+        <FormStyled onSubmit={onSubmitHandler}>
+          <select onChange={handleChange}>
+            {data.map((option, index) => (
+              <option key={index} value={index} active="true">
+                {option.name}
+              </option>
+            ))}
+          </select>
+        </FormStyled>
 
         <Outlet />
       </FormSectionStyled>
@@ -42,6 +47,8 @@ const FormSectionStyled = styled.section`
     text-align: center;
   }
   .container {
+  }
+  input type="bodypart" {
   }
 `;
 

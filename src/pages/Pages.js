@@ -27,9 +27,7 @@ const Pages = () => {
           />
         </Route>
         <Route path="/fitness" element={<FitnessPage />}>
-          <Route path="exercises" element={<FitnessSearchBar />}>
-            <Route path=":name" element={<FitnessList />} />
-          </Route>
+          <Route path="name" element={<FitnessList />} />
         </Route>
         <Route path="/clean-air" element={<AirQualityPage />}>
           <Route path="search" element={<CityAirSearchBar />}>
