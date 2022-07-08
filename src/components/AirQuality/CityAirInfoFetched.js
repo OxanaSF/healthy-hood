@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import ClockLoader from 'react-spinners/ClockLoader';
 
 const CityAirInfoFetched = (props) => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [color, setColor] = useState('lightblue');
   const [aqiStyle, setAqiStyle] = useState('');
 
@@ -16,6 +16,9 @@ const CityAirInfoFetched = (props) => {
   let params = useParams();
 
   const getCityWeatherInfo = (cityName) => {
+
+  
+   
     const axios = require('axios');
 
     const options = {
@@ -27,6 +30,7 @@ const CityAirInfoFetched = (props) => {
     };
     axios
       .request(options)
+      
 
       .then((response) => {
         // console.log('Cities: ', response.data);
@@ -37,15 +41,18 @@ const CityAirInfoFetched = (props) => {
         setAqius(response.data.data.cities[0].currentMeasurement.aqius);
         // setImg(response.data.data.news[0].contributors.picture);
         setLoading(false);
+        
       })
       .catch((error) => {
         console.error(error);
       });
+    
   };
 
   useEffect(() => {
     // console.log(params.name);
     getCityWeatherInfo(params.name);
+    setLoading(true);
   }, [params.name]);
 
   useEffect(() => {
@@ -54,6 +61,7 @@ const CityAirInfoFetched = (props) => {
       setLoading(false);
     }, 5000);
   }, []);
+
 
   console.log(aqius);
 
