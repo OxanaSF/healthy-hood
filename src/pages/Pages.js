@@ -8,6 +8,9 @@ import CitiesList from "../components/AirQuality/CitiesList";
 import CityAirInfoFetched from "../components/AirQuality/CityAirInfoFetched";
 import { AnimatePresence } from "framer-motion";
 import FitnessList from "../components/FitnessList";
+import RecipeVideos from "../components/RecipeVideos";
+import SearchNutritionValue from "../components/SearchNutritionValue";
+
 const Pages = () => {
   const location = useLocation();
 
@@ -15,7 +18,10 @@ const Pages = () => {
     <AnimatePresence exitBeforeEnter>
       <Routes location={location} key={location.pathname.split("/")[1]}>
         <Route path="/" element={<Home />} />
-        <Route path="/nutritions" element={<NutritionsPage />} />
+        <Route path="/nutritions" element={<NutritionsPage />} >
+          <Route path="recipe-videos" element={<RecipeVideos />} />
+          <Route path="search-by-nutrition" element={<SearchNutritionValue />} />
+        </Route>
         <Route path="/fitness" element={<FitnessPage />}>
           <Route path="exercises" element={<CityAirSearchBar />}>
             <Route path=":name" element={<FitnessList />} />
