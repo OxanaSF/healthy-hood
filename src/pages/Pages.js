@@ -12,7 +12,6 @@ const Pages = () => {
   const location = useLocation();
 
   return (
-
     <AnimatePresence exitBeforeEnter>
       <Routes location={location} key={location.pathname.split("/")[1]}>
         <Route path="/" element={<Home />} />
@@ -25,7 +24,6 @@ const Pages = () => {
           </Route>
           <Route path="list" element={<CitiesList />} />
         </Route>
-
       </Routes>
     </AnimatePresence>
   );
