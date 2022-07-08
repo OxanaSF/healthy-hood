@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 const FitnessList = (props) => {
-  const [muscle, setMuscle] = useState([]);
   const [img, setImg] = useState("");
+  const [results, setResults] = useState();
 
   let params = useParams();
 
@@ -19,7 +19,7 @@ const FitnessList = (props) => {
       .request(options)
       .then((response) => {
         console.log("Body: ", response.data);
-        setMuscle(response.data);
+        setResults(response.data);
       })
       .catch((error) => {
         console.error(error);
@@ -33,8 +33,8 @@ const FitnessList = (props) => {
 
   return (
     <FitnessListStyled>
-      {muscle.map((part) => (
-        <div>{part["target"]} </div>
+      {results.map((part, i) => (
+        <div key={i}>{part["target"]} </div>
       ))}
       <img src={img} alt="" />
     </FitnessListStyled>

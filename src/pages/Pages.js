@@ -1,15 +1,17 @@
-import { Route, Routes, useLocation } from 'react-router-dom';
-import Home from './Home';
-import NutritionsPage from './NutritionsPage';
-import FitnessPage from './FitnessPage';
-import AirQualityPage from './AirQualityPage';
-import CityAirSearchBar from '../components/AirQuality/CityAirSearchBar';
+import { Route, Routes, useLocation } from "react-router-dom";
+import Home from "./Home";
+import NutritionsPage from "./NutritionsPage";
+import FitnessPage from "./FitnessPage";
+import AirQualityPage from "./AirQualityPage";
+import CityAirSearchBar from "../components/AirQuality/CityAirSearchBar";
+import CityAirInfoFetched from "../components/AirQuality/CityAirInfoFetched";
+import FitnessList from "../components/fitness/FitnessList";
+import RecipeVideos from "../components/Nutrition/RecipeVideos";
+import SearchNutritionValue from "../components/Nutrition/SearchNutritionValue";
 import Wildfires from '../components/AirQuality/Wildfires';
-import CityAirInfoFetched from '../components/AirQuality/CityAirInfoFetched';
-import { AnimatePresence } from 'framer-motion';
-import FitnessList from '../components/FitnessList';
-import RecipeVideos from '../components/RecipeVideos';
-import SearchNutritionValue from '../components/SearchNutritionValue';
+
+
+import { AnimatePresence } from "framer-motion";
 
 const Pages = () => {
   const location = useLocation();
@@ -26,9 +28,7 @@ const Pages = () => {
           />
         </Route>
         <Route path="/fitness" element={<FitnessPage />}>
-          <Route path="exercises" element={<CityAirSearchBar />}>
-            <Route path=":name" element={<FitnessList />} />
-          </Route>
+          <Route path="name" element={<FitnessList />} />
         </Route>
         <Route path="/clean-air" element={<AirQualityPage />}>
           <Route path="search" element={<CityAirSearchBar />}>
