@@ -59,9 +59,12 @@ app.get("/search", (req, res) => {
 //   const options = {
 //     method: "GET",
 //     url: `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${muscle}`,
+
 //     headers: {
 //       "X-RapidAPI-Key": process.env.REACT_APP_API_KEY_2,
 //       "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
+//       "Access-Control-Allow-Origin": "*",
+//       "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
 //     },
 //   };
 //   console.log(options.url);
