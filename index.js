@@ -15,37 +15,37 @@ app.get("/", (req, res) => {
 
 // API Request - search by a city name to get Air info for the city
 
-// app.get("/search", (req, res) => {
-//   const city = req.query.q;
+app.get("/search", (req, res) => {
+  const city = req.query.q;
 
-//   console.log("**********************");
-//   console.log("**********************");
-//   console.log("**********************");
-//   console.log("BACK END CITY:", city);
-//   console.log("**********************");
-//   console.log("**********************");
-//   console.log("**********************");
+  console.log("**********************");
+  console.log("**********************");
+  console.log("**********************");
+  console.log("BACK END CITY:", city);
+  console.log("**********************");
+  console.log("**********************");
+  console.log("**********************");
 
-//   const options = {
-//     method: "GET",
-//     url: "https://airvisual1.p.rapidapi.com/v2/auto-complete",
-//     params: { q: city },
-//     headers: {
-//       "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
-//       "X-RapidAPI-Host": "airvisual1.p.rapidapi.com",
-//     },
-//   };
+  const options = {
+    method: "GET",
+    url: "https://airvisual1.p.rapidapi.com/v2/auto-complete",
+    params: { q: city },
+    headers: {
+      "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
+      "X-RapidAPI-Host": "airvisual1.p.rapidapi.com",
+    },
+  };
 
-//   axios
-//     .request(options)
-//     .then((response) => {
-//       res.json(response.data);
-//       console.log("QUERY!!!!: ", response.data);
-//     })
-//     .catch((error) => {
-//       console.error(error);
-//     });
-// });
+  axios
+    .request(options)
+    .then((response) => {
+      res.json(response.data);
+      console.log("QUERY!!!!: ", response.data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+});
 
 app.get("/exercises", (req, res) => {
   const muscle = req.query.bodypart;
