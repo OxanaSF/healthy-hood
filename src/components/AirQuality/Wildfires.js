@@ -10,7 +10,7 @@ function Wildfires({ data }) {
   console.log('result is: ', JSON.stringify(data, null, 10));
 
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: 'AIzaSyA0C1JZ_qxzQCWUq5Ttkc_JsgZcRbCelb4',
+    googleMapsApiKey: process.env.REACT_APP_API_KEY,
   });
 
   if (!isLoaded) {
