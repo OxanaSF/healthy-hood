@@ -1,36 +1,60 @@
+import { Box, Flex, Skeleton } from '@chakra-ui/react';
+import { FaLocationArrow, FaTimes } from 'react-icons/fa';
 
-import styled from "styled-components"
-import  Map  from "../Map/Map"
-import { useJsApiLoader } from "@react-google-maps/api";
+import { useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api';
 
+const center = { lat: 37.773972, lng: -122.431297 };
 
-const API_KEY_GOOGLE_MAP = process.env.REACT_APP_API_KEY_GOOGLE_MAPS
+function Wildfires({ data }) {
+  // console.log(data)
+  console.log('result is: ', JSON.stringify(data, null, 10));
 
-const defaultCenter = {
-  lat: 37.773972,
-  lng: -122.431297
-};
-
-const Wildfires = () => {
   const { isLoaded } = useJsApiLoader({
-    id: 'google-map-script',
-    googleMapsApiKey: API_KEY_GOOGLE_MAP
-  })
+    googleMapsApiKey: 'AIzaSyA0C1JZ_qxzQCWUq5Ttkc_JsgZcRbCelb4',
+  });
+
+  if (!isLoaded) {
+    return <Skeleton />;
+  }
 
   return (
-    <WildfiresStyled>
-      {isLoaded ?  <Map center={defaultCenter}/> : <h2>Loading...</h2>}
-    
-    
-    </WildfiresStyled>
-  )
+    <Flex
+      position="relative"
+      flexDirection="column"
+      alignItems="center"
+      h="100vh"
+      w="100vw"
+    >
+      <Box position="absolute" left={0} top={0} h="100%" w="100%"></Box>
+      <GoogleMap
+        center={center}
+        zoom={3}
+        mapContainerStyle={{ width: '100%', height: '100%' }}
+        options={{
+          zoomControl: true,
+          streetViewControl: false,
+          mapTypeControl: false,
+          fullscreenControl: true,
+        }}
+      >
+        <Marker position={center} />
+
+        {data
+          .filter((item) =>
+            item.properties.categories[0].id.includes('wildfires')
+          )
+          .map((item) => (
+            <Marker
+              key={item.geometry.coordinates[0] + item.geometry.coordinates[1]}
+              position={{
+                lat: item.geometry.coordinates[1],
+                lng: item.geometry.coordinates[0],
+              }}
+            />
+          ))}
+      </GoogleMap>
+    </Flex>
+  );
 }
 
-
-const WildfiresStyled = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-`
-
-export default Wildfires
+export default Wildfires;

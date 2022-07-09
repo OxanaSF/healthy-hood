@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -9,7 +9,42 @@ import {
 } from '../animations/animation';
 import AnimatedPage from '../animations/AnimatedPageTransition';
 
-const AirQualityPage = () => {
+const AirQualityPage = (props) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [err, setErr] = useState('');
+
+  const handleClick = async () => {
+    setIsLoading(true);
+
+    try {
+      const response = await fetch(
+        'https://eonet.gsfc.nasa.gov/api/v3/events/geojson',
+        {
+          method: 'GET',
+          headers: {
+            Accept: 'application/json',
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`Error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+
+      console.log('ORIGINAL DATA is: ', JSON.stringify(result, null, 10));
+
+      props.setData(result['features']);
+    } catch (err) {
+      setErr(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // console.log(props.data);
+
   return (
     <AnimatedPage>
       <AirQualityPageStyled>
@@ -43,13 +78,20 @@ const AirQualityPage = () => {
             <NavLink to="/clean-air/search" className="circle1">
               <p>Get AQI in your city</p>
             </NavLink>
-            <NavLink to="/clean-air/wildfires" className="circle2">
+            <NavLink
+              to="/clean-air/wildfires"
+              className="circle2"
+              onClick={handleClick}
+            >
               <p>Wildfire Tracker</p>
             </NavLink>
           </nav>
 
           <div>
             <Outlet />
+          </div>
+          <div className="new-div-to-test">
+            <h1>new-div-to-test</h1>
           </div>
         </div>
       </AirQualityPageStyled>

@@ -1,3 +1,4 @@
+import {useState} from 'react'
 import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./Home";
 import NutritionsPage from "./NutritionsPage";
@@ -14,6 +15,7 @@ import Wildfires from '../components/AirQuality/Wildfires';
 import { AnimatePresence } from "framer-motion";
 
 const Pages = () => {
+  const [data, setData] = useState([]);
   const location = useLocation();
 
   return (
@@ -30,11 +32,17 @@ const Pages = () => {
         <Route path="/fitness" element={<FitnessPage />}>
           <Route path="name" element={<FitnessList />} />
         </Route>
-        <Route path="/clean-air" element={<AirQualityPage />}>
+        <Route path="/clean-air" element={<AirQualityPage 
+            data={data}
+            setData={setData}
+        />}>
           <Route path="search" element={<CityAirSearchBar />}>
             <Route path=":name" element={<CityAirInfoFetched />} />
           </Route>
-          <Route path="wildfires" element={<Wildfires />} />
+          <Route path="wildfires" element={<Wildfires 
+             data={data}
+             setData={setData}
+          />} />
         </Route>
       </Routes>
     </AnimatePresence>
