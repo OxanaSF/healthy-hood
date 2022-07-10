@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Footer = () => {
   return (
     <FooterStyled>
-      <h3>&copy; Healthy Hood {new Date().getFullYear()}</h3>
+      <h3>&copy; Live Healthy {new Date().getFullYear()}</h3>
 
       <div className="custom-shape-divider-top">
         <svg

@@ -90,9 +90,6 @@ const AirQualityPage = (props) => {
           <div>
             <Outlet />
           </div>
-          <div className="new-div-to-test">
-            <h1>new-div-to-test</h1>
-          </div>
         </div>
       </AirQualityPageStyled>
     </AnimatedPage>
@@ -146,7 +143,7 @@ const AirQualityPageStyled = styled.section`
     gap: 5rem;
     font-size: 3rem;
     position: relative;
-    transform: translateY(-8rem);
+    transform: translateY(-6rem);
 
     a {
       color: #243966;

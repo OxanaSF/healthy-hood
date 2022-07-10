@@ -47,6 +47,43 @@ app.get("/search", (req, res) => {
     });
 });
 
+
+// API Request - get a random gratitude question
+
+app.get("/question", (req, res) => {
+
+
+  const options = {
+    method: 'GET',
+    url: 'https://gratitude-questions.p.rapidapi.com/question',
+    headers: {
+      'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
+      'X-RapidAPI-Host': 'gratitude-questions.p.rapidapi.com',
+    },
+  };
+
+  axios
+    .request(options)
+    .then(function (response) {
+      console.log('***************');
+      console.log('***************');
+      console.log('***************');
+      console.log('***************');
+      console.log('RESPONSE DATA', response.data.question);
+      console.log('***************');
+      console.log('***************');
+      console.log('***************');
+      console.log('***************');
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+});
+
+
+
+
+
 // app.get("/exercises", (req, res) => {
 //   const muscle = req.query.bodypart;
 //   console.log("**********************");

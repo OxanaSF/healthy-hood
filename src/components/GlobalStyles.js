@@ -17,6 +17,7 @@ const GlobalStyles = createGlobalStyle `
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    color: #243966;
   }
 
  *::-webkit-scrollbar {
