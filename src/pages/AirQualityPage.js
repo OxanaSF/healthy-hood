@@ -47,7 +47,8 @@ const AirQualityPage = (props) => {
 
   return (
     <AnimatedPage>
-      <IntroStyled IntroStyled>
+      <H1Styled>Air Quality</H1Styled>
+      <IntroStyled>
         <p>
           Having clean air to breathe is necessary for good health. Poor air
           quality reduces quality of life. Some air pollutants are irritants.
@@ -70,14 +71,13 @@ const AirQualityPage = (props) => {
             variants={slidesFromLeftLeaveToLeft}
             initial="hidden"
             animate="show"
-            // exit="exit"
           />
 
-          <motion.div className='list-clean-air-benefits'
+          <motion.div
+            className="list-clean-air-benefits"
             variants={slidesFromRightftLeaveToRight}
             initial="hidden"
             animate="show"
-            // exit="exit"
           >
             <h3>Breathing in clean air has many benefits, including:</h3>
             <ul>
@@ -115,8 +115,15 @@ const AirQualityPage = (props) => {
   );
 };
 
+const H1Styled = styled.h1`
+  font-size: 4.5rem;
+  font-weight: 600;
+  color: #243966;
+  margin: 4rem 0;
+`;
+
 const IntroStyled = styled.p`
-  margin: 5rem 10rem 1rem 10rem;
+  margin: 0 10rem 1rem 10rem;
   color: #243966;
   font-size: 1.6rem;
   text-align: center;
@@ -135,7 +142,6 @@ const AirQualityPageStyled = styled.section`
     gap: 5rem;
 
     .list-clean-air-benefits {
-      
       border-radius: 3rem;
       color: #243966;
       border: 10px solid lightblue;
@@ -150,7 +156,7 @@ const AirQualityPageStyled = styled.section`
       line-height: 1.9;
       text-align: left;
 
-      h3{
+      h3 {
         font-size: 1.6rem;
         font-weight: 500;
       }

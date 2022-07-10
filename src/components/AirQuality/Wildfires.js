@@ -12,6 +12,7 @@ function Wildfires({ data }) {
 
   const { isLoaded } = useJsApiLoader({
     // googleMapsApiKey: process.env.REACT_APP_API_KEY,
+
   });
 
   if (!isLoaded) {

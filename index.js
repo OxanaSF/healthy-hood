@@ -65,15 +65,8 @@ app.get("/question", (req, res) => {
   axios
     .request(options)
     .then(function (response) {
-      console.log('***************');
-      console.log('***************');
-      console.log('***************');
-      console.log('***************');
-      console.log('RESPONSE DATA', response.data.question);
-      console.log('***************');
-      console.log('***************');
-      console.log('***************');
-      console.log('***************');
+      res.json(response.data.question);
+      
     })
     .catch(function (error) {
       console.error(error);
@@ -81,7 +74,15 @@ app.get("/question", (req, res) => {
 });
 
 
-
+// console.log('***************');
+//       console.log('***************');
+//       console.log('***************');
+//       console.log('***************');
+//       console.log('RESPONSE DATA', response.data.question);
+//       console.log('***************');
+//       console.log('***************');
+//       console.log('***************');
+//       console.log('***************');
 
 
 // app.get("/exercises", (req, res) => {
