@@ -47,6 +47,21 @@ const AirQualityPage = (props) => {
 
   return (
     <AnimatedPage>
+      <IntroStyled IntroStyled>
+        <p>
+          Having clean air to breathe is necessary for good health. Poor air
+          quality reduces quality of life. Some air pollutants are irritants.
+          Some smell bad. Some air pollutants can cause respiratory disease or
+          even cancer. Air quality is important both indoors and outdoors.
+          Ground level ozone, particulate matter and allergens are common
+          outdoor air pollutants. Secondhand smoke, mold and radon are common
+          indoor air pollutants. Poor air quality may limit people’s ability or
+          opportunity to be physically active. People with preexisting medical
+          conditions such as asthma, emphysema or COPD are at greater risk from
+          poor air quality. Good air quality is an important livability
+          indicator for a healthy community.{' '}
+        </p>
+      </IntroStyled>
       <AirQualityPageStyled>
         <div className="section">
           <motion.img
@@ -58,19 +73,23 @@ const AirQualityPage = (props) => {
             // exit="exit"
           />
 
-          <motion.p
+          <motion.div className='list-clean-air-benefits'
             variants={slidesFromRightftLeaveToRight}
             initial="hidden"
             animate="show"
             // exit="exit"
           >
-            Air Quality Index (AQI) & Health Millions of people live in areas
-            where air pollution can cause serious health problems. Local air
-            quality can affect our daily lives. Like the weather, it can change
-            from day to day. EPA developed the Air Quality Index, or AQI, to
-            make information available about the health effects of the five most
-            common air pollutants, and how to avoid those effects.
-          </motion.p>
+            <h3>Breathing in clean air has many benefits, including:</h3>
+            <ul>
+              <li>Cleaner lungs</li>
+              <li>Decreased asthma and allergies symptoms</li>
+              <li>Improved skin appearance</li>
+              <li>Helps digestion</li>
+              <li>Psychological and emotional stabilizer</li>
+              <li>Better mood and normalized sleep patterns</li>
+              <li>Reduce chances of lung, heart, and arterial diseases</li>
+            </ul>
+          </motion.div>
         </div>
 
         <div className="air-quality-page-main">
@@ -96,6 +115,13 @@ const AirQualityPage = (props) => {
   );
 };
 
+const IntroStyled = styled.p`
+  margin: 5rem 10rem 1rem 10rem;
+  color: #243966;
+  font-size: 1.6rem;
+  text-align: center;
+`;
+
 const AirQualityPageStyled = styled.section`
   min-height: 70vh;
   display: flex;
@@ -108,7 +134,8 @@ const AirQualityPageStyled = styled.section`
     grid-template-columns: 1.2fr 1.6fr;
     gap: 5rem;
 
-    p {
+    .list-clean-air-benefits {
+      
       border-radius: 3rem;
       color: #243966;
       border: 10px solid lightblue;
@@ -117,9 +144,16 @@ const AirQualityPageStyled = styled.section`
       font-size: 1.2rem;
       padding: 3rem;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       line-height: 1.9;
+      text-align: left;
+
+      h3{
+        font-size: 1.6rem;
+        font-weight: 500;
+      }
     }
 
     img {

@@ -19,6 +19,7 @@ const IntroStyled = styled.section`
     margin: 5rem 17rem 1rem 17rem;
     color: #243966;
     font-size: 1.6rem;
+    text-align: center;
 `
 
 export default Intro
