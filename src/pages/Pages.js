@@ -6,7 +6,6 @@ import FitnessPage from "./FitnessPage";
 import AirQualityPage from "./AirQualityPage";
 import CityAirSearchBar from "../components/AirQuality/CityAirSearchBar";
 import CityAirInfoFetched from "../components/AirQuality/CityAirInfoFetched";
-import FitnessList from "../components/fitness/FitnessList";
 import MentalHealthPage from "./MentalHealthPage";
 import RecipeVideos from "../components/Nutrition/RecipeVideos";
 import SearchNutritionValue from "../components/Nutrition/SearchNutritionValue";
@@ -30,9 +29,7 @@ const Pages = () => {
           />
         </Route>
 
-        <Route path="/fitness" element={<FitnessPage />}>
-          <Route path="name" element={<FitnessList />} />
-        </Route>
+        <Route path="/fitness" element={<FitnessPage />}></Route>
         <Route
           path="/clean-air"
           element={<AirQualityPage data={data} setData={setData} />}
