@@ -31,7 +31,7 @@ const FitnessSelect = (props) => {
             </option>
             {data.map((option, index) => {
               return (
-                <option key={option.id} value={index} placeholder="Select">
+                <option key={option.id} value={index}>
                   {option.name.toUpperCase()}
                 </option>
               );

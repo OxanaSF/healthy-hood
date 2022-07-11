@@ -1,16 +1,15 @@
-import { useState } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
-import Home from './Home';
-import NutritionsPage from './NutritionsPage';
-import FitnessPage from './FitnessPage';
-import AirQualityPage from './AirQualityPage';
-import CityAirSearchBar from '../components/AirQuality/CityAirSearchBar';
-import CityAirInfoFetched from '../components/AirQuality/CityAirInfoFetched';
-import FitnessList from '../components/Fitness/FitnessList';
-import MentalHealthPage from './MentalHealthPage';
-import RecipeVideos from '../components/Nutrition/RecipeVideos';
-import SearchNutritionValue from '../components/Nutrition/SearchNutritionValue';
-import Wildfires from '../components/AirQuality/Wildfires';
+import { useState } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import Home from "./Home";
+import NutritionsPage from "./NutritionsPage";
+import FitnessPage from "./FitnessPage";
+import AirQualityPage from "./AirQualityPage";
+import CityAirSearchBar from "../components/AirQuality/CityAirSearchBar";
+import CityAirInfoFetched from "../components/AirQuality/CityAirInfoFetched";
+import MentalHealthPage from "./MentalHealthPage";
+import RecipeVideos from "../components/Nutrition/RecipeVideos";
+import SearchNutritionValue from "../components/Nutrition/SearchNutritionValue";
+import Wildfires from "../components/AirQuality/Wildfires";
 
 import { AnimatePresence } from 'framer-motion';
 
@@ -30,9 +29,7 @@ const Pages = () => {
           />
         </Route>
 
-        <Route path="/fitness" element={<FitnessPage />}>
-          <Route path="name" element={<FitnessList />} />
-        </Route>
+        <Route path="/fitness" element={<FitnessPage />}></Route>
         <Route
           path="/clean-air"
           element={<AirQualityPage data={data} setData={setData} />}

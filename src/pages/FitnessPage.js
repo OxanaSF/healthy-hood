@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import AnimatedPageTransition from "../animations/AnimatedPageTransition";
-import FitnessSelect from "../components/Fitness/FitnessSearch";
+import FitnessSelect from "../components/FitnessSection/FitnessSearch";
 
 const FitnessPage = () => {
   return (
