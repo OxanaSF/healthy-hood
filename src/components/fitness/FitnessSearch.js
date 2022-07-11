@@ -1,53 +1,76 @@
 import styled from "styled-components";
-import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useState, useEffect } from "react";
 import AnimatedPage from "../../animations/AnimatedPageTransition";
 import { data } from "./data";
 
-const FitnessSearchBar = (props) => {
+const FitnessSelect = (props) => {
   const [input, setInput] = useState(false);
-  const navigate = useNavigate();
   const [bodypart, setBodypart] = useState("");
-  const [option, setOption] = useState({});
+  const [option, setOption] = useState("");
   const [exercise, setExercise] = useState("");
-
-  const onSubmitHandler = (e) => {
-    e.preventDefault();
-    navigate(input);
-    setInput("");
-  };
 
   const handleChange = (e) => {
     setInput(true);
+    e.preventDefault();
     setOption(data[e.target.value]);
     console.log(option);
+  };
+
+  useEffect(() => {
     setBodypart(option.bodyPart);
     setExercise(option.gifUrl);
-  };
+  }, [option]);
 
   return (
     <>
       <AnimatedPage>
-        <select onChange={handleChange}>
-          {data.map((option, index) => {
-            return (
-              <option key={index} value={index} placeholder="--Select--">
-                {option.name.toUpperCase()}
-              </option>
-            );
-          })}
-        </select>
+        <SelectSection>
+          <select onChange={handleChange}>
+            <option disabled={true} selected>
+              Select Exercise
+            </option>
+            {data.map((option, index) => {
+              return (
+                <option key={option.id} value={index} placeholder="Select">
+                  {option.name.toUpperCase()}
+                </option>
+              );
+            })}
+          </select>
+        </SelectSection>
       </AnimatedPage>
       {!input ? null : (
         <>
-          <div>{bodypart}</div>
-          <img className="exercises" alt="exercise" src={exercise}></img>
+          <SelectSection>
+            <h2>Targeted Muscle:</h2>
+            <h3>{bodypart}</h3>
+            <img className="exercises" alt="exercise" src={exercise}></img>
+          </SelectSection>
         </>
       )}
     </>
   );
 };
 
-const SelectSection = styled.section``;
+const SelectSection = styled.section`
+  font-size: 1rem;
+  font-weight: 600;
+  color: #243966;
+  margin: 2rem 0;
+  select {
+    text-align: center;
+    border: 3px solid rgb(254, 233, 218);
+    border-radius: 3rem;
+    width: fit-content;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  img {
+    border: 10px solid rgb(254, 233, 218);
+    border-radius: 3rem;
+    margin: 2rem auto;
+  }
+`;
 
-export default FitnessSearchBar;
+export default FitnessSelect;
