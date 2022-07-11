@@ -275,12 +275,9 @@ const AirQualityContainerStyled = styled.section`
       gap: 5rem;
 
     
+    }
   }
-
-
- 
-
-  }
+}
 `;
 
 const AirQualityPageStyled = styled.section``;
