@@ -75,7 +75,7 @@ const MentalHealthPage = () => {
         <div className="right-col">
           <GratitudeQuestions />
 
-          <div className='iframe-container'>
+          <div className="iframe-container">
             <h2>Use this 15-minute meditation</h2>
             <iframe
               width="560"
@@ -88,18 +88,23 @@ const MentalHealthPage = () => {
               className="iframe"
             ></iframe>
           </div>
-          <div className='mental-health-news'>
+         
+        </div>
+
+        
+      </main>
+
+      <div className="mental-health-news">
             <h2>Check out news about mental health</h2>
             <MentalHealthArticles />
           </div>
-        </div>
-      </main>
+
+
+   
+
     </MentalHealthPageStyled>
   );
 };
-
-
-
 
 const MentalHealthPageStyled = styled.section`
   min-height: 70vh;
@@ -109,10 +114,20 @@ const MentalHealthPageStyled = styled.section`
     grid-template-columns: 1fr 1.7fr;
     margin: 3rem 10rem;
     gap: 3rem;
-    
+
+    .health-care-tips {
+      height: 70rem;
+      overflow: auto;
+      text-align: justify;
+
+      h2 {
+        margin-bottom: 2.5rem;
+      }
+    }
+
     .right-col {
       display: grid;
-      grid-template-rows: 1fr 1fr 1.7fr;
+      grid-template-rows: 1.5fr 2fr;
       gap: 3rem;
 
       .iframe {
@@ -120,18 +135,20 @@ const MentalHealthPageStyled = styled.section`
         border-radius: 3rem;
         width: 100%;
         height: 25rem;
+
       }
     }
 
-    .mental-health-news {
-
+    .iframe-container {
       h2 {
-        font-size: 1.4rem;
-      text-align: center;
-      padding-bottom: 2rem;
+        font-size: 2rem;
+        color: #008e90;
+        text-align: center;
+        font-weight: 500;
       }
-     
     }
+
+   
 
     ul li {
       list-style-image: url('exerciseImg');
@@ -162,6 +179,39 @@ const MentalHealthPageStyled = styled.section`
 
     .bold-text {
       font-weight: 700;
+    }
+  }
+
+
+
+
+  .mental-health-news {
+      margin: 0 10rem;
+      margin-bottom: 5rem;
+      padding: 5rem;
+      
+      h2 {
+        font-size: 1.4rem;
+        text-align: center;
+        padding-bottom: 2rem;
+        color: #243966;
+        font-size: 2.4rem;
+        font-weight: 500;
+      }
+    }
+
+  @media only screen and (max-width: 1600px) {
+    main {
+      display: grid;
+      grid-template-columns: 1.4fr 1.6fr;
+    }
+
+    @media only screen and (max-width: 1300px) {
+      /* background-color: green; */
+      main {
+        display: grid;
+        grid-template-columns: 1.5fr 1.5fr;
+      }
     }
   }
 `;
