@@ -1,16 +1,14 @@
 import styled from "styled-components";
 import AnimatedPageTransition from "../animations/AnimatedPageTransition";
-import { Outlet } from "react-router-dom";
-import FitnessSearchBar from "../components/fitness/FitnessSearch";
+import FitnessSelect from "../components/Fitness/FitnessSearch";
 
 const FitnessPage = () => {
   return (
     <AnimatedPageTransition>
       <FitnessPageStyled>
-        <h2>This is a Fitness Page that is going to be created by Johnson!</h2>
+        <h2>Choose an Exercise</h2>
         <div className="fitness-page-main">
-          <FitnessSearchBar />
-          <Outlet />
+          <FitnessSelect />
         </div>
       </FitnessPageStyled>
     </AnimatedPageTransition>
@@ -19,8 +17,13 @@ const FitnessPage = () => {
 
 const FitnessPageStyled = styled.section`
   min-height: 70vh;
+  padding-top: 2rem;
+  text-align: center;
+  font-weight: 600;
+  color: #243966;
+  position: relative;
   h2 {
-    margin-top: 5rem;
+    margin-top: 2rem;
     text-align: center;
     font-size: 2rem;
   }

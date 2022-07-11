@@ -1,99 +1,76 @@
 import styled from "styled-components";
-import { useState } from "react";
-import { Outlet } from "react-router-dom";
-import { useNavigate } from "react-router";
+import { useState, useEffect } from "react";
 import AnimatedPage from "../../animations/AnimatedPageTransition";
 import { data } from "./data";
 
-const FitnessSearchBar = (props) => {
-  const [input, setInput] = useState("");
-  const navigate = useNavigate();
-
-  const [option, setOption] = useState({});
-  console.log(option);
-
-  const onSubmitHandler = (e) => {
-    e.preventDefault();
-    navigate(input);
-    setInput("");
-  };
+const FitnessSelect = (props) => {
+  const [input, setInput] = useState(false);
+  const [bodypart, setBodypart] = useState("");
+  const [option, setOption] = useState("");
+  const [exercise, setExercise] = useState("");
 
   const handleChange = (e) => {
-    setOption(data[+e.target.value]);
+    setInput(true);
+    e.preventDefault();
+    setOption(data[e.target.value]);
+    console.log(option);
   };
 
-  return (
-    <AnimatedPage>
-      <FormSectionStyled>
-        <FormStyled onSubmit={onSubmitHandler}>
-          <select onChange={handleChange}>
-            {data.map((option, index) => (
-              <option key={index} value={index} active="true">
-                {option.name}
-              </option>
-            ))}
-          </select>
-        </FormStyled>
+  useEffect(() => {
+    setBodypart(option.bodyPart);
+    setExercise(option.gifUrl);
+  }, [option]);
 
-        <Outlet />
-      </FormSectionStyled>
-    </AnimatedPage>
+  return (
+    <>
+      <AnimatedPage>
+        <SelectSection>
+          <select onChange={handleChange}>
+            <option disabled={true} selected>
+              Select Exercise
+            </option>
+            {data.map((option, index) => {
+              return (
+                <option key={option.id} value={index} placeholder="Select">
+                  {option.name.toUpperCase()}
+                </option>
+              );
+            })}
+          </select>
+        </SelectSection>
+      </AnimatedPage>
+      {!input ? null : (
+        <>
+          <SelectSection>
+            <h2>Targeted Muscle:</h2>
+            <h3>{bodypart}</h3>
+            <img className="exercises" alt="exercise" src={exercise}></img>
+          </SelectSection>
+        </>
+      )}
+    </>
   );
 };
 
-const FormSectionStyled = styled.section`
-  h3 {
-    font-size: 4rem;
+const SelectSection = styled.section`
+  font-size: 1rem;
+  font-weight: 600;
+  color: #243966;
+  margin: 2rem 0;
+  select {
     text-align: center;
+    border: 3px solid rgb(254, 233, 218);
+    border-radius: 3rem;
+    width: fit-content;
   }
-  .container {
-  }
-  input type="bodypart" {
-  }
-`;
-
-const FormStyled = styled.form`
-  padding-top: 2rem;
-  display: flex;
-  justify-content: center;
-
-  position: relative;
-
-  .search-icon {
-    position: absolute;
-    top: 3rem;
-    left: 35rem;
+  h3 {
     font-size: 2rem;
-    color: lightblue;
-    margin-right: 2rem;
-    font-weight: 100;
   }
-
-  h3 {
-    text-align: center;
-    padding-bottom: 3rem;
-    font-size: 2.2rem;
-    width: 75%;
-    margin: auto;
-    height: 2rem;
-    margin-bottom: 1rem;
-    background-color: rgba(255, 255, 255, 0.8);
-  }
-
-  input {
-    border: 5px solid lightblue;
-    padding: 1rem 3rem;
-    margin-bottom: 3rem;
-    border-radius: 1rem;
-    outline: none;
-    font-size: 1rem;
-    width: 40%;
-
-    text-align: center;
-    color: #999999;
-    font-weight: 600;
-    letter-spacing: 1px;
+  img {
+    border: 10px solid rgb(254, 233, 218);
+    border-radius: 3rem;
+    margin: 2rem auto;
   }
 `;
 
-export default FitnessSearchBar;
+export default FitnessSelect;

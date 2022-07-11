@@ -126,7 +126,6 @@ const HomeDisplay = () => {
 };
 
 const HomeDisplayStyled = styled.section`
-
   min-height: 30vh;
   margin: 8rem 0;
 

@@ -20,7 +20,7 @@ const Pages = () => {
 
   return (
     <AnimatePresence exitBeforeEnter>
-      <Routes location={location} key={location.pathname.split('/')[1]}>
+      <Routes location={location} key={location.pathname.split("/")[1]}>
         <Route path="/" element={<Home />} />
         <Route path="/nutritions" element={<NutritionsPage />}>
           <Route path="recipe-videos" element={<RecipeVideos />} />
@@ -29,6 +29,7 @@ const Pages = () => {
             element={<SearchNutritionValue />}
           />
         </Route>
+
         <Route path="/fitness" element={<FitnessPage />}>
           <Route path="name" element={<FitnessList />} />
         </Route>
