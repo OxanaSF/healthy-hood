@@ -2,38 +2,10 @@ import axios from "axios"
 import { useState } from 'react'
 import styled from 'styled-components'
 import ClockLoader from 'react-spinners/ClockLoader';
-import { ResultItem, StyledButton, VideoPlayerContainer, ResultsArea } from './StyledComponents'
+import { ResultItem, StyledButton, VideoPlayerContainer, ResultsArea, NutritionsPageStyled, FormStyled } from './StyledComponents'
+import { FaSearch } from 'react-icons/fa';
 
 
-const FormStyled = styled.form`
-  padding-top: 5rem;
-  margin: auto;
-  position: relative;
-  width: 25%;
-
-  .search-icon {
-    position: absolute;
-    top: 6.1rem;
-    left: 1.6rem;
-    font-size: 2rem;
-    color: #999999;
-    margin-right: 2rem;
-    font-weight: 100;
-  }
-
-  input {
-    border: 1px solid #999999;
-    padding: 1rem 3rem;
-    border-radius: 1rem;
-    outline: none;
-    font-size: 1.5rem;
-    width: 100%;
-    text-align: center;
-    color: #999999;
-    font-weight: 600;
-    letter-spacing: 1px;
-  }
-`;
 const DUMMY_DATA = [{
     title: "how to make chicken soup - dinner recipes - homemade from scratch - stock recipes -",
     youTubeId: "2h0bhpqFKpM",
@@ -64,7 +36,7 @@ const DUMMY_DATA = [{
 const RecipeVideos = () => {
 
     const [searchValue, setSearchValue] = useState('')
-    const [results, setResults] = useState([])
+    const [results, setResults] = useState(DUMMY_DATA)
     const [showVideo, setShowVideo] = useState(false)
     const [videoId, setVideoId] = useState('')
 
@@ -127,11 +99,11 @@ const RecipeVideos = () => {
 
     if (showVideo === false) {
         return (
-            <div>
-                Search for food videos
+            <NutritionsPageStyled>
+                <p>Search for food videos</p>
                 <FormStyled name='videos' onSubmit={submitHandler}>
-                    <label>Search by food:</label>
-                    <input type='text' placeholder='chicken soup' onChange={changeHandler} />
+                    <FaSearch className="search-icon" />
+                    <input type='text' onChange={changeHandler} />
                     <StyledButton>Submit</StyledButton>
                 </FormStyled>
                 <ResultsArea>
@@ -154,7 +126,7 @@ const RecipeVideos = () => {
                 <br />
                 <br />
                 </ResultsArea>
-            </div>
+            </NutritionsPageStyled>
         );
     } else {
         return (
