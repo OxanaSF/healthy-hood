@@ -1,14 +1,14 @@
-import Hero from '../components/Hero';
-import HomeDisplay from '../components/HomeDisplay';
-import BmiCalculator from '../components/BmiCalculator/BmiCalculator';
+import Hero from '../components/Home/Hero';
+import HomeDisplay from '../components/Home/HomeDisplay';
 import AnimatedPageTransition from '../animations/AnimatedPageTransition';
+import Intro from '../components/Home/Intro';
 
 const Home = () => {
   return (
     <AnimatedPageTransition>
       <Hero />
+      <Intro />
       <HomeDisplay />
-      <BmiCalculator />
     </AnimatedPageTransition>
   );
 };

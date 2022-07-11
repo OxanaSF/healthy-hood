@@ -15,6 +15,7 @@ const Nav = () => {
         <NavLink to="/nutritions">nutritions</NavLink>
         <NavLink to="/fitness">fitness</NavLink>
         <NavLink to="/clean-air">clean-air</NavLink>
+        <NavLink to="/mental-health">mental health</NavLink>
       </div>
     </NavStyled>
   );
