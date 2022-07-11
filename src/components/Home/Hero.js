@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <HeroStyled>
       <Link to="/">
-        <h1>Healthy Hood</h1>
+        <h1>Live Healthy</h1>
       </Link>
       <div className="custom-shape-divider-bottom">
         <svg
@@ -34,6 +34,7 @@ const HeroStyled = styled.section`
   h1 {
     color: white;
     color: rgb(159, 207, 215);
+    font-weight: 600;
   }
 
   .custom-shape-divider-bottom {
