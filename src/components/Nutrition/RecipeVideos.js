@@ -36,7 +36,7 @@ const DUMMY_DATA = [{
 const RecipeVideos = () => {
 
     const [searchValue, setSearchValue] = useState('')
-    const [results, setResults] = useState(DUMMY_DATA)
+    const [results, setResults] = useState([])
     const [showVideo, setShowVideo] = useState(false)
     const [videoId, setVideoId] = useState('')
 
@@ -120,7 +120,7 @@ const RecipeVideos = () => {
                         display="flex"
                         /> :
                  results.length > 0 &&
-                 results.map(result => <ResultItem key={result.youTubeId}><img src={result.thumbnail} onClick={() => openVideo(result.youTubeId)} /></ResultItem>)
+                 results.map(result => <><p>{result.title.split('-')[0]}</p><ResultItem key={result.youTubeId}><img src={result.thumbnail} onClick={() => openVideo(result.youTubeId)} /></ResultItem></>)
                 }
 
                 <br />

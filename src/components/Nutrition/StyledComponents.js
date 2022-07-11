@@ -119,13 +119,13 @@ export const StyledButton = styled.button`
 `
 
 export const ResultItem = styled.div`
-    padding: 10px;
+    padding: .2rem;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 75px;
+    margin-bottom: 3rem;
     width: fit-content;
     border: solid 10px #A0DAF1;
     border-radius: 3rem;
@@ -146,6 +146,10 @@ export const ResultsArea = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    p{
+      margin-bottom: 1rem;
+    }
 `
 
 export const VideoPlayerContainer = styled.div `
