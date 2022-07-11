@@ -74,6 +74,43 @@ app.get("/question", (req, res) => {
 });
 
 
+
+// API Request - get articles about mental health
+
+app.get("/news", (req, res) => {
+
+
+  const options = {
+    method: 'GET',
+    url: 'https://gratitude-questions.p.rapidapi.com/news',
+    headers: {
+      'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
+      'X-RapidAPI-Host': 'mental-health-info-api.p.rapidapi.com',
+    },
+  };
+
+  axios
+    .request(options)
+    .then(function (response) {
+      res.json(response.data);
+      console.log('***************');
+      console.log('***************');
+      console.log('***************');
+      console.log('***************');
+      console.log('RESPONSE DATA', response.data);
+      console.log('***************');
+      console.log('***************');
+      console.log('***************');
+      console.log('***************');
+      
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+});
+
+
+
 // console.log('***************');
 //       console.log('***************');
 //       console.log('***************');

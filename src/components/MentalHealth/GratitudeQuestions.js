@@ -1,23 +1,25 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
+import { ClockLoader } from 'react-spinners';
 
 const GratitudeQuestions = () => {
   const [gratitudeQuestion, setGratitudeQuestion] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [color, setColor] = useState('#fca0b9');
 
-  useEffect(() => {
-    getGratitudeQuestion();
-  }, []);
+  // useCallback(() => {
+  //   getGratitudeQuestion();
+  // }, [gratitudeQuestion]);
+
+
 
   const getGratitudeQuestion = () => {
+    setLoading(true);
     const axios = require('axios');
 
     const options = {
       method: 'GET',
       url: 'http://localhost:8000/question',
-      headers: {
-        'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
-        'X-RapidAPI-Host': 'gratitude-questions.p.rapidapi.com',
-      },
     };
 
     axios
@@ -25,11 +27,14 @@ const GratitudeQuestions = () => {
       .then(function (response) {
         console.log(response.data);
         setGratitudeQuestion(response.data);
+        setLoading(false);
       })
       .catch(function (error) {
         console.error(error);
       });
   };
+
+// getGratitudeQuestion();
 
   //   console.log('gratitudeQuestion:', gratitudeQuestion);
 
@@ -39,7 +44,20 @@ const GratitudeQuestions = () => {
 
       <button onClick={getGratitudeQuestion}>Get Question</button>
 
-      <div className="gratitude-question">{gratitudeQuestion}</div>
+      {loading ? (
+        <ClockLoaderStyled>
+          <ClockLoader
+            color={color}
+            loading={loading}
+            size={140}
+            display="flex"
+            justifyContent="center"
+            backgroundColor="white"
+          />
+        </ClockLoaderStyled>
+      ) : (
+        <div className="gratitude-question">{gratitudeQuestion}</div>
+      )}
     </ButtonStyled>
   );
 };
@@ -58,6 +76,7 @@ const ButtonStyled = styled.div`
     color: #fca0b9;
     font-size: 1.7rem;
     font-weight: 600;
+    text-align: center;
   }
 
   button {
@@ -78,6 +97,11 @@ const ButtonStyled = styled.div`
     font-weight: 700;
     color: #3e4981;
   }
+`;
+
+const ClockLoaderStyled = styled.div`
+  display: flex;
+  justify-content: center;
 `;
 
 export default GratitudeQuestions;

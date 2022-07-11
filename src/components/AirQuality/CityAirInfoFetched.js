@@ -16,9 +16,6 @@ const CityAirInfoFetched = (props) => {
   let params = useParams();
 
   const getCityWeatherInfo = (cityName) => {
-
-  
-   
     const axios = require('axios');
 
     const options = {
@@ -30,7 +27,6 @@ const CityAirInfoFetched = (props) => {
     };
     axios
       .request(options)
-      
 
       .then((response) => {
         // console.log('Cities: ', response.data);
@@ -41,12 +37,10 @@ const CityAirInfoFetched = (props) => {
         setAqius(response.data.data.cities[0].currentMeasurement.aqius);
         // setImg(response.data.data.news[0].contributors.picture);
         setLoading(false);
-        
       })
       .catch((error) => {
         console.error(error);
       });
-    
   };
 
   useEffect(() => {
@@ -61,7 +55,6 @@ const CityAirInfoFetched = (props) => {
       setLoading(false);
     }, 5000);
   }, []);
-
 
   console.log(aqius);
 
@@ -139,9 +132,12 @@ const CityAirInfoFetched = (props) => {
             >
               AQI: {aqius}
             </div>{' '}
+            
           </div>
         </CityAirInfoFetchedStyled>
       )}
+     
+             
     </RequestDisplayStyled>
   );
 };
@@ -150,6 +146,11 @@ const RequestDisplayStyled = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 2rem 10rem;
+
+  @media only screen and (max-width: 1300px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
 
   img {
     width: 100%;
@@ -177,6 +178,9 @@ const CityAirInfoFetchedStyled = styled.div`
     flex-direction: column;
     justify-content: center;
   }
+
+
+
 `;
 
 const ClockLoaderStyled = styled.div`

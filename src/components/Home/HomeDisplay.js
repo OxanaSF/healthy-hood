@@ -144,13 +144,15 @@ const HomeDisplayStyled = styled.section`
       display: flex;
       align-items: center;
       color: #243966;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       line-height: 2;
+      text-indent: 4em;
+      margin-top: 1rem;
     }
   }
 
   .container-description {
-    margin: 2rem 0;
+    margin: 0;
 
     .img-arrow-right {
       float: right;

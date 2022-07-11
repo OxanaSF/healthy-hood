@@ -4,6 +4,8 @@ import { FaLocationArrow, FaTimes } from 'react-icons/fa';
 import { useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api';
 import { defaultTheme } from '../Theme';
 
+
+
 const center = { lat: 37.773972, lng: -122.431297 };
 
 function Wildfires({ data }) {
@@ -11,8 +13,8 @@ function Wildfires({ data }) {
   console.log('result is: ', JSON.stringify(data, null, 10));
 
   const { isLoaded } = useJsApiLoader({
-    // googleMapsApiKey: process.env.REACT_APP_API_KEY,
-
+    googleMapsApiKey: process.env.REACT_APP_API_KEY,
+   
   });
 
   if (!isLoaded) {
@@ -37,7 +39,6 @@ function Wildfires({ data }) {
         rounded="10px"
         borderColor="gray.300"
       >
-        
         <GoogleMap
           center={center}
           zoom={3}
@@ -50,7 +51,7 @@ function Wildfires({ data }) {
             styles: defaultTheme,
           }}
         >
-          <Marker position={center}/>
+          <Marker position={center} />
 
           {data
             .filter((item) =>
@@ -68,7 +69,7 @@ function Wildfires({ data }) {
               />
             ))}
         </GoogleMap>
-        </Box>
+      </Box>
     </Flex>
   );
 }

@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import img from '../components/MentalHealth/mentalbg.jpeg';
-import GratitudeQuestions from '../components/GratitudeQuestions';
+import GratitudeQuestions from '../components/MentalHealth/GratitudeQuestions';
+import MentalHealthArticles from '../components/MentalHealth/MentalHealthArticles';
+import exerciseImg from '../components/MentalHealth/exercise.png';
 
 const MentalHealthPage = () => {
   return (
@@ -23,6 +25,7 @@ const MentalHealthPage = () => {
               improve your health. Small amounts of exercise add up, so don’t be
               discouraged if you can’t do 30 minutes at one time.
             </li>
+
             <li>
               <span className="bold-text">
                 Eat healthy, regular meals and stay hydrated.{' '}
@@ -71,6 +74,24 @@ const MentalHealthPage = () => {
 
         <div className="right-col">
           <GratitudeQuestions />
+
+          <div className='iframe-container'>
+            <h2>Use this 15-minute meditation</h2>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/cAPDr3lDf5w"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              className="iframe"
+            ></iframe>
+          </div>
+          <div className='mental-health-news'>
+            <h2>Check out news about mental health</h2>
+            <MentalHealthArticles />
+          </div>
         </div>
       </main>
     </MentalHealthPageStyled>
@@ -82,14 +103,35 @@ const MentalHealthPageStyled = styled.section`
 
   main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.7fr;
     margin: 3rem 10rem;
     gap: 3rem;
-
+    
     .right-col {
       display: grid;
-      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1.7fr;
       gap: 3rem;
+
+      .iframe {
+        border: 10px solid rgb(254, 233, 218);
+        border-radius: 3rem;
+        width: 100%;
+        height: 25rem;
+      }
+    }
+
+    .mental-health-news {
+
+      h2 {
+        font-size: 1.4rem;
+      text-align: center;
+      padding-bottom: 2rem;
+      }
+     
+    }
+
+    ul li {
+      list-style-image: url('exerciseImg');
     }
   }
 
@@ -101,7 +143,6 @@ const MentalHealthPageStyled = styled.section`
   }
 
   .health-care-tips {
-    /* margin: 3rem 10rem; */
     width: 100%;
     border: 10px solid rgb(254, 233, 218);
     border-radius: 3rem;
