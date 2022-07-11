@@ -18,8 +18,17 @@ const CityAirSearchBar = () => {
   return (
     <AnimatedPage>
       <FormSectionStyled>
-        <h3>Get air quality data in your city</h3>
         <div className="container">
+          <h3>Get up-to-date AQI of your city</h3>
+          <p className="aqi-descriprion">
+            *Air Quality Index (AQI) & Health Millions of people live in areas
+            where air pollution can cause serious health problems. Local air
+            quality can affect our daily lives. Like the weather, it can change
+            from day to day. EPA developed the Air Quality Index, or AQI, to
+            make information available about the health effects of the five most
+            common air pollutants, and how to avoid those effects.
+          </p>
+
           <FormStyled onSubmit={onSubmitHandler}>
             <FaSearch className="search-icon" />
             <input
@@ -37,11 +46,26 @@ const CityAirSearchBar = () => {
 };
 
 const FormSectionStyled = styled.section`
-  h3 {
-    font-size: 4rem;
-    text-align: center;
-  }
   .container {
+    h3 {
+      font-size: 3rem;
+      text-align: center;
+      color: #243966;
+    }
+
+    .aqi-descriprion {
+      width: 50%;
+      margin: auto;
+      color: #243966;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    @media only screen and (max-width: 1300px) {
+      .aqi-descriprion {
+        width: 90%;
+      }
+    }
   }
 `;
 
@@ -62,17 +86,6 @@ const FormStyled = styled.form`
     font-weight: 100;
   }
 
-  h3 {
-    text-align: center;
-    padding-bottom: 3rem;
-    font-size: 2.2rem;
-    width: 75%;
-    margin: auto;
-    height: 2rem;
-    margin-bottom: 1rem;
-    background-color: rgba(255, 255, 255, 0.8);
-  }
-
   input {
     border: 5px solid lightblue;
     padding: 1rem 3rem;
@@ -86,6 +99,19 @@ const FormStyled = styled.form`
     color: #999999;
     font-weight: 600;
     letter-spacing: 1px;
+  }
+
+  @media only screen and (max-width: 1300px) {
+    transform: translateY(0%);
+    h3 {
+      font-size: 2rem;
+      width: 100%;
+      text-align: left;
+    }
+
+    input {
+      width: 80%;
+    }
   }
 `;
 
