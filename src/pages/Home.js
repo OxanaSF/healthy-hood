@@ -3,6 +3,7 @@ import HomeDisplay from '../components/Home/HomeDisplay';
 import AnimatedPageTransition from '../animations/AnimatedPageTransition';
 import Intro from '../components/Home/Intro';
 
+
 const Home = () => {
   return (
     <AnimatedPageTransition>

@@ -1,7 +1,12 @@
+import {useState} from 'react'
 import styled from 'styled-components';
 import { Link, NavLink } from 'react-router-dom';
 
+
 const Nav = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
+
   return (
     <NavStyled>
       <Link to="/">
@@ -10,12 +15,17 @@ const Nav = () => {
           alt="fitness"
         />
       </Link>
-      <div className="nav-links">
+      <div className={`nav-links ${isOpen && 'open'}`}>
+
         <NavLink to="/">home</NavLink>
         <NavLink to="/nutritions">nutritions</NavLink>
         <NavLink to="/fitness">fitness</NavLink>
         <NavLink to="/clean-air">clean-air</NavLink>
         <NavLink to="/mental-health">mental health</NavLink>
+      </div>
+      <div className={`nav-toggle ${isOpen && 'open'}`} 
+      onClick={() => setIsOpen(!isOpen)}>
+        <div className="bar"></div>
       </div>
     </NavStyled>
   );
@@ -40,7 +50,7 @@ const NavStyled = styled.nav`
     a {
       color: #8c777c;
     }
-    
+
     a.active {
       border-bottom: 5px solid lightblue;
     }
@@ -51,27 +61,63 @@ const NavStyled = styled.nav`
     margin: 1rem;
   }
 
-  @media only screen and (max-width: 600px) {
-    img {
-      width: 3rem;
-      margin: 1rem;
-    }
-
-    .nav-links {
-      font-size: 0.9rem;
-    }
+  .nav-toggle {
+    display: none;
   }
 
-  @media only screen and (max-width: 900px) {
-    img {
-      width: 4rem;
-      margin: 1rem;
-    }
+  @media (max-width: 43.75rem) {
+    background-color: red;
 
     .nav-links {
-      font-size: 0.8rem;
-      gap: 1rem;
-      margin-right: 2rem;
+      position: absolute;
+      top: 3.75rem;
+      display: flex;
+      flex-direction: column;
+      background-color: rgb(254, 233, 218);
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .nav-toggle {
+      display: flex;
+      width: 3.125rem;
+      height: 3.125rem;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      .bar {
+        position: relative;
+        width: 2rem;
+        height: 0.125rem;
+        background: green;
+        transition: all .45 ease-in-out;
+      }
+
+      .bar::before,
+      .bar::after
+      {
+       content: '';
+       width: 100%;
+       position: absolute;
+       background: purple;
+       border-radius: 2px;
+       transition: all .45 ease-in-out;
+      }
+
+      .bar::before{
+        width: 25px;
+        transform: translateY()(-8px);
+        right: 0;
+
+      }
+
+      .bar::after{
+        width: 32px;
+        transform: translateY()(8px);
+
+      }
     }
   }
 `;
