@@ -6,7 +6,7 @@ import FitnessPage from "./FitnessPage";
 import AirQualityPage from "./AirQualityPage";
 import CityAirSearchBar from "../components/AirQuality/CityAirSearchBar";
 import CityAirInfoFetched from "../components/AirQuality/CityAirInfoFetched";
-import FitnessList from "../components/fitness/FitnessList";
+import FitnessList from "../components/Fitness/FitnessList";
 import MentalHealthPage from "./MentalHealthPage";
 import RecipeVideos from "../components/Nutrition/RecipeVideos";
 import SearchNutritionValue from "../components/Nutrition/SearchNutritionValue";
