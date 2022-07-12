@@ -1,53 +1,88 @@
 import styled from "styled-components";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import AnimatedPage from "../../animations/AnimatedPageTransition";
-import { data } from "./data";
+import ExerciseList from "./ExerciseList";
 
 const FitnessSelect = (props) => {
-  const [input, setInput] = useState(false);
-  const [bodypart, setBodypart] = useState("");
-  const [option, setOption] = useState("");
-  const [exercise, setExercise] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [items, setitems] = useState([]);
+  const [exercise, setExercise] = useState([]);
+  const [error, setError] = useState(null);
 
-  const handleChange = (e) => {
-    setInput(true);
-    e.preventDefault();
-    setOption(data[e.target.value]);
-  };
+  const fetchExercises = useCallback(async () => {
+    setError(null);
+
+    try {
+      const response = await fetch(
+        "https://fitness-ef629-default-rtdb.firebaseio.com/exercises.json"
+      );
+
+      if (!response.ok) {
+        throw new Error("Something went wrong");
+      }
+      const data = await response.json();
+
+      const transformData = data.map((option) => {
+        return {
+          bodypart: option.bodyPart,
+          equipment: option.equipment,
+          gifUrl: option.gifUrl,
+          id: option.id,
+          name: option.name,
+          target: option.target,
+        };
+      });
+      console.log(transformData);
+
+      setitems(transformData);
+    } catch (error) {
+      setError(error.message);
+    }
+  }, []);
 
   useEffect(() => {
-    setBodypart(option.bodyPart);
-    setExercise(option.gifUrl);
-    console.log(option);
-  }, [option]);
+    fetchExercises();
+  }, [fetchExercises]);
+
+  let content = <p>You have not selected and exercise.</p>;
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setExercise(items[e.target.value]);
+  };
+
+  if (isLoading) {
+    content = <ExerciseList exercise={exercise} />;
+  }
+
+  if (error) {
+    content = <p>{error}</p>;
+  }
 
   return (
     <>
       <AnimatedPage>
         <SelectSection>
-          <select onChange={handleChange} defaultValue={"default"}>
+          <select
+            className="dropdown"
+            onChange={handleChange}
+            defaultValue={"default"}
+          >
             <option value="default" disabled>
               Select an Exercise
             </option>
-            {data.map((option, index) => {
+            {items.map((item, i) => {
               return (
-                <option key={option.id} value={index}>
-                  {option.name.toUpperCase()}
+                <option key={item.id} value={i}>
+                  {item.name}
                 </option>
               );
             })}
           </select>
+          <section className="content">{content}</section>
         </SelectSection>
       </AnimatedPage>
-      {!input ? null : (
-        <>
-          <SelectSection>
-            <h2>Targeted Muscle:</h2>
-            <h3>{bodypart}</h3>
-            <img className="exercises" alt="exercise" src={exercise}></img>
-          </SelectSection>
-        </>
-      )}
     </>
   );
 };
@@ -57,15 +92,14 @@ const SelectSection = styled.section`
   font-weight: 600;
   color: #243966;
   margin: 2rem 0;
+  text-align: center;
   select {
     text-align: center;
     border: 3px solid rgb(254, 233, 218);
     border-radius: 3rem;
     width: fit-content;
   }
-  h3 {
-    font-size: 2rem;
-  }
+
   img {
     border: 10px solid rgb(254, 233, 218);
     border-radius: 3rem;
