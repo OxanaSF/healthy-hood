@@ -32,6 +32,7 @@ const Nav = () => {
 };
 
 const NavStyled = styled.nav`
+
   min-height: 7rem;
   text-align: left;
   background-color: rgb(254, 233, 218);

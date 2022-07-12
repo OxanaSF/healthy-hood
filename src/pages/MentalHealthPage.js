@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 import img from '../components/MentalHealth/mentalbg.jpeg';
 import GratitudeQuestions from '../components/MentalHealth/GratitudeQuestions';
 import MentalHealthArticles from '../components/MentalHealth/MentalHealthArticles';
@@ -88,26 +89,29 @@ const MentalHealthPage = () => {
               className="iframe"
             ></iframe>
           </div>
-         
         </div>
-
-        
       </main>
 
       <div className="mental-health-news">
-            <h2>Check out news about mental health</h2>
-            <MentalHealthArticles />
-          </div>
+        <h2>Check out news about mental health</h2>
+        <MentalHealthArticles />
 
+        <NavLink to="/" className="contact-us">
+        <button>
+          <h2>CONTACT US</h2>
+        </button>
+      </NavLink>
+      </div>
 
-   
-
+      
     </MentalHealthPageStyled>
   );
 };
 
 const MentalHealthPageStyled = styled.section`
-  min-height: 70vh;
+  /* min-height: 70vh; */
+
+
 
   main {
     display: grid;
@@ -135,7 +139,6 @@ const MentalHealthPageStyled = styled.section`
         border-radius: 3rem;
         width: 100%;
         height: 25rem;
-
       }
     }
 
@@ -147,8 +150,6 @@ const MentalHealthPageStyled = styled.section`
         font-weight: 500;
       }
     }
-
-   
 
     ul li {
       list-style-image: url('exerciseImg');
@@ -182,35 +183,62 @@ const MentalHealthPageStyled = styled.section`
     }
   }
 
-
-
-
   .mental-health-news {
-      margin: 0 10rem;
-      margin-bottom: 5rem;
-      padding: 5rem;
-      
-      h2 {
-        font-size: 1.4rem;
-        text-align: center;
-        padding-bottom: 2rem;
-        color: #243966;
-        font-size: 2.4rem;
-        font-weight: 500;
-      }
+    margin: 0 10rem;
+    margin-bottom: 5rem;
+    padding: 5rem;
+
+    h2 {
+      font-size: 1.4rem;
+      text-align: center;
+      padding-bottom: 2rem;
+      color: #243966;
+      font-size: 2.4rem;
+      font-weight: 500;
     }
+  }
+
+  .contact-us {
+    padding: 3rem;
+    background-color: rgb(254, 233, 218);
+    border-radius: 1rem;
+    width: 30rem;
+    /* margin: 5rem auto 10rem auto; */
+ 
+    text-align: center;
+
+
+    h2 {
+      color: #8c777c;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    }
+  }
+
+
 
   @media only screen and (max-width: 1600px) {
     main {
-      display: grid;
       grid-template-columns: 1.4fr 1.6fr;
     }
 
     @media only screen and (max-width: 1300px) {
-      /* background-color: green; */
       main {
-        display: grid;
         grid-template-columns: 1.5fr 1.5fr;
+      }
+    }
+
+    @media only screen and (max-width: 1150px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      .mental-health-news {
+        h2 {
+          font-size: 1.7rem;
+        }
+        margin: 0 5rem;
       }
     }
   }

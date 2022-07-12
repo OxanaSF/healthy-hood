@@ -35,6 +35,7 @@ const HomeDisplay = () => {
               and eventually lead a healthy life.
             </p>
 
+            
             <img
               src={`${process.env.PUBLIC_URL}/images/left-arrow.png`}
               alt="arrow to the left"

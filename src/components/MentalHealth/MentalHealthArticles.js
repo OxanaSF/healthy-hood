@@ -37,7 +37,7 @@ const MentalHealthArticles = () => {
       {articles.map((item) => (
         <div key={item.title + item.url} className="article">
           <p>
-            <a href={item.url} className="url">
+            <a href={item.url} target="_blank" className="url">
               {item.title}
             </a>
           </p>
@@ -49,7 +49,7 @@ const MentalHealthArticles = () => {
 };
 
 const ArticlesStyled = styled.div`
-height: 50rem;
+  height: 50rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,14 +76,14 @@ height: 50rem;
     padding-bottom: 1rem;
     color: #243966;
     font-weight: 500;
-    font-size: 1.4rem;
+    font-size: 1.7rem;
     font-family: 'Roboto', sans-serif;
   }
 
   .url:hover {
     text-decoration: underline;
     color: #4480cf;
-
+    color: #6495ed;
   }
 
   .source {
