@@ -10,6 +10,14 @@ import { favoritesActions } from "../../store/store"
 
 
 
+
+import { useDispatch, useSelector } from "react-redux"
+import { favoritesActions } from "../../store/store"
+  
+
+
+
+
 const DUMMY_DATA = [{
     title: "how to make chicken soup - dinner recipes - homemade from scratch - stock recipes -",
     youTubeId: "2h0bhpqFKpM",
@@ -40,7 +48,7 @@ const DUMMY_DATA = [{
 const RecipeVideos = () => {
 
     const [searchValue, setSearchValue] = useState('')
-    const [results, setResults] = useState([])
+    const [results, setResults] = useState(DUMMY_DATA)
     const [showVideo, setShowVideo] = useState(false)
     const [videoId, setVideoId] = useState('')
     const [loading, setLoading] = useState(false)

@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import { Link,Outlet } from "react-router-dom"
 
-const NutritionsPage = () => {
 
   return (
     <NutritionsPageStyled>
