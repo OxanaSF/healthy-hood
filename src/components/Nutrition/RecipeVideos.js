@@ -10,14 +10,6 @@ import { favoritesActions } from "../../store/store"
 
 
 
-
-import { useDispatch, useSelector } from "react-redux"
-import { favoritesActions } from "../../store/store"
-  
-
-
-
-
 const DUMMY_DATA = [{
     title: "how to make chicken soup - dinner recipes - homemade from scratch - stock recipes -",
     youTubeId: "2h0bhpqFKpM",
