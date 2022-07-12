@@ -14,8 +14,8 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        YOUR_SERVICE_ID ,
-        YOUR_TEMPLATE_ID ,
+        YOUR_SERVICE_ID,
+        YOUR_TEMPLATE_ID,
         form.current,
         YOUR_PUBLIC_KEY
       )
@@ -115,6 +115,14 @@ const ContactStyled = styled.section`
       border: none;
       height: 4rem;
     }
+  }
+
+  @media (max-width: 1150px) {
+    width: 80%;
+  }
+
+  @media (max-width: 500px) {
+    width: 90%;
   }
 `;
 

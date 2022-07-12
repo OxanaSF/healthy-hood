@@ -95,23 +95,21 @@ const MentalHealthPage = () => {
       <div className="mental-health-news">
         <h2>Check out news about mental health</h2>
         <MentalHealthArticles />
-
-        <NavLink to="/" className="contact-us">
-        <button>
-          <h2>CONTACT US</h2>
-        </button>
-      </NavLink>
       </div>
 
-      
+      <div className="contact-us-wrapper">
+        <NavLink to="/" className="contact-us">
+          <button>
+            <h2>CONTACT US</h2>
+          </button>
+        </NavLink>
+      </div>
     </MentalHealthPageStyled>
   );
 };
 
 const MentalHealthPageStyled = styled.section`
   /* min-height: 70vh; */
-
-
 
   main {
     display: grid;
@@ -160,6 +158,7 @@ const MentalHealthPageStyled = styled.section`
     font-size: 4.5rem;
     font-weight: 600;
     color: #243966;
+    color: #8c777c;
     margin: 4rem 0;
   }
 
@@ -170,6 +169,7 @@ const MentalHealthPageStyled = styled.section`
     padding: 2rem;
     line-height: 2.5;
     color: #243966;
+    color: #8c777c;
 
     h2 {
       font-size: 1.3rem;
@@ -193,9 +193,16 @@ const MentalHealthPageStyled = styled.section`
       text-align: center;
       padding-bottom: 2rem;
       color: #243966;
+      color: #8c777c;
       font-size: 2.4rem;
       font-weight: 500;
     }
+  }
+  .contact-us-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 7rem;
   }
 
   .contact-us {
@@ -204,19 +211,16 @@ const MentalHealthPageStyled = styled.section`
     border-radius: 1rem;
     width: 30rem;
     /* margin: 5rem auto 10rem auto; */
- 
-    text-align: center;
 
+    text-align: center;
 
     h2 {
       color: #8c777c;
-    font-weight: 600;
-    font-size: 1.5rem;
-    letter-spacing: 1px;
+      font-weight: 600;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
     }
   }
-
-
 
   @media only screen and (max-width: 1600px) {
     main {
@@ -241,6 +245,20 @@ const MentalHealthPageStyled = styled.section`
         margin: 0 5rem;
       }
     }
+  }
+
+  @media only screen and (max-width: 900px) {
+
+    main {
+      margin: 3rem;
+
+      .health-care-tips {
+      height: 40rem;
+    
+    }
+    }
+    
+  
   }
 `;
 

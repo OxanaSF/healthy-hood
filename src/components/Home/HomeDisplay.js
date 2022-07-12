@@ -15,7 +15,7 @@ const HomeDisplay = () => {
         exit="exit"
       >
         <div className="container container-1">
-          <Link to="/nutritions" className="box box1" id='order-1'>
+          <Link to="/nutritions" className="box box1" id="order-1">
             <img
               src={`${process.env.PUBLIC_URL}/images/nutritions.jpeg`}
               alt="nutritions"
@@ -23,7 +23,7 @@ const HomeDisplay = () => {
             <div className="text-over text-over-nutritions">Nutritions</div>
           </Link>
 
-          <div className="container-description" id='order-2'>
+          <div className="container-description" id="order-2">
             <p>
               Often, we are only concerned about pleasing our taste buds and not
               caring about our health. But unfortunately, the unhealthy and
@@ -35,7 +35,6 @@ const HomeDisplay = () => {
               and eventually lead a healthy life.
             </p>
 
-            
             <img
               src={`${process.env.PUBLIC_URL}/images/left-arrow.png`}
               alt="arrow to the left"
@@ -44,8 +43,8 @@ const HomeDisplay = () => {
           </div>
         </div>
 
-        <div className="container container-2" >
-          <div className="container-description" id='order-1'>
+        <div className="container container-2">
+          <div className="container-description" id="order-1">
             <p>
               While all types of pollution are extremely dangerous, air
               contaminants represent about 66% of the total deaths alluded to
@@ -63,21 +62,21 @@ const HomeDisplay = () => {
             />
           </div>
 
-          <Link to="/clean-air" className="box box2" id='order-2'>
+          <Link to="/clean-air" className="box box2" id="order-2">
             <img src={`${process.env.PUBLIC_URL}/images/air.jpeg`} alt="air" />
             <div className="text-over">Clean air</div>
           </Link>
         </div>
 
         <div className="container container-3">
-          <Link to="/fitness" className="box box3" id='order-1'>
+          <Link to="/fitness" className="box box3" id="order-1">
             <img
               src={`${process.env.PUBLIC_URL}/images/fitness.jpeg`}
               alt="fitness"
             />
             <div className="text-over">Fitness</div>
           </Link>
-          <div className="container-description" id='order-2'>
+          <div className="container-description" id="order-2">
             <p>
               One of the most essential things you can do to maintain good
               health is to incorporate physical fitness into your regular
@@ -97,7 +96,7 @@ const HomeDisplay = () => {
         </div>
 
         <div className="container container-4">
-          <div className="container-description" id='order-1'>
+          <div className="container-description" id="order-1">
             <p>
               Mental health includes our emotional, psychological, and social
               well-being. It affects how we think, feel, and act. It also helps
@@ -113,7 +112,7 @@ const HomeDisplay = () => {
             />
           </div>
 
-          <Link to="/fitness" className="box box3" id='order-2'>
+          <Link to="/fitness" className="box box3" id="order-2">
             <img
               src={`${process.env.PUBLIC_URL}/images/mental.jpeg`}
               alt="fitness"
@@ -146,6 +145,7 @@ const HomeDisplayStyled = styled.section`
     display: flex;
     align-items: center;
     color: #243966;
+    color: #8c777c;
     font-size: 1.2rem;
     line-height: 2;
     text-indent: 4em;
@@ -198,35 +198,73 @@ const HomeDisplayStyled = styled.section`
   }
 
   @media only screen and (max-width: 1300px) {
-
     p {
       font-size: 1rem;
     }
   }
 
   @media only screen and (max-width: 1150px) {
-    background-color: lightblue;
-
     p {
       font-size: 1.2rem;
       color: #8c777c;
-  
     }
     .container {
       grid-template-columns: 1fr;
       margin: 0 4rem;
-     
     }
 
-    .container-2 > #order-1 {order: 2}
-    .container-2 > #order-2 {order: 1}
+    .container-2 > #order-1 {
+      order: 2;
+    }
+    .container-2 > #order-2 {
+      order: 1;
+    }
 
-    .container-4 > #order-1 {order: 2}
-    .container-4 > #order-2 {order: 1}
+    .container-4 > #order-1 {
+      order: 2;
+    }
+    .container-4 > #order-2 {
+      order: 1;
+    }
 
     .img-arrow-right,
     .img-arrow-left {
-        opacity: 0;
+      opacity: 0;
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    background-color: lightblue;
+  }
+
+  @media only screen and (max-width: 500px) {
+    margin-bottom: 0;
+    margin-top: 3rem;
+    .container {
+      margin: 0 2rem;
+      
+    }
+
+    .container-description {
+      p{
+        font-size: 1rem;
+       margin: 0;
+       text-align: center;
+       line-height: 1.4;
+       font-weight: 600;
+       text-indent: 0;
+       border-bottom: 5px solid rgb(254, 233, 218);
+       padding-bottom: 1rem;
+      }
+
+    }
+
+    .box {
+     
+      .text-over {
+        font-size: 2.3rem;
+        
+      }
     }
   }
 `;

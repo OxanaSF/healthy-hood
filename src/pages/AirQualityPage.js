@@ -182,6 +182,7 @@ const AirQualityContainerStyled = styled.section`
       border-radius: 3rem;
       border-radius: 3rem;
       color: #243966;
+      color: #8c777c;
       border: 10px solid lightblue;
       width: 100%;
       height: 100%;
@@ -200,6 +201,7 @@ const AirQualityContainerStyled = styled.section`
     font-size: 4.5rem;
     font-weight: 600;
     color: #243966;
+    color: #8c777c;
     margin: 4rem 0;
     text-align: center;
   }
@@ -207,6 +209,7 @@ const AirQualityContainerStyled = styled.section`
   .air-quality-page-intro {
     margin: 0 10rem 1rem 10rem;
     color: #243966;
+    color: #8c777c;
     font-size: 1.6rem;
     text-align: center;
   }
@@ -225,6 +228,7 @@ const AirQualityContainerStyled = styled.section`
       .list-clean-air-benefits {
         border-radius: 3rem;
         color: #243966;
+        color: #8c777c;
         border: 10px solid lightblue;
         width: 100%;
         height: 100%;
@@ -267,6 +271,8 @@ const AirQualityContainerStyled = styled.section`
 
       a {
         color: #243966;
+        color: #8c777c;
+        font-weight: 600;
         background-color: lightblue;
         padding: 2.5rem;
         font-size: 1.2rem;
@@ -285,7 +291,6 @@ const AirQualityContainerStyled = styled.section`
       }
       .circle2 {
         animation: circle2 4s;
-        /* background: orange; */
         clip-path: circle(75%);
         height: 10rem;
         width: 20rem;

@@ -73,7 +73,7 @@ const HeroStyled = styled.section`
     }
   }
 
-  @media only screen and (max-width: 1150px) {
+  @media only screen and (max-width: 700px) {
     fill: lightblue;
 
     h1{
@@ -84,6 +84,27 @@ const HeroStyled = styled.section`
 
 
  
+  @media only screen and (max-width: 500px) {
+    fill: lightblue;
+
+    h1{
+      font-size: 3rem;
+    }
+
+  }
+
+
+   
+  @media only screen and (max-width: 380px) {
+
+
+    h1{
+      
+    }
+
+  }
+
+
   
 `;
 
