@@ -1,7 +1,6 @@
+import { createGlobalStyle } from 'styled-components';
 
-import { createGlobalStyle } from "styled-components";
-
-const GlobalStyles = createGlobalStyle `
+const GlobalStyles = createGlobalStyle`
 
 
 * {
@@ -23,8 +22,12 @@ const GlobalStyles = createGlobalStyle `
  *::-webkit-scrollbar {
    width: 8px;
  }
+ 
+.app {
 
+  @media only screen and (max-width: 1150px) {
+    background-color: lightblue;
+ }
+`;
 
-`
-
-export default GlobalStyles
+export default GlobalStyles;
