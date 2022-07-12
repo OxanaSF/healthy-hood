@@ -54,39 +54,37 @@ const HeroStyled = styled.section`
     }
   }
 
-  @media only screen and (max-width: 900px) {
-    min-height: 45vh;
+  @media only screen and (max-width: 4000px) {
+    fill: white;
 
-    h1 {
-      font-size: 2.8rem;
+    h1{
+      font-size: 6rem;
     }
 
-    .shape-fill {
-      fill: lightblue;
-    }
   }
 
-  @media only screen and (min-width: 900px) {
-    h1 {
-      font-size: 4rem;
-    }
 
-    .shape-fill {
-      fill: #ffffff;
-    }
-  }
 
-  @media only screen and (min-width: 1350px) {
-    h1 {
+  @media only screen and (max-width: 1300px) {
+    fill: white;
+
+    h1{
       font-size: 5rem;
     }
   }
 
-  @media only screen and (min-width: 1450px) {
-    h1 {
-      font-size: 7rem;
+  @media only screen and (max-width: 1150px) {
+    fill: lightblue;
+
+    h1{
+      font-size: 5rem;
     }
+
   }
+
+
+ 
+  
 `;
 
 export default Hero;

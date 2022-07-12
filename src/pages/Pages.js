@@ -11,7 +11,7 @@ import RecipeVideos from "../components/Nutrition/RecipeVideos";
 import SearchNutritionValue from "../components/Nutrition/SearchNutritionValue";
 import Wildfires from "../components/AirQuality/Wildfires";
 
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence } from 'framer-motion';
 
 const Pages = () => {
   const [data, setData] = useState([]);

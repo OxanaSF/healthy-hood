@@ -49,7 +49,7 @@ const AirQualityPage = (props) => {
     <AnimatedPage>
       <AirQualityContainerStyled>
         <h1>Air Quality</h1>
-
+    
         <div className="air-quality-page-intro">
           <p>
             Having clean air to breathe is necessary for good health. Poor air
@@ -114,6 +114,36 @@ const AirQualityPage = (props) => {
             </div>
           </div>
         </main>
+        <div className="air-info-display">
+          <div className="about-aqi">
+            <p>
+              Air Quality Index (AQI) & Health Millions of people live in areas
+              where air pollution can cause serious health problems. Local air
+              quality can affect our daily lives. Like the weather, it can
+              change from day to day. EPA developed the Air Quality Index, or
+              AQI, to make information available about the health effects of the
+              five most common air pollutants, and how to avoid those effects.
+            </p>
+          </div>
+          <div className="about-woldfires">
+            The effects of smoke from wildfires can range from eye and
+            respiratory tract irritation to more serious disorders, including
+            reduced lung function, bronchitis, exacerbation of asthma and heart
+            failure, and premature death. Children, pregnant women, and the
+            elderly are especially vulnerable to smoke exposure. Emissions from
+            wildfires are known to cause increased visits to hospitals and
+            clinics by those exposed to smoke. It is important to more fully
+            understand the human health effects associated with short- and
+            long-term exposures to smoke from wildfires as well as prescribed
+            fires, referred together as wildland fires. Research is being
+            conducted to advance understanding of the health effects from
+            different types of fires as well as combustion phases.
+          </div>
+        </div>
+
+        <NavLink to="/" className="contact-us">
+          <button><h2>CONTACT US</h2></button>
+        </NavLink>
       </AirQualityContainerStyled>
     </AnimatedPage>
   );
@@ -122,7 +152,49 @@ const AirQualityPage = (props) => {
 const AirQualityContainerStyled = styled.section`
   display: flex;
   flex-direction: column;
-  
+
+  .contact-us {
+    padding: 3rem;
+    background-color: rgb(254, 233, 218);
+    border-radius: 1rem;
+    width: 30rem;
+    margin: 5rem auto 10rem auto;
+    text-align: center;
+
+
+    h2 {
+      color: #8c777c;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    }
+  }
+
+  .air-info-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 3rem 10rem;
+
+    .about-aqi,
+    .about-woldfires {
+      border: 10px solid lightblue;
+      border-radius: 3rem;
+      border-radius: 3rem;
+      color: #243966;
+      border: 10px solid lightblue;
+      width: 100%;
+      height: 100%;
+      font-size: 1.2rem;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.9;
+      text-align: left;
+    }
+  }
 
   h1 {
     font-size: 4.5rem;
@@ -140,15 +212,14 @@ const AirQualityContainerStyled = styled.section`
   }
 
   .air-quality-page-main {
-    min-height: 70vh;
     display: flex;
     flex-direction: column;
-    gap: 10rem;
+    gap: 3rem;
 
     .top-main-section {
       margin: 5rem 10rem 0 10rem;
       display: grid;
-      grid-template-columns: 1.2fr 1.6fr;
+      grid-template-columns: 1fr 1fr;
       gap: 5rem;
 
       .list-clean-air-benefits {
@@ -193,7 +264,6 @@ const AirQualityContainerStyled = styled.section`
       gap: 5rem;
       font-size: 3rem;
       position: relative;
-      transform: translateY(-6rem);
 
       a {
         color: #243966;
@@ -253,31 +323,28 @@ const AirQualityContainerStyled = styled.section`
     }
 
     .air-quality-page-intro {
-    margin: 0 5rem 1rem 10rem;
-    font-size: 1.2rem;
-  }
-
-  .air-quality-page-main {
-    min-height: 70vh;
-    display: flex;
-    flex-direction: column;
-    gap: 10rem;
-
-    nav {
-
-      flex-direction: column;
+      margin: 0 5rem 1rem 10rem;
+      font-size: 1.2rem;
     }
+
+    .air-quality-page-main {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      gap: 10rem;
+
+      nav {
+        flex-direction: column;
+      }
 
       .top-main-section {
-      margin: 5rem 5rem 0 5rem;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 5rem;
-
-    
+        margin: 5rem 5rem 0 5rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5rem;
+      }
     }
   }
-}
 `;
 
 const AirQualityPageStyled = styled.section``;

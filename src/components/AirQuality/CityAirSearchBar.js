@@ -28,14 +28,16 @@ const CityAirSearchBar = () => {
             make information available about the health effects of the five most
             common air pollutants, and how to avoid those effects.
           </p>
-
+          .
           <FormStyled onSubmit={onSubmitHandler}>
-            <FaSearch className="search-icon" />
-            <input
-              onChange={(e) => setInput(e.target.value)}
-              type="text"
-              value={input}
-            />
+            <div className="search-box">
+              <FaSearch className="search-icon" />
+              <input
+                onChange={(e) => setInput(e.target.value)}
+                type="text"
+                value={input}
+              />
+            </div>
           </FormStyled>
         </div>
 
@@ -48,9 +50,10 @@ const CityAirSearchBar = () => {
 const FormSectionStyled = styled.section`
   .container {
     h3 {
-      font-size: 3rem;
+      font-size: 2.4rem;
       text-align: center;
       color: #243966;
+      font-weight: 500;
     }
 
     .aqi-descriprion {
@@ -59,6 +62,7 @@ const FormSectionStyled = styled.section`
       color: #243966;
       font-weight: 500;
       text-align: center;
+      margin-bottom: 3rem;
     }
 
     @media only screen and (max-width: 1300px) {
@@ -70,20 +74,19 @@ const FormSectionStyled = styled.section`
 `;
 
 const FormStyled = styled.form`
-  padding-top: 2rem;
   display: flex;
   justify-content: center;
 
-  position: relative;
+  .search-box {
+    position: relative;
+  }
 
   .search-icon {
     position: absolute;
-    top: 3rem;
-    left: 35rem;
+    top: 1.2rem;
+    left: 2rem;
     font-size: 2rem;
     color: lightblue;
-    margin-right: 2rem;
-    font-weight: 100;
   }
 
   input {
@@ -93,7 +96,7 @@ const FormStyled = styled.form`
     border-radius: 1rem;
     outline: none;
     font-size: 1rem;
-    width: 40%;
+    width: 40rem;
 
     text-align: center;
     color: #999999;
