@@ -13,21 +13,21 @@ const FitnessSelect = (props) => {
     setInput(true);
     e.preventDefault();
     setOption(data[e.target.value]);
-    console.log(option);
   };
 
   useEffect(() => {
     setBodypart(option.bodyPart);
     setExercise(option.gifUrl);
+    console.log(option);
   }, [option]);
 
   return (
     <>
       <AnimatedPage>
         <SelectSection>
-          <select onChange={handleChange}>
-            <option disabled={true} selected>
-              Select Exercise
+          <select onChange={handleChange} defaultValue={"default"}>
+            <option value="default" disabled>
+              Select an Exercise
             </option>
             {data.map((option, index) => {
               return (
