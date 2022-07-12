@@ -1,9 +1,16 @@
 import axios from "axios"
 import { useState } from 'react'
-import styled from 'styled-components'
 import ClockLoader from 'react-spinners/ClockLoader';
 import { ResultItem, StyledButton, VideoPlayerContainer, ResultsArea, NutritionsPageStyled, FormStyled } from './StyledComponents'
 import { FaSearch } from 'react-icons/fa';
+
+
+
+import { useDispatch, useSelector } from "react-redux"
+import { favoritesActions } from "../../store/store"
+  
+
+
 
 
 const DUMMY_DATA = [{
@@ -36,11 +43,19 @@ const DUMMY_DATA = [{
 const RecipeVideos = () => {
 
     const [searchValue, setSearchValue] = useState('')
-    const [results, setResults] = useState([])
+    const [results, setResults] = useState(DUMMY_DATA)
     const [showVideo, setShowVideo] = useState(false)
     const [videoId, setVideoId] = useState('')
 
     const [loading, setLoading] = useState(false)
+
+    const currentState = useSelector(state => state.favoritesList)
+    const dispatch = useDispatch()
+  const addItem = (e) => {
+    dispatch(favoritesActions.addToFavorites())
+  }
+
+{console.log(currentState)}
 
 
     const getVideos = (value) => {
@@ -141,6 +156,7 @@ const RecipeVideos = () => {
                     webkitallowfullscreen="webkitallowfullscreen">
                 </iframe>
                 <StyledButton onClick={() => setShowVideo(false)}>Close Video</StyledButton>
+                <StyledButton onClick={()=>addItem(videoId)}>Add To Favorites</StyledButton>
             </VideoPlayerContainer>
         )
     }
