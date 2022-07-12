@@ -33,13 +33,15 @@ const MentalHealthArticles = () => {
 
   return (
     <ArticlesStyled>
-
       <button onClick={getMentalHealthArticle}>Click</button>
       {articles.map((item) => (
-        <div key={item.title + item.url} className='article'>
-          <div className='title'>{item.title}</div>
-          <p><a href={item.url} className='url'>Link to the article</a></p>
-          <div className='source'>Source: {item.source}</div>
+        <div key={item.title + item.url} className="article">
+          <p>
+            <a href={item.url} className="url">
+              {item.title}
+            </a>
+          </p>
+          <div className="source">Source: {item.source}</div>
         </div>
       ))}
     </ArticlesStyled>
@@ -47,6 +49,7 @@ const MentalHealthArticles = () => {
 };
 
 const ArticlesStyled = styled.div`
+height: 50rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,35 +64,34 @@ const ArticlesStyled = styled.div`
   overflow: auto;
   text-align: justify;
 
-
   .article {
-    border-bottom: 3px solid rgb(254, 233, 218);;
-   margin: 2rem;
-   padding-bottom: 1.5rem;
-   width: 80%;
-  }
-
-  .title {
-    padding-bottom: 1rem;
-    color: #243966;
-    font-weight: 500;
-    font-size: 1.7rem;
-    font-family: 'Roboto', sans-serif;
-    /* font-style: italic;
-    text-decoration: underline; */
+    border-bottom: 3px solid rgb(254, 233, 218);
+    margin: 2rem;
+    padding-bottom: 1.5rem;
+    width: 80%;
   }
 
   .url {
-    color: lightblue;
     font-weight: 700;
-    text-decoration: underline; 
+    padding-bottom: 1rem;
+    color: #243966;
+    font-weight: 500;
+    font-size: 1.4rem;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .url:hover {
+    text-decoration: underline;
+    color: #4480cf;
+
   }
 
   .source {
     text-transform: capitalize;
-    color: #4480cf;
+    color: #9fcfd7;
     font-weight: 700;
     font-size: 1.5rem;
+    padding-top: 2rem;
   }
 `;
 
