@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback } from "react";
 import AnimatedPage from "../../animations/AnimatedPageTransition";
 import ExerciseList from "./ExerciseList";
 import { useLocation } from "react-router-dom"
+import { animateScroll as scroll } from "react-scroll";
 
 const FitnessSelect = (props) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -18,7 +19,13 @@ const FitnessSelect = (props) => {
 
     try {
       const response = await fetch(
-        "https://fitness-ef629-default-rtdb.firebaseio.com/exercises.json"
+        "https://fitness-ef629-default-rtdb.firebaseio.com/exercises.json",
+        {
+          method: "GET",
+          headers: {
+            Accept: "application/json",
+          },
+        }
       );
 
       if (!response.ok) {
@@ -49,11 +56,14 @@ const FitnessSelect = (props) => {
   }, [fetchExercises]);
 
   let content = <p>You have not selected and exercise.</p>;
-
+  const scrollToBottom = () => {
+    scroll.scrollToBottom();
+  };
   const handleChange = (e) => {
     e.preventDefault();
     setIsLoading(true);
     setExercise(items[e.target.value]);
+    scrollToBottom();
   };
 
   if (isLoading) {
@@ -102,12 +112,6 @@ const SelectSection = styled.section`
     border: 3px solid rgb(254, 233, 218);
     border-radius: 3rem;
     width: fit-content;
-  }
-
-  img {
-    border: 10px solid rgb(254, 233, 218);
-    border-radius: 3rem;
-    margin: 2rem auto;
   }
 `;
 
