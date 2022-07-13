@@ -1,8 +1,14 @@
-import React from "react";
+import { StyledButton } from '../Nutrition/StyledComponents'
+import { useDispatch, useSelector } from "react-redux"
+import { favoritesActions } from "../../store/store"
 
 import Exercises from "./Exercises";
 
 const ExerciseList = (props) => {
+  const dispatch = useDispatch()
+  const addItem = () => {
+    dispatch(favoritesActions.addToFavorites({ category: 'exercise', id: props.exerciseIndex, title: props.exercise.name}))
+}
   return (
     <div>
       <Exercises
@@ -12,6 +18,7 @@ const ExerciseList = (props) => {
         bodypart={props.exercise.bodypart}
         gifUrl={props.exercise.gifUrl}
       />
+      <StyledButton onClick={addItem}>Add To Favorites</StyledButton>
     </div>
   );
 };

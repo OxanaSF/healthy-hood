@@ -1,25 +1,62 @@
-import { NutritionsPageStyled as StyleDiv} from '../components/Nutrition/StyledComponents'
+import { NutritionsPageStyled as StyleDiv } from '../components/Nutrition/StyledComponents'
 import { useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom'
+import ExerciseList from '../components/FitnessSection/ExerciseList';
 
 const Profile = () => {
     const location = useLocation()
     const currentState = useSelector(state => state.favorites.favoritesList)
     const videoList = []
-
-    console.log(location.state === null)
+    const recipeList = []
+    const cityList = []
+    const exerciseList = []
+    {console.log(currentState)}
     currentState.map(item => {
-        if(item.category == 'video'){
-            videoList.push(item.id)
+        switch (item.category) {
+            case 'video':
+                videoList.push({id: item.id, title: item.title})
+                break;
+            case 'recipe':
+                recipeList.push({id: item.id, title: item.title})
+                break;
+            case 'aqi':
+                cityList.push({title: item.title})
+                break;
+            case 'exercise':
+                exerciseList.push({...item})
+                break;
         }
     })
+    
     return (
         <StyleDiv>
-            
+
             <p>Videos:</p>
-            {videoList.length > 0 ? 
-            videoList.map(item => <Link to="recipe-videos" state={{id: item}}>{item}</Link>) :
-            <p>No Videos Saved</p>}
+            {
+            videoList.length > 0 ?
+                videoList.map(item => <Link to="recipe-videos" state={{ id: item.id }} key={item.id}>{item.title}</Link>) :
+                <p>No Videos Saved</p>
+            }
+
+            <p>Recipes:</p>
+            {
+            recipeList.length > 0 ?
+                recipeList.map(item => <Link to="search-by-nutrition" state={{ id: item.id }} key={item.id}>{item.title}</Link>) :
+                <p>No Recipes Saved</p>
+            }
+            
+            <p>City AQI:</p>
+            {
+            cityList.length > 0 ?
+                cityList.map(item => <Link to={`/clean-air/search/${item.title}`} key={item.title}>{item.title}</Link>) :
+                <p>No Cities Saved</p>
+            }
+            <p>Exercises:</p>
+            {
+            exerciseList.length > 0 ?
+                exerciseList.map(item => <Link to={`/fitness`} key={item.title} state={{ id: item.id }}>{item.title}</Link>) :
+                <p>No Exercises Saved</p>
+            }
         </StyleDiv>
     );
 };
