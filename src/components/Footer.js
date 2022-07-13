@@ -17,7 +17,8 @@ const FooterStyled = styled.footer`
   position: relative;
 
   h3 {
-    color: rgb(62, 50, 85);
+    color:  #9996b3;
+    font-weight: 600;
     margin-bottom: 2rem;
   }
 
@@ -25,7 +26,8 @@ const FooterStyled = styled.footer`
     h3 {
       font-size: 0.7rem;
       font-weight: 500;
-      color: rgb(62, 50, 70);
+      color: #9996b3;
+      font-weight: 600;
     }
   }
 `;
