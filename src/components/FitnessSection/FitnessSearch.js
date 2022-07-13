@@ -14,7 +14,13 @@ const FitnessSelect = (props) => {
 
     try {
       const response = await fetch(
-        "https://fitness-ef629-default-rtdb.firebaseio.com/exercises.json"
+        "https://fitness-ef629-default-rtdb.firebaseio.com/exercises.json",
+        {
+          method: "GET",
+          headers: {
+            Accept: "application/json",
+          },
+        }
       );
 
       if (!response.ok) {
