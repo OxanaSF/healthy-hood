@@ -10,6 +10,7 @@ import MentalHealthPage from "./MentalHealthPage";
 import RecipeVideos from "../components/Nutrition/RecipeVideos";
 import SearchNutritionValue from "../components/Nutrition/SearchNutritionValue";
 import Wildfires from "../components/AirQuality/Wildfires";
+import Profile from "../pages/Profile"
 
 import { AnimatePresence } from 'framer-motion';
 
@@ -43,6 +44,7 @@ const Pages = () => {
           />
         </Route>
         <Route path="/mental-health" element={<MentalHealthPage />} />
+        <Route path="/savedpages" element={<Profile />} />
       </Routes>
     </AnimatePresence>
   );

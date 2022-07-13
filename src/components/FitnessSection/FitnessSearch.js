@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useState, useEffect, useCallback } from "react";
 import AnimatedPage from "../../animations/AnimatedPageTransition";
 import ExerciseList from "./ExerciseList";
+import { useLocation } from "react-router-dom"
 
 const FitnessSelect = (props) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -9,6 +10,9 @@ const FitnessSelect = (props) => {
   const [exercise, setExercise] = useState([]);
   const [error, setError] = useState(null);
 
+  let location = useLocation()    
+  let state = location
+  console.log(state)
   const fetchExercises = useCallback(async () => {
     setError(null);
 
