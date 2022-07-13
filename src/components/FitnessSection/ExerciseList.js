@@ -6,8 +6,8 @@ import Exercises from "./Exercises";
 
 const ExerciseList = (props) => {
   const dispatch = useDispatch()
-  const addItem = (id, title) => {
-    dispatch(favoritesActions.addToFavorites({ category: 'exercise', id: props.exercise.id, title: props.exercise.name}))
+  const addItem = () => {
+    dispatch(favoritesActions.addToFavorites({ category: 'exercise', id: props.exerciseIndex, title: props.exercise.name}))
 }
   return (
     <div>

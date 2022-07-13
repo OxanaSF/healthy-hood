@@ -10,10 +10,11 @@ const FitnessSelect = (props) => {
   const [items, setitems] = useState([]);
   const [exercise, setExercise] = useState([]);
   const [error, setError] = useState(null);
+  const [exerciseIndex, setExerciseIndex] = useState()
 
   let location = useLocation()    
-  let state = location
-  console.log(state)
+  let state = null
+  
   const fetchExercises = useCallback(async () => {
     setError(null);
 
@@ -46,14 +47,30 @@ const FitnessSelect = (props) => {
       console.log(transformData);
 
       setitems(transformData);
+      if(state !== null){
+        console.log('in fetch, ',state)
+        setExercise(transformData[state.id])
+        setIsLoading(true)
+        state = null
+      }
     } catch (error) {
       setError(error.message);
     }
   }, []);
 
   useEffect(() => {
-    fetchExercises();
-  }, [fetchExercises]);
+    if(items.length === 0){
+      fetchExercises();
+      state = location.state
+      console.log('fetching: ', state)
+    }
+     if(items.length > 0 && state !== null){
+      console.log('should be here')
+      setExercise(items[state.id])
+      setIsLoading(true)
+      state = null
+    }
+  }, [fetchExercises,items]);
 
   let content = <p>You have not selected and exercise.</p>;
   const scrollToBottom = () => {
@@ -63,11 +80,14 @@ const FitnessSelect = (props) => {
     e.preventDefault();
     setIsLoading(true);
     setExercise(items[e.target.value]);
+    setExerciseIndex(e.target.value)
     scrollToBottom();
   };
 
+
+
   if (isLoading) {
-    content = <ExerciseList exercise={exercise} />;
+    content = <ExerciseList exercise={exercise} exerciseIndex={exerciseIndex} />;
   }
 
   if (error) {
