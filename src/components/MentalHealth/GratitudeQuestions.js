@@ -102,9 +102,12 @@ const ButtonStyled = styled.div`
     }
 
     button {
-      width: 7rem;
+      width: 9rem;
       height: 5rem;
       border-radius: 1rem;
+      border: none;
+      font-weight: 600;
+
     }
 
     .gratitude-question {

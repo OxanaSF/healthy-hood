@@ -112,7 +112,7 @@ const HomeDisplay = () => {
             />
           </div>
 
-          <Link to="/fitness" className="box box3" id="order-2">
+          <Link to="/mental-health" className="box box3" id="order-2">
             <img
               src={`${process.env.PUBLIC_URL}/images/mental.jpeg`}
               alt="fitness"

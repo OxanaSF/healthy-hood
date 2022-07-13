@@ -98,6 +98,7 @@ const ArticlesStyled = styled.div`
     gap: 1.5rem;
     margin-bottom: 3rem;
     padding: 0;
+    height:  30rem;
 
     .article {
       border-bottom: 2px solid rgb(254, 233, 218);
