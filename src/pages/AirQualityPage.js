@@ -157,17 +157,31 @@ const AirQualityPage = (props) => {
 const AirQualityContainerStyled = styled.section`
   /* @media only screen and (max-width: 4000px) { */
 
-  fill: white;
-
-  h1 {
-    font-size: 6rem;
-  }
+  /* fill: white; */
 
   display: flex;
   flex-direction: column;
 
+  /* Start h1 */
+  h1 {
+    font-size: 4.5rem;
+    font-weight: 600;
+    color: #243966;
+    color: #8c777c;
+    margin: 4rem 0;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 700px) {
+    h1 {
+      font-size: 3rem;
+      margin: 1rem 0;
+    }
+  }
+  /* End h1 */
+
+  /* Start Contact section */
   .contact-us {
-    background-color: yellow;
     padding: 3rem;
     background-color: rgb(254, 233, 218);
     border-radius: 1rem;
@@ -183,6 +197,20 @@ const AirQualityContainerStyled = styled.section`
     }
   }
 
+  @media only screen and (max-width: 700px) {
+    .contact-us {
+      padding: 2rem;
+      background-color: rgb(254, 233, 218);
+      border-radius: 1rem;
+      width: 90%;
+      margin: 5rem auto;
+      text-align: center;
+    }
+  }
+
+  /* End Contact section */
+
+  /* Start Air Info display */
   .air-info-display {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -193,10 +221,7 @@ const AirQualityContainerStyled = styled.section`
     .about-woldfires {
       border: 10px solid lightblue;
       border-radius: 3rem;
-      border-radius: 3rem;
-      color: #243966;
       color: #8c777c;
-      border: 10px solid lightblue;
       width: 100%;
       height: 100%;
       font-size: 1.2rem;
@@ -210,23 +235,50 @@ const AirQualityContainerStyled = styled.section`
     }
   }
 
-  h1 {
-    font-size: 4.5rem;
-    font-weight: 600;
-    color: #243966;
-    color: #8c777c;
-    margin: 4rem 0;
-    text-align: center;
-  }
+  @media only screen and (max-width: 700px) {
+    .air-info-display {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
 
+      .about-aqi,
+      .about-woldfires {
+        border: 5px solid rgb(254, 233, 218);
+        border-radius: 3rem;
+        width: 90%;
+        margin: 0 auto;
+        height: 100%;
+        font-size: 0.8rem;
+        padding: 1rem;
+        text-align: center;
+      }
+    }
+  }
+  /* End Air Info display */
+
+  /* Start air-quality-page-intro */
   .air-quality-page-intro {
     margin: 0 10rem 1rem 10rem;
-    color: #243966;
     color: #8c777c;
     font-size: 1.6rem;
     text-align: center;
   }
 
+  @media only screen and (max-width: 700px) {
+    .air-quality-page-intro {
+      margin: 0 1rem;
+      color: #8c777c;
+      font-size: 0.9rem;
+      border: 5px solid rgb(254, 233, 218);
+      padding: 0.8rem;
+      border-radius: 3rem;
+    }
+  }
+
+  /* End air-quality-page-intro */
+
+  /* Start air-quality-page-main */
   .air-quality-page-main {
     display: flex;
     flex-direction: column;
@@ -240,7 +292,6 @@ const AirQualityContainerStyled = styled.section`
 
       .list-clean-air-benefits {
         border-radius: 3rem;
-        color: #243966;
         color: #8c777c;
         border: 10px solid lightblue;
         width: 100%;
@@ -268,11 +319,6 @@ const AirQualityContainerStyled = styled.section`
         border-radius: 3rem;
       }
     }
-
-    /* .air-quality-page-main {
-      display: grid;
-      grid-template-columns: 1fr;
-    } */
 
     nav {
       display: flex;
@@ -334,6 +380,92 @@ const AirQualityContainerStyled = styled.section`
       }
     }
   }
+
+  @media only screen and (max-width: 700px) {
+    /* background: red; */
+    gap: 2rem;
+
+    .air-quality-page-main {
+      .top-main-section {
+        margin: 1rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+
+        .list-clean-air-benefits {
+          border-radius: 3rem;
+          border: 5px solid rgb(254, 233, 218);
+          font-size: 1rem;
+          padding: 1.2rem;
+          line-height: 1.7;
+          text-align: left;
+
+          h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+          }
+        }
+
+        img {
+          background-color: rgb(254, 233, 218);
+        }
+      }
+
+      nav {
+        margin: 0 1rem;
+        gap: 1.5rem;
+        font-size: 3rem;
+
+        a {
+          color: #8c777c;
+          font-weight: 600;
+          background-color: rgb(254, 233, 218);
+          padding: 1rem;
+          font-size: 0.8rem;
+          border-radius: 2rem;
+        }
+
+        .circle1 {
+          animation: circle1 3s;
+          clip-path: circle(75%);
+          height: 6rem;
+          width: 10rem;
+        }
+        .circle2 {
+          animation: circle2 4s;
+          clip-path: circle(75%);
+          height: 6rem;
+          width: 10rem;
+        }
+
+        @keyframes circle1 {
+          0% {
+            clip-path: circle(75%);
+          }
+          50% {
+            clip-path: circle(25%);
+          }
+          100% {
+            clip-path: circle(75%);
+          }
+        }
+
+        @keyframes circle2 {
+          0% {
+            clip-path: circle(75%);
+          }
+          50% {
+            clip-path: circle(25%);
+          }
+          100% {
+            clip-path: circle(75%);
+          }
+        }
+      }
+    }
+  }
+
+  /* End air-quality-page-main */
 `;
 
 export default AirQualityPage;

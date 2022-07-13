@@ -21,7 +21,7 @@ const FooterStyled = styled.footer`
     margin-bottom: 2rem;
   }
 
-  @media only screen and (max-width: 280px) {
+  @media only screen and (max-width: 700px) {
     h3 {
       font-size: 0.7rem;
       font-weight: 500;
