@@ -2,11 +2,14 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { slidesFromLeftLeaveToRight } from '../../animations/animation';
-// import leftArrowAimg from ''
+import ScrollToTop from '../ScrollToTop'
+
 
 const HomeDisplay = () => {
   return (
+
     <HomeDisplayStyled>
+      <ScrollToTop />
       <motion.div
         className="categories-container"
         variants={slidesFromLeftLeaveToRight}

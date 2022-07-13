@@ -113,6 +113,7 @@ const AirQualityPage = (props) => {
               <Outlet />
             </div>
           </div>
+
         </main>
 
         <div className="air-info-display">
@@ -172,7 +173,7 @@ const AirQualityContainerStyled = styled.section`
     text-align: center;
   }
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 930px) {
     h1 {
       font-size: 3rem;
       margin: 1rem 0;
@@ -197,7 +198,7 @@ const AirQualityContainerStyled = styled.section`
     }
   }
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 930px) {
     .contact-us {
       padding: 2rem;
       background-color: rgb(254, 233, 218);
@@ -235,7 +236,7 @@ const AirQualityContainerStyled = styled.section`
     }
   }
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 930px) {
     .air-info-display {
       grid-template-columns: 1fr;
       gap: 2rem;
@@ -265,7 +266,7 @@ const AirQualityContainerStyled = styled.section`
     text-align: center;
   }
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 930px) {
     .air-quality-page-intro {
       margin: 0 1rem;
       color: #8c777c;
@@ -381,7 +382,7 @@ const AirQualityContainerStyled = styled.section`
     }
   }
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 920px) {
     /* background: red; */
     gap: 2rem;
 
@@ -438,7 +439,7 @@ const AirQualityContainerStyled = styled.section`
           width: 10rem;
         }
 
-        @keyframes circle1 {
+        /* @keyframes circle1 {
           0% {
             clip-path: circle(75%);
           }
@@ -448,9 +449,9 @@ const AirQualityContainerStyled = styled.section`
           100% {
             clip-path: circle(75%);
           }
-        }
+        } */
 
-        @keyframes circle2 {
+        /* @keyframes circle2 {
           0% {
             clip-path: circle(75%);
           }
@@ -460,7 +461,7 @@ const AirQualityContainerStyled = styled.section`
           100% {
             clip-path: circle(75%);
           }
-        }
+        } */
       }
     }
   }
