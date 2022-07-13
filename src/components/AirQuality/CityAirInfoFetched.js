@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ClockLoader from 'react-spinners/ClockLoader';
-
+import { useDispatch } from "react-redux"
+import { favoritesActions } from "../../store/store"
 const CityAirInfoFetched = (props) => {
   const [loading, setLoading] = useState(false);
   const [color, setColor] = useState('lightblue');
@@ -12,8 +13,13 @@ const CityAirInfoFetched = (props) => {
   const [date, setDate] = useState('');
   const [aqius, setAqius] = useState(0);
   const [img, setImg] = useState('');
+  const dispatch = useDispatch()
 
   let params = useParams();
+  
+  const addItem = (id, title) => {
+    dispatch(favoritesActions.addToFavorites({ category: 'aqi', id, title}))
+}
 
   const getCityWeatherInfo = (cityName) => {
     const axios = require('axios');
@@ -37,6 +43,7 @@ const CityAirInfoFetched = (props) => {
         setAqius(response.data.data.cities[0].currentMeasurement.aqius);
         // setImg(response.data.data.news[0].contributors.picture);
         setLoading(false);
+        addItem(options.params.q, options.params.q)
       })
       .catch((error) => {
         console.error(error);

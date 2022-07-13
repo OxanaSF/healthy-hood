@@ -47,7 +47,7 @@ const RecipeVideos = () => {
     const [showVideo, setShowVideo] = useState(false)
     const [videoId, setVideoId] = useState('')
     const [loading, setLoading] = useState(false)
-
+    const [videoTitle, setVideoTitle] = useState('')
     const authState = useSelector(state => state.auth.loggedIn)
     const dispatch = useDispatch()
     let location = useLocation()    
@@ -61,8 +61,8 @@ useEffect(()=>{
       }
 },[])
 
-    const addItem = (id) => {
-        dispatch(favoritesActions.addToFavorites({ category: 'video', id }))
+    const addItem = (id, title) => {
+        dispatch(favoritesActions.addToFavorites({ category: 'video', id, title}))
     }
 
     const getVideos = (value) => {
@@ -112,8 +112,9 @@ useEffect(()=>{
         }
     }
 
-    const openVideo = (youTubeId) => {
+    const openVideo = (youTubeId, title) => {
         setVideoId(youTubeId)
+        setVideoTitle(title)
         setShowVideo(true)
     }
 
@@ -183,7 +184,7 @@ useEffect(()=>{
                     webkitallowfullscreen="webkitallowfullscreen">
                 </iframe>
                 <StyledButton onClick={() => setShowVideo(false)}>Close Video</StyledButton>
-                {authState && <StyledButton onClick={() => addItem(videoId)}>Add To Favorites</StyledButton>}
+                {authState && <StyledButton onClick={() => addItem(videoId, videoTitle)}>Add To Favorites</StyledButton>}
             </VideoPlayerContainer>
         )
     }
