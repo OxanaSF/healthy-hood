@@ -1,12 +1,10 @@
 import styled from "styled-components"
 import { Link,Outlet } from "react-router-dom"
 
-
 const NutritionsPage = () => {
 
   return (
     <NutritionsPageStyled>
-      
       <h2>Find A Recipe For Your Healthy Lifestyle Today</h2>
       <div>
         <Link to='recipe-videos' className='nutritionLink'>Find A Video Of A Recipe</Link>
