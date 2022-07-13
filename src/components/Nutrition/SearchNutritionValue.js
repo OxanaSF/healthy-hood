@@ -1,9 +1,10 @@
 import axios from "axios"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ClockLoader from 'react-spinners/ClockLoader';
 import { StyledButton, ResultsArea, ResultItem } from './StyledComponents'
 import { NutritionsPageStyled, FormStyled } from "./StyledComponents";
 import RecipeDetals from "./RecipeDetals";
+import { useLocation } from "react-router-dom"
 
 
 const DUMMY_DATA = [
@@ -146,9 +147,6 @@ const SearchNutritionValue = (props) => {
 
     const fetchByNutrition = () => {
 
-        console.log('nutrition')
-
-
         const options = {
             method: 'GET',
             url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByNutrients',
@@ -183,7 +181,6 @@ const SearchNutritionValue = (props) => {
 
 
     const recipeClickHandler = (id) => {
-        console.log('recipe id, ', id)
         setRecipeId(id)
         setShowRecipe(true)
         // const options = {
@@ -203,7 +200,17 @@ const SearchNutritionValue = (props) => {
 
     }
 
+    let location = useLocation()    
+    let state
 
+useEffect(()=>{
+    state = location.state
+    if(state !== null){
+        setRecipeId(state.id)
+        setShowRecipe(true)
+        state = null
+      }
+},[])
 
     if(showRecipe){
         return(

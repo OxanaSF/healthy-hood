@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
-import { RecipePageStyle } from './StyledComponents';
+import { RecipePageStyle, StyledButton } from './StyledComponents';
 import ClockLoader from 'react-spinners/ClockLoader';
 import axios from "axios"
+import { useDispatch, useSelector } from "react-redux"
+import { favoritesActions } from "../../store/store"
+
 
 
 const DUMMY_RECIPE_INFO = {
@@ -650,9 +653,9 @@ const DUMMY_RECIPE_INFO = {
 const RecipeDetals = (props) => {
     const [recipeInfo, setRecipeInfo] = useState({})
     const [loading, setLoading] = useState(false)
+    const dispatch = useDispatch()
 
     useEffect(() => {
-        console.log('running use effect fetch')
         setLoading(true)
         const options = {
                 method: 'GET',
@@ -664,7 +667,6 @@ const RecipeDetals = (props) => {
             };
     
             axios.request(options).then(function (response) {
-                console.log(response.data);
                 setLoading(false)
                 setRecipeInfo(response.data)
             }).catch(function (error) {
@@ -672,6 +674,10 @@ const RecipeDetals = (props) => {
                 setLoading(false)
             });    
     },[])
+
+    const addItem = (id, title) => {
+        dispatch(favoritesActions.addToFavorites({ category: 'recipe', id, title }))
+    }
 
 
     return (
@@ -697,6 +703,7 @@ const RecipeDetals = (props) => {
             {console.log(recipeInfo)}
             </>
             }         
+           <StyledButton onClick={() => addItem(recipeInfo.id, recipeInfo.title)}>Add To Favorites</StyledButton>
         </RecipePageStyle>
     );
 };
