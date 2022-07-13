@@ -15,9 +15,11 @@ const Profile = () => {
     })
     return (
         <StyleDiv>
-            <p>Hi</p>
-            {console.log(videoList)}
-            {videoList.length > 0 && videoList.map(item => <Link to="recipe-videos" state={{id: item}}>{item}</Link>)}
+            
+            <p>Videos:</p>
+            {videoList.length > 0 ? 
+            videoList.map(item => <Link to="recipe-videos" state={{id: item}}>{item}</Link>) :
+            <p>No Videos Saved</p>}
         </StyleDiv>
     );
 };

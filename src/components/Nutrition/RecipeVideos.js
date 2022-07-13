@@ -1,5 +1,5 @@
 import axios from "axios"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ClockLoader from 'react-spinners/ClockLoader';
 import { ResultItem, StyledButton, VideoPlayerContainer, ResultsArea, NutritionsPageStyled, FormStyled } from './StyledComponents'
 import { FaSearch } from 'react-icons/fa';
@@ -7,6 +7,9 @@ import { useDispatch, useSelector } from "react-redux"
 import { favoritesActions } from "../../store/store"
 
 
+
+
+import { useLocation } from "react-router-dom"
 
 
 
@@ -40,14 +43,24 @@ const DUMMY_DATA = [{
 const RecipeVideos = () => {
 
     const [searchValue, setSearchValue] = useState('')
-    const [results, setResults] = useState(DUMMY_DATA)
+    const [results, setResults] = useState([])
     const [showVideo, setShowVideo] = useState(false)
     const [videoId, setVideoId] = useState('')
     const [loading, setLoading] = useState(false)
 
     const authState = useSelector(state => state.auth.loggedIn)
     const dispatch = useDispatch()
-    
+    let location = useLocation()    
+    let state
+
+useEffect(()=>{
+    state = location.state
+    if(state !== null){
+        openVideo(state.id)
+        state = null
+      }
+},[])
+
     const addItem = (id) => {
         dispatch(favoritesActions.addToFavorites({ category: 'video', id }))
     }
@@ -86,8 +99,6 @@ const RecipeVideos = () => {
     }
 
 
-
-
     const changeHandler = (e) => {
         setSearchValue(e.target.value)
     }
@@ -105,6 +116,7 @@ const RecipeVideos = () => {
         setVideoId(youTubeId)
         setShowVideo(true)
     }
+
 
     if (showVideo === false) {
         return (
