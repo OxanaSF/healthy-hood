@@ -71,6 +71,40 @@ const FormSectionStyled = styled.section`
       }
     }
   }
+
+  @media only screen and (max-width: 700px) {
+    .container {
+      h3 {
+        font-size: 1.7rem;
+        margin: 2rem;
+        color: #8c777c;
+      }
+
+      .aqi-descriprion {
+        width: 90%;
+        font-size: 1rem;
+        margin-bottom: 0;
+        color: #8c777c;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 280px) {
+    .container {
+      h3 {
+        font-size: 1.7rem;
+        margin: 2rem;
+        color: #8c777c;
+      }
+
+      .aqi-descriprion {
+        width: 90%;
+        font-size: 1rem;
+        margin-bottom: 0;
+        color: #8c777c;
+      }
+    }
+  }
 `;
 
 const FormStyled = styled.form`
@@ -105,7 +139,7 @@ const FormStyled = styled.form`
   }
 
   @media only screen and (max-width: 1300px) {
-    transform: translateY(0%);
+    /* transform: translateY(0%); */
     h3 {
       font-size: 2rem;
       width: 100%;
@@ -114,6 +148,20 @@ const FormStyled = styled.form`
 
     input {
       width: 80%;
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    input {
+      width: 100%;
+      margin: auto;
+    }
+  }
+
+  @media only screen and (max-width: 280px) {
+    input {
+      width: 100%;
+      margin: auto;
     }
   }
 `;

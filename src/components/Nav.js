@@ -1,11 +1,9 @@
-import {useState} from 'react'
+import { useState } from 'react';
 import styled from 'styled-components';
 import { Link, NavLink } from 'react-router-dom';
 
-
 const Nav = () => {
-  const [isOpen, setIsOpen] = useState(false)
-
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <NavStyled>
@@ -15,16 +13,17 @@ const Nav = () => {
           alt="fitness"
         />
       </Link>
-      <div className={`nav-links ${isOpen && 'open'}`}>
-
+      <div className="nav-links">
         <NavLink to="/">home</NavLink>
         <NavLink to="/nutritions">nutritions</NavLink>
         <NavLink to="/fitness">fitness</NavLink>
         <NavLink to="/clean-air">clean-air</NavLink>
         <NavLink to="/mental-health">mental health</NavLink>
       </div>
-      <div className={`nav-toggle ${isOpen && 'open'}`} 
-      onClick={() => setIsOpen(!isOpen)}>
+      <div
+        className={`nav-toggle ${isOpen && 'open'}`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
         <div className="bar"></div>
       </div>
     </NavStyled>
@@ -32,7 +31,6 @@ const Nav = () => {
 };
 
 const NavStyled = styled.nav`
-
   min-height: 7rem;
   text-align: left;
   background-color: rgb(254, 233, 218);
@@ -66,59 +64,52 @@ const NavStyled = styled.nav`
     display: none;
   }
 
-  @media (max-width: 43.75rem) {
-    background-color: red;
+  @media (max-width: 1050px) {
+    /* background-color: red; */
+    .nav-links {
+      font-size: 1.5rem;
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 860px) {
+    /* background-color: green; */
 
     .nav-links {
-      position: absolute;
-      top: 3.75rem;
-      display: flex;
-      flex-direction: column;
-      background-color: rgb(254, 233, 218);
-      left: 0;
-      width: 100%;
-      height: 100%;
+      font-size: 1.1rem;
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+
+    img {
+      width: 5rem;
+      margin: 1rem;
     }
 
-    .nav-toggle {
-      display: flex;
-      width: 3.125rem;
-      height: 3.125rem;
-      align-items: center;
+    .nav-links {
       justify-content: center;
-      cursor: pointer;
+      margin: 0;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+  }
 
-      .bar {
-        position: relative;
-        width: 2rem;
-        height: 0.125rem;
-        background: green;
-        transition: all .45 ease-in-out;
-      }
+  @media (max-width: 500px) {
+    img {
+      width: 5rem;
+      margin: 1rem;
+    }
 
-      .bar::before,
-      .bar::after
-      {
-       content: '';
-       width: 100%;
-       position: absolute;
-       background: purple;
-       border-radius: 2px;
-       transition: all .45 ease-in-out;
-      }
-
-      .bar::before{
-        width: 25px;
-        transform: translateY()(-8px);
-        right: 0;
-
-      }
-
-      .bar::after{
-        width: 32px;
-        transform: translateY()(8px);
-
-      }
+    .nav-links {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+      margin: 0;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      text-align: center;
     }
   }
 `;
