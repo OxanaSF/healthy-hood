@@ -43,7 +43,7 @@ const DUMMY_DATA = [{
 const RecipeVideos = () => {
 
     const [searchValue, setSearchValue] = useState('')
-    const [results, setResults] = useState([])
+    const [results, setResults] = useState(DUMMY_DATA)
     const [showVideo, setShowVideo] = useState(false)
     const [videoId, setVideoId] = useState('')
     const [loading, setLoading] = useState(false)
@@ -122,17 +122,18 @@ useEffect(()=>{
     if (showVideo === false) {
         return (
             <NutritionsPageStyled>
-                <p>Search for food videos</p>
+                <h3>Search for food videos</h3>
                 <FormStyled name='videos' onSubmit={submitHandler}>
                     <FaSearch className="search-icon" />
-                    <input type='text' onChange={changeHandler} />
+                    <input type='text' onChange={changeHandler} className='nutrition-input'/>
                     <StyledButton>Submit</StyledButton>
                 </FormStyled>
                 <ResultsArea>
-                    {results.length > 0 && <p>Total Results  {results.length} </p>}
+                    {results.length > 0 && <p className="total-result">Total Results  {results.length} </p>}
                     {loading && <p>Loading...</p>}
 
                     <br />
+                    <div className="results-wrapper">
                     {
                         loading ?
                             <ClockLoader
@@ -141,12 +142,32 @@ useEffect(()=>{
                                 color='orange'
                                 display="flex"
                             /> :
-                            results.length > 0 &&
-                            results.map(result => <><p>{result.title.split('-')[0]}</p><ResultItem key={result.youTubeId}><img src={result.thumbnail} onClick={() => openVideo(result.youTubeId, result.title)} /></ResultItem></>)
-                    }
+                            
 
-                    <br />
-                    <br />
+                           
+
+                            results.length > 0 &&
+                            
+
+                            
+                            results.map(result => 
+                            <>
+                                
+                                <ResultItem key={result.youTubeId}>
+                                <p className="result-title">{result.title.split('-')[0]}</p>
+                                    <img 
+                                        src={result.thumbnail} 
+                                        onClick={() => openVideo(result.youTubeId)} />
+                                    
+                                </ResultItem>
+                            </>)
+                    
+            
+                    }
+                    
+                    </div>
+                    {/* <br />
+                    <br /> */}
                 </ResultsArea>
             </NutritionsPageStyled>
         );
@@ -169,5 +190,9 @@ useEffect(()=>{
     }
 
 };
+
+
+
+
 
 export default RecipeVideos;

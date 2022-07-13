@@ -3,7 +3,7 @@ import GlobalStyles from './components/GlobalStyles';
 import Nav from './components/Nav';
 import Pages from './pages/Pages';
 import Footer from './components/Footer';
-import ScrollToTop from './components/ScrollToTop';
+
 
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       <GlobalStyles />
 
       <BrowserRouter>
-        <ScrollToTop />
+     
         <Nav />
         <Pages />
         <Footer />
