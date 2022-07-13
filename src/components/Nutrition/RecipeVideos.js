@@ -1,15 +1,15 @@
 import axios from "axios"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ClockLoader from 'react-spinners/ClockLoader';
 import { ResultItem, StyledButton, VideoPlayerContainer, ResultsArea, NutritionsPageStyled, FormStyled } from './StyledComponents'
 import { FaSearch } from 'react-icons/fa';
-
-
-
 import { useDispatch, useSelector } from "react-redux"
 import { favoritesActions } from "../../store/store"
-  
 
+
+
+
+import { useLocation } from "react-router-dom"
 
 
 
@@ -46,17 +46,24 @@ const RecipeVideos = () => {
     const [results, setResults] = useState(DUMMY_DATA)
     const [showVideo, setShowVideo] = useState(false)
     const [videoId, setVideoId] = useState('')
-
     const [loading, setLoading] = useState(false)
 
-    const currentState = useSelector(state => state.favoritesList)
+    const authState = useSelector(state => state.auth.loggedIn)
     const dispatch = useDispatch()
-  const addItem = (e) => {
-    dispatch(favoritesActions.addToFavorites())
-  }
+    let location = useLocation()    
+    let state
 
-{console.log(currentState)}
+useEffect(()=>{
+    state = location.state
+    if(state !== null){
+        openVideo(state.id)
+        state = null
+      }
+},[])
 
+    const addItem = (id) => {
+        dispatch(favoritesActions.addToFavorites({ category: 'video', id }))
+    }
 
     const getVideos = (value) => {
 
@@ -92,8 +99,6 @@ const RecipeVideos = () => {
     }
 
 
-
-
     const changeHandler = (e) => {
         setSearchValue(e.target.value)
     }
@@ -112,34 +117,56 @@ const RecipeVideos = () => {
         setShowVideo(true)
     }
 
+
     if (showVideo === false) {
         return (
             <NutritionsPageStyled>
-                <p>Search for food videos</p>
+                <h3>Search for food videos</h3>
                 <FormStyled name='videos' onSubmit={submitHandler}>
                     <FaSearch className="search-icon" />
-                    <input type='text' onChange={changeHandler} />
+                    <input type='text' onChange={changeHandler} className='nutrition-input'/>
                     <StyledButton>Submit</StyledButton>
                 </FormStyled>
                 <ResultsArea>
-                {results.length > 0 && <p>Total Results  {results.length} </p>}
-                {loading && <p>Loading...</p>}
+                    {results.length > 0 && <p className="total-result">Total Results  {results.length} </p>}
+                    {loading && <p>Loading...</p>}
 
-                <br />
-                {
-                    loading ? 
-                    <ClockLoader
-                        loading={loading}
-                        size={150}
-                        color='orange'
-                        display="flex"
-                        /> :
-                 results.length > 0 &&
-                 results.map(result => <><p>{result.title.split('-')[0]}</p><ResultItem key={result.youTubeId}><img src={result.thumbnail} onClick={() => openVideo(result.youTubeId)} /></ResultItem></>)
-                }
+                    <br />
+                    <div className="results-wrapper">
+                    {
+                        loading ?
+                            <ClockLoader
+                                loading={loading}
+                                size={150}
+                                color='orange'
+                                display="flex"
+                            /> :
+                            
 
-                <br />
-                <br />
+                           
+
+                            results.length > 0 &&
+                            
+
+                            
+                            results.map(result => 
+                            <>
+                                
+                                <ResultItem key={result.youTubeId}>
+                                <p className="result-title">{result.title.split('-')[0]}</p>
+                                    <img 
+                                        src={result.thumbnail} 
+                                        onClick={() => openVideo(result.youTubeId)} />
+                                    
+                                </ResultItem>
+                            </>)
+                    
+            
+                    }
+                    
+                    </div>
+                    {/* <br />
+                    <br /> */}
                 </ResultsArea>
             </NutritionsPageStyled>
         );
@@ -156,11 +183,15 @@ const RecipeVideos = () => {
                     webkitallowfullscreen="webkitallowfullscreen">
                 </iframe>
                 <StyledButton onClick={() => setShowVideo(false)}>Close Video</StyledButton>
-                <StyledButton onClick={()=>addItem(videoId)}>Add To Favorites</StyledButton>
+                {authState && <StyledButton onClick={() => addItem(videoId)}>Add To Favorites</StyledButton>}
             </VideoPlayerContainer>
         )
     }
 
 };
+
+
+
+
 
 export default RecipeVideos;
