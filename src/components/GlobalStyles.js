@@ -25,9 +25,10 @@ const GlobalStyles = createGlobalStyle`
  
 .app {
 
-  @media only screen and (max-width: 1150px) {
+  @media only screen and (max-width: 700px) {
     background-color: lightblue;
  }
+}
 `;
 
 export default GlobalStyles;

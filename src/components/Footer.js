@@ -20,6 +20,14 @@ const FooterStyled = styled.footer`
     color: rgb(62, 50, 85);
     margin-bottom: 2rem;
   }
+
+  @media only screen and (max-width: 700px) {
+    h3 {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: rgb(62, 50, 70);
+    }
+  }
 `;
 
 export default Footer;

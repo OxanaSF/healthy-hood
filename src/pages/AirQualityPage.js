@@ -49,7 +49,7 @@ const AirQualityPage = (props) => {
     <AnimatedPage>
       <AirQualityContainerStyled>
         <h1>Air Quality</h1>
-    
+
         <div className="air-quality-page-intro">
           <p>
             Having clean air to breathe is necessary for good health. Poor air
@@ -114,18 +114,20 @@ const AirQualityPage = (props) => {
             </div>
           </div>
         </main>
+
         <div className="air-info-display">
           <div className="about-aqi">
-            <p>
-              Air Quality Index (AQI) & Health Millions of people live in areas
-              where air pollution can cause serious health problems. Local air
-              quality can affect our daily lives. Like the weather, it can
-              change from day to day. EPA developed the Air Quality Index, or
-              AQI, to make information available about the health effects of the
-              five most common air pollutants, and how to avoid those effects.
-            </p>
+            {/* <p> */}
+            Air Quality Index (AQI) & Health Millions of people live in areas
+            where air pollution can cause serious health problems. Local air
+            quality can affect our daily lives. Like the weather, it can change
+            from day to day. EPA developed the Air Quality Index, or AQI, to
+            make information available about the health effects of the five most
+            common air pollutants, and how to avoid those effects.
+            {/* </p> */}
           </div>
           <div className="about-woldfires">
+            {/* <p> */}
             The effects of smoke from wildfires can range from eye and
             respiratory tract irritation to more serious disorders, including
             reduced lung function, bronchitis, exacerbation of asthma and heart
@@ -138,11 +140,14 @@ const AirQualityPage = (props) => {
             fires, referred together as wildland fires. Research is being
             conducted to advance understanding of the health effects from
             different types of fires as well as combustion phases.
+            {/* </p> */}
           </div>
         </div>
 
         <NavLink to="/" className="contact-us">
-          <button><h2>CONTACT US</h2></button>
+          <button>
+            <h2>CONTACT US</h2>
+          </button>
         </NavLink>
       </AirQualityContainerStyled>
     </AnimatedPage>
@@ -150,9 +155,32 @@ const AirQualityPage = (props) => {
 };
 
 const AirQualityContainerStyled = styled.section`
+  /* @media only screen and (max-width: 4000px) { */
+
+  /* fill: white; */
+
   display: flex;
   flex-direction: column;
 
+  /* Start h1 */
+  h1 {
+    font-size: 4.5rem;
+    font-weight: 600;
+    color: #243966;
+    color: #8c777c;
+    margin: 4rem 0;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 700px) {
+    h1 {
+      font-size: 3rem;
+      margin: 1rem 0;
+    }
+  }
+  /* End h1 */
+
+  /* Start Contact section */
   .contact-us {
     padding: 3rem;
     background-color: rgb(254, 233, 218);
@@ -161,15 +189,28 @@ const AirQualityContainerStyled = styled.section`
     margin: 5rem auto 10rem auto;
     text-align: center;
 
-
     h2 {
       color: #8c777c;
-    font-weight: 600;
-    font-size: 1.5rem;
-    letter-spacing: 1px;
+      font-weight: 600;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
     }
   }
 
+  @media only screen and (max-width: 700px) {
+    .contact-us {
+      padding: 2rem;
+      background-color: rgb(254, 233, 218);
+      border-radius: 1rem;
+      width: 90%;
+      margin: 5rem auto;
+      text-align: center;
+    }
+  }
+
+  /* End Contact section */
+
+  /* Start Air Info display */
   .air-info-display {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -180,9 +221,7 @@ const AirQualityContainerStyled = styled.section`
     .about-woldfires {
       border: 10px solid lightblue;
       border-radius: 3rem;
-      border-radius: 3rem;
-      color: #243966;
-      border: 10px solid lightblue;
+      color: #8c777c;
       width: 100%;
       height: 100%;
       font-size: 1.2rem;
@@ -196,21 +235,50 @@ const AirQualityContainerStyled = styled.section`
     }
   }
 
-  h1 {
-    font-size: 4.5rem;
-    font-weight: 600;
-    color: #243966;
-    margin: 4rem 0;
-    text-align: center;
-  }
+  @media only screen and (max-width: 700px) {
+    .air-info-display {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
 
+      .about-aqi,
+      .about-woldfires {
+        border: 5px solid rgb(254, 233, 218);
+        border-radius: 3rem;
+        width: 90%;
+        margin: 0 auto;
+        height: 100%;
+        font-size: 0.8rem;
+        padding: 1rem;
+        text-align: center;
+      }
+    }
+  }
+  /* End Air Info display */
+
+  /* Start air-quality-page-intro */
   .air-quality-page-intro {
     margin: 0 10rem 1rem 10rem;
-    color: #243966;
+    color: #8c777c;
     font-size: 1.6rem;
     text-align: center;
   }
 
+  @media only screen and (max-width: 700px) {
+    .air-quality-page-intro {
+      margin: 0 1rem;
+      color: #8c777c;
+      font-size: 0.9rem;
+      border: 5px solid rgb(254, 233, 218);
+      padding: 0.8rem;
+      border-radius: 3rem;
+    }
+  }
+
+  /* End air-quality-page-intro */
+
+  /* Start air-quality-page-main */
   .air-quality-page-main {
     display: flex;
     flex-direction: column;
@@ -224,7 +292,7 @@ const AirQualityContainerStyled = styled.section`
 
       .list-clean-air-benefits {
         border-radius: 3rem;
-        color: #243966;
+        color: #8c777c;
         border: 10px solid lightblue;
         width: 100%;
         height: 100%;
@@ -252,11 +320,6 @@ const AirQualityContainerStyled = styled.section`
       }
     }
 
-    .air-quality-page-main {
-      display: grid;
-      grid-template-columns: 1fr;
-    }
-
     nav {
       display: flex;
       justify-content: center;
@@ -267,6 +330,8 @@ const AirQualityContainerStyled = styled.section`
 
       a {
         color: #243966;
+        color: #8c777c;
+        font-weight: 600;
         background-color: lightblue;
         padding: 2.5rem;
         font-size: 1.2rem;
@@ -285,7 +350,6 @@ const AirQualityContainerStyled = styled.section`
       }
       .circle2 {
         animation: circle2 4s;
-        /* background: orange; */
         clip-path: circle(75%);
         height: 10rem;
         width: 20rem;
@@ -317,36 +381,91 @@ const AirQualityContainerStyled = styled.section`
     }
   }
 
-  @media only screen and (max-width: 1300px) {
-    h1 {
-      font-size: 3.2rem;
-    }
-
-    .air-quality-page-intro {
-      margin: 0 5rem 1rem 10rem;
-      font-size: 1.2rem;
-    }
+  @media only screen and (max-width: 700px) {
+    /* background: red; */
+    gap: 2rem;
 
     .air-quality-page-main {
-      min-height: 70vh;
-      display: flex;
-      flex-direction: column;
-      gap: 10rem;
-
-      nav {
-        flex-direction: column;
-      }
-
       .top-main-section {
-        margin: 5rem 5rem 0 5rem;
+        margin: 1rem;
         display: grid;
         grid-template-columns: 1fr;
-        gap: 5rem;
+        gap: 2rem;
+
+        .list-clean-air-benefits {
+          border-radius: 3rem;
+          border: 5px solid rgb(254, 233, 218);
+          font-size: 1rem;
+          padding: 1.2rem;
+          line-height: 1.7;
+          text-align: left;
+
+          h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+          }
+        }
+
+        img {
+          background-color: rgb(254, 233, 218);
+        }
+      }
+
+      nav {
+        margin: 0 1rem;
+        gap: 1.5rem;
+        font-size: 3rem;
+
+        a {
+          color: #8c777c;
+          font-weight: 600;
+          background-color: rgb(254, 233, 218);
+          padding: 1rem;
+          font-size: 0.8rem;
+          border-radius: 2rem;
+        }
+
+        .circle1 {
+          animation: circle1 3s;
+          clip-path: circle(75%);
+          height: 6rem;
+          width: 10rem;
+        }
+        .circle2 {
+          animation: circle2 4s;
+          clip-path: circle(75%);
+          height: 6rem;
+          width: 10rem;
+        }
+
+        @keyframes circle1 {
+          0% {
+            clip-path: circle(75%);
+          }
+          50% {
+            clip-path: circle(25%);
+          }
+          100% {
+            clip-path: circle(75%);
+          }
+        }
+
+        @keyframes circle2 {
+          0% {
+            clip-path: circle(75%);
+          }
+          50% {
+            clip-path: circle(25%);
+          }
+          100% {
+            clip-path: circle(75%);
+          }
+        }
       }
     }
   }
-`;
 
-const AirQualityPageStyled = styled.section``;
+  /* End air-quality-page-main */
+`;
 
 export default AirQualityPage;
