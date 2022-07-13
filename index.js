@@ -3,6 +3,10 @@ const express = require("express");
 const cors = require("cors");
 const axios = require("axios");
 
+
+
+
+
 require("dotenv").config();
 
 const app = express();
@@ -18,13 +22,13 @@ app.get("/", (req, res) => {
 app.get("/search", (req, res) => {
   const city = req.query.q;
 
-  console.log("**********************");
-  console.log("**********************");
-  console.log("**********************");
-  console.log("BACK END CITY:", city);
-  console.log("**********************");
-  console.log("**********************");
-  console.log("**********************");
+  // console.log("**********************");
+  // console.log("**********************");
+  // console.log("**********************");
+  // console.log("BACK END CITY:", city);
+  // console.log("**********************");
+  // console.log("**********************");
+  // console.log("**********************");
 
   const options = {
     method: "GET",
@@ -93,15 +97,15 @@ app.get("/news", (req, res) => {
     .request(options)
     .then(function (response) {
       res.json(response.data);
-      console.log('***************');
-      console.log('***************');
-      console.log('***************');
-      console.log('***************');
-      console.log('RESPONSE DATA', response.data);
-      console.log('***************');
-      console.log('***************');
-      console.log('***************');
-      console.log('***************');
+      // console.log('***************');
+      // console.log('***************');
+      // console.log('***************');
+      // console.log('***************');
+      // console.log('RESPONSE DATA', response.data);
+      // console.log('***************');
+      // console.log('***************');
+      // console.log('***************');
+      // console.log('***************');
       
     })
     .catch(function (error) {
@@ -109,6 +113,22 @@ app.get("/news", (req, res) => {
     });
 });
 
+
+
+
+// $.ajax('https://api.emailjs.com/api/v1.0/email/send', {
+//     type: 'POST',
+//     data: JSON.stringify(data),
+//     contentType: 'application/json'
+// }).done(function() {
+//     alert('Your mail is sent!');
+// }).fail(function(error) {
+//     alert('Oops... ' + JSON.stringify(error));
+// });
+
+
+
+// })
 
 
 // console.log('***************');

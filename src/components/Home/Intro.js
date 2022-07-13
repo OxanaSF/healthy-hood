@@ -18,6 +18,7 @@ const Intro = () => {
 const IntroStyled = styled.section`
   margin: 5rem 17rem 1rem 17rem;
   color: #243966;
+  color: #8c777c;
   font-size: 1.6rem;
   text-align: center;
   letter-spacing: 0.1rem;
@@ -28,13 +29,29 @@ const IntroStyled = styled.section`
   }
 
   @media only screen and (max-width: 1150px) {
-    background-color: lightblue;
     margin: 0;
     padding: 2rem 5rem 1rem 5rem;
     color: #8c777c;
     font-weight: 400;
+  }
 
-   
+  @media only screen and (max-width: 700px) {
+    background-color: lightblue;
+  }
+
+  @media only screen and (max-width: 500px) {
+    border-radius: 3rem;
+    border: 5px solid rgb(254, 233, 218);
+    margin: 3rem 2rem 0 2rem;
+    padding: 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  @media only screen and (max-width: 280px) {
+    margin: 3rem 1rem 0 1rem;
+    padding: 1rem;
+    font-size: 0.8rem;
   }
 `;
 
