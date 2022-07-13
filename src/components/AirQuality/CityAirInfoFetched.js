@@ -75,11 +75,12 @@ const CityAirInfoFetched = (props) => {
       ) : (
         <CityAirInfoFetchedStyled>
           <div className="display-details">
-            <div>
+            <div className="city-country">
               {cityWeatherInfo.city}, {cityWeatherInfo.country}
             </div>
-            <div>{date}</div>
+            <div className="city-date">{date}</div>
             <div
+              className="index"
               style={
                 Number(aqius) <= 50
                   ? {
@@ -132,12 +133,9 @@ const CityAirInfoFetched = (props) => {
             >
               AQI: {aqius}
             </div>{' '}
-            
           </div>
         </CityAirInfoFetchedStyled>
       )}
-     
-             
     </RequestDisplayStyled>
   );
 };
@@ -146,11 +144,6 @@ const RequestDisplayStyled = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 2rem 10rem;
-
-  @media only screen and (max-width: 1300px) {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
 
   img {
     width: 100%;
@@ -162,6 +155,33 @@ const RequestDisplayStyled = styled.div`
   img:hover {
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
+  }
+
+  @media only screen and (max-width: 1300px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  @media only screen and (max-width: 280px) {
+    margin: 2rem 2rem;
+    img {
+      border: 10px solid rgb(254, 233, 218);
+      padding: 0.5rem;
+      margin: 0;
+    }
+
+    .display-details {
+      text-align: center;
+
+      .city-country,
+      .city-date {
+        font-size: 1.2rem;
+      }
+    }
+    .index {
+      width: 100%;
+      margin: auto;
+    }
   }
 `;
 
@@ -178,9 +198,6 @@ const CityAirInfoFetchedStyled = styled.div`
     flex-direction: column;
     justify-content: center;
   }
-
-
-
 `;
 
 const ClockLoaderStyled = styled.div`

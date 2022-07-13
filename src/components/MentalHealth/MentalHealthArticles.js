@@ -49,7 +49,6 @@ const MentalHealthArticles = () => {
 };
 
 const ArticlesStyled = styled.div`
-  height: 50rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,7 +58,8 @@ const ArticlesStyled = styled.div`
   border-radius: 3rem;
 
   padding: 10rem 2rem;
-  width: 100%;
+
+  margin: auto;
   height: 45rem;
   overflow: auto;
   text-align: justify;
@@ -92,6 +92,32 @@ const ArticlesStyled = styled.div`
     font-weight: 700;
     font-size: 1.5rem;
     padding-top: 2rem;
+  }
+
+  @media only screen and (max-width: 700px) {
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    padding: 0;
+
+    .article {
+      border-bottom: 2px solid rgb(254, 233, 218);
+      margin: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .url {
+      font-size: 1rem;
+    }
+
+    .source {
+      font-size: 1rem;
+      color: #4480cf;
+    }
+
+    .url:hover {
+      text-decoration: underline;
+      color: #9fcfd7;
+    }
   }
 `;
 

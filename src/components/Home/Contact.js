@@ -124,6 +124,12 @@ const ContactStyled = styled.section`
   @media (max-width: 500px) {
     width: 90%;
   }
+
+  @media only screen and (max-width: 280px) {
+    h1 {
+      font-size: 2rem;
+    }
+  }
 `;
 
 export default Contact;

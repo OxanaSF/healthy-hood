@@ -49,7 +49,7 @@ const AirQualityPage = (props) => {
     <AnimatedPage>
       <AirQualityContainerStyled>
         <h1>Air Quality</h1>
-    
+
         <div className="air-quality-page-intro">
           <p>
             Having clean air to breathe is necessary for good health. Poor air
@@ -114,18 +114,20 @@ const AirQualityPage = (props) => {
             </div>
           </div>
         </main>
+
         <div className="air-info-display">
           <div className="about-aqi">
-            <p>
-              Air Quality Index (AQI) & Health Millions of people live in areas
-              where air pollution can cause serious health problems. Local air
-              quality can affect our daily lives. Like the weather, it can
-              change from day to day. EPA developed the Air Quality Index, or
-              AQI, to make information available about the health effects of the
-              five most common air pollutants, and how to avoid those effects.
-            </p>
+            {/* <p> */}
+            Air Quality Index (AQI) & Health Millions of people live in areas
+            where air pollution can cause serious health problems. Local air
+            quality can affect our daily lives. Like the weather, it can change
+            from day to day. EPA developed the Air Quality Index, or AQI, to
+            make information available about the health effects of the five most
+            common air pollutants, and how to avoid those effects.
+            {/* </p> */}
           </div>
           <div className="about-woldfires">
+            {/* <p> */}
             The effects of smoke from wildfires can range from eye and
             respiratory tract irritation to more serious disorders, including
             reduced lung function, bronchitis, exacerbation of asthma and heart
@@ -138,11 +140,14 @@ const AirQualityPage = (props) => {
             fires, referred together as wildland fires. Research is being
             conducted to advance understanding of the health effects from
             different types of fires as well as combustion phases.
+            {/* </p> */}
           </div>
         </div>
 
         <NavLink to="/" className="contact-us">
-          <button><h2>CONTACT US</h2></button>
+          <button>
+            <h2>CONTACT US</h2>
+          </button>
         </NavLink>
       </AirQualityContainerStyled>
     </AnimatedPage>
@@ -150,10 +155,19 @@ const AirQualityPage = (props) => {
 };
 
 const AirQualityContainerStyled = styled.section`
+  /* @media only screen and (max-width: 4000px) { */
+
+  fill: white;
+
+  h1 {
+    font-size: 6rem;
+  }
+
   display: flex;
   flex-direction: column;
 
   .contact-us {
+    background-color: yellow;
     padding: 3rem;
     background-color: rgb(254, 233, 218);
     border-radius: 1rem;
@@ -161,12 +175,11 @@ const AirQualityContainerStyled = styled.section`
     margin: 5rem auto 10rem auto;
     text-align: center;
 
-
     h2 {
       color: #8c777c;
-    font-weight: 600;
-    font-size: 1.5rem;
-    letter-spacing: 1px;
+      font-weight: 600;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
     }
   }
 
@@ -256,10 +269,10 @@ const AirQualityContainerStyled = styled.section`
       }
     }
 
-    .air-quality-page-main {
+    /* .air-quality-page-main {
       display: grid;
       grid-template-columns: 1fr;
-    }
+    } */
 
     nav {
       display: flex;
@@ -321,37 +334,6 @@ const AirQualityContainerStyled = styled.section`
       }
     }
   }
-
-  @media only screen and (max-width: 1300px) {
-    h1 {
-      font-size: 3.2rem;
-    }
-
-    .air-quality-page-intro {
-      margin: 0 5rem 1rem 10rem;
-      font-size: 1.2rem;
-    }
-
-    .air-quality-page-main {
-      min-height: 70vh;
-      display: flex;
-      flex-direction: column;
-      gap: 10rem;
-
-      nav {
-        flex-direction: column;
-      }
-
-      .top-main-section {
-        margin: 5rem 5rem 0 5rem;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 5rem;
-      }
-    }
-  }
 `;
-
-const AirQualityPageStyled = styled.section``;
 
 export default AirQualityPage;

@@ -90,8 +90,6 @@ const NavStyled = styled.nav`
     }
 
     .nav-links {
-      /* background-color: green; */
-      /* display: flex; */
       justify-content: center;
       margin: 0;
       font-size: 1.2rem;

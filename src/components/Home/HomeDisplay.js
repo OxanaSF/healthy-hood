@@ -242,28 +242,41 @@ const HomeDisplayStyled = styled.section`
     margin-top: 3rem;
     .container {
       margin: 0 2rem;
-      
     }
 
     .container-description {
-      p{
+      p {
         font-size: 1rem;
-       margin: 0;
-       text-align: center;
-       line-height: 1.4;
-       font-weight: 600;
-       text-indent: 0;
-       border-bottom: 5px solid rgb(254, 233, 218);
-       padding-bottom: 1rem;
+        margin: 0;
+        text-align: center;
+        line-height: 1.4;
+        font-weight: 600;
+        text-indent: 0;
+        border-bottom: 5px solid rgb(254, 233, 218);
+        padding-bottom: 1rem;
       }
-
     }
 
     .box {
-     
       .text-over {
         font-size: 2.3rem;
-        
+      }
+    }
+  }
+
+  @media only screen and (max-width: 280px) {
+    .container {
+      margin: 0 1rem;
+    }
+    .container-description {
+      p {
+        font-size: 0.8rem;
+      }
+    }
+
+    .box {
+      .text-over {
+        font-size: 2rem;
       }
     }
   }

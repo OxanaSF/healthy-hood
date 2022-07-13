@@ -28,6 +28,7 @@ const GlobalStyles = createGlobalStyle`
   @media only screen and (max-width: 700px) {
     background-color: lightblue;
  }
+}
 `;
 
 export default GlobalStyles;

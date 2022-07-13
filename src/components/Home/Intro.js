@@ -29,7 +29,6 @@ const IntroStyled = styled.section`
   }
 
   @media only screen and (max-width: 1150px) {
-    
     margin: 0;
     padding: 2rem 5rem 1rem 5rem;
     color: #8c777c;
@@ -47,7 +46,12 @@ const IntroStyled = styled.section`
     padding: 2rem;
     font-size: 1rem;
     font-weight: 500;
+  }
 
+  @media only screen and (max-width: 280px) {
+    margin: 3rem 1rem 0 1rem;
+    padding: 1rem;
+    font-size: 0.8rem;
   }
 `;
 

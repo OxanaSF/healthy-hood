@@ -248,17 +248,64 @@ const MentalHealthPageStyled = styled.section`
   }
 
   @media only screen and (max-width: 900px) {
-
     main {
       margin: 3rem;
 
       .health-care-tips {
-      height: 40rem;
-    
+        height: 40rem;
+      }
     }
+  }
+
+  @media only screen and (max-width: 700px) {
+    h1 {
+      font-size: 2rem;
     }
-    
-  
+
+    main {
+      width: 90%;
+      margin: auto;
+      margin-top: 2rem;
+
+      .health-care-tips {
+        height: 30rem;
+        h2 {
+          font-size: 1rem;
+        }
+
+        ul li {
+          font-size: 0.7rem;
+        }
+      }
+
+      .right-col {
+        .iframe-container {
+          h2 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+          }
+        }
+      }
+    }
+
+    .mental-health-news {
+      width: 90%;
+      margin: auto;
+      padding: 0;
+      h2 {
+        font-size: 1.2rem;
+      }
+    }
+
+    .contact-us {
+      width: 90%;
+      margin: auto;
+      padding: 1rem;
+
+      h2 {
+        font-size: 1.1rem;
+      }
+    }
   }
 `;
 
@@ -277,6 +324,12 @@ const IntroStyled = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+
+  @media only screen and (max-width: 700px) {
+    min-height: 18rem;
+    width: 95%;
+    background-position: center;
+  }
 `;
 
 export default MentalHealthPage;

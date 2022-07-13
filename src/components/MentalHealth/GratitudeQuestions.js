@@ -11,8 +11,6 @@ const GratitudeQuestions = () => {
   //   getGratitudeQuestion();
   // }, [gratitudeQuestion]);
 
-
-
   const getGratitudeQuestion = () => {
     setLoading(true);
     const axios = require('axios');
@@ -34,7 +32,7 @@ const GratitudeQuestions = () => {
       });
   };
 
-// getGratitudeQuestion();
+  // getGratitudeQuestion();
 
   //   console.log('gratitudeQuestion:', gratitudeQuestion);
 
@@ -96,6 +94,22 @@ const ButtonStyled = styled.div`
     text-align: center;
     font-weight: 700;
     color: #3e4981;
+  }
+
+  @media only screen and (max-width: 700px) {
+    h2 {
+      font-size: 1.2rem;
+    }
+
+    button {
+      width: 7rem;
+      height: 5rem;
+      border-radius: 1rem;
+    }
+
+    .gratitude-question {
+      font-size: 1.2rem;
+    }
   }
 `;
 
