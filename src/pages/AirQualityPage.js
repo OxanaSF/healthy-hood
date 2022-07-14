@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+
 import { motion } from 'framer-motion';
 
 import {
@@ -8,6 +9,7 @@ import {
   slidesFromRightftLeaveToRight,
 } from '../animations/animation';
 import AnimatedPage from '../animations/AnimatedPageTransition';
+import ScrollToTop from '../components/ScrollToTop'
 
 const AirQualityPage = (props) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -47,10 +49,17 @@ const AirQualityPage = (props) => {
 
   return (
     <AnimatedPage>
+      <ScrollToTop />
       <AirQualityContainerStyled>
+        
         <h1>Air Quality</h1>
 
-        <div className="air-quality-page-intro">
+        <motion.div
+          className="air-quality-page-intro"
+          variants={slidesFromLeftLeaveToLeft}
+          initial="hidden"
+          animate="show"
+        >
           <p>
             Having clean air to breathe is necessary for good health. Poor air
             quality reduces quality of life. Some air pollutants are irritants.
@@ -64,7 +73,7 @@ const AirQualityPage = (props) => {
             risk from poor air quality. Good air quality is an important
             livability indicator for a healthy community.{' '}
           </p>
-        </div>
+        </motion.div>
 
         <main className="air-quality-page-main">
           <div className="top-main-section">
@@ -188,6 +197,7 @@ const AirQualityContainerStyled = styled.section`
     border-radius: 1rem;
     width: 30rem;
     margin: 5rem auto 10rem auto;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
     text-align: center;
 
     h2 {
@@ -206,6 +216,10 @@ const AirQualityContainerStyled = styled.section`
       width: 90%;
       margin: 5rem auto;
       text-align: center;
+
+      h2 {
+        font-size: 1.1rem;
+      }
     }
   }
 
@@ -233,6 +247,7 @@ const AirQualityContainerStyled = styled.section`
       align-items: center;
       line-height: 1.9;
       text-align: left;
+      box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
     }
   }
 
@@ -250,7 +265,7 @@ const AirQualityContainerStyled = styled.section`
         width: 90%;
         margin: 0 auto;
         height: 100%;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         padding: 1rem;
         text-align: center;
       }
@@ -264,13 +279,16 @@ const AirQualityContainerStyled = styled.section`
     color: #8c777c;
     font-size: 1.6rem;
     text-align: center;
+    /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); */
+    padding: 2rem;
+    border-radius: 3rem;
   }
 
   @media only screen and (max-width: 930px) {
     .air-quality-page-intro {
       margin: 0 1rem;
       color: #8c777c;
-      font-size: 0.9rem;
+      font-size: 0.7rem;
       border: 5px solid rgb(254, 233, 218);
       padding: 0.8rem;
       border-radius: 3rem;
@@ -305,6 +323,7 @@ const AirQualityContainerStyled = styled.section`
         align-items: center;
         line-height: 1.9;
         text-align: left;
+        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
 
         h3 {
           font-size: 1.6rem;
@@ -318,6 +337,7 @@ const AirQualityContainerStyled = styled.section`
         height: 100%;
         object-fit: cover;
         border-radius: 3rem;
+        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
       }
     }
 
@@ -348,12 +368,14 @@ const AirQualityContainerStyled = styled.section`
         clip-path: circle(75%);
         height: 10rem;
         width: 20rem;
+        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
       }
       .circle2 {
         animation: circle2 4s;
         clip-path: circle(75%);
         height: 10rem;
         width: 20rem;
+        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
       }
 
       @keyframes circle1 {
@@ -383,7 +405,11 @@ const AirQualityContainerStyled = styled.section`
   }
 
   @media only screen and (max-width: 920px) {
-    /* background: red; */
+
+    h1 {
+      font-size: 2rem;
+    }
+
     gap: 2rem;
 
     .air-quality-page-main {
@@ -396,13 +422,13 @@ const AirQualityContainerStyled = styled.section`
         .list-clean-air-benefits {
           border-radius: 3rem;
           border: 5px solid rgb(254, 233, 218);
-          font-size: 1rem;
+          font-size: 0.7rem;
           padding: 1.2rem;
           line-height: 1.7;
           text-align: left;
 
           h3 {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 500;
           }
         }
@@ -439,29 +465,6 @@ const AirQualityContainerStyled = styled.section`
           width: 10rem;
         }
 
-        /* @keyframes circle1 {
-          0% {
-            clip-path: circle(75%);
-          }
-          50% {
-            clip-path: circle(25%);
-          }
-          100% {
-            clip-path: circle(75%);
-          }
-        } */
-
-        /* @keyframes circle2 {
-          0% {
-            clip-path: circle(75%);
-          }
-          50% {
-            clip-path: circle(25%);
-          }
-          100% {
-            clip-path: circle(75%);
-          }
-        } */
       }
     }
   }
