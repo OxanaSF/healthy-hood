@@ -174,4 +174,4 @@ app.get("/news", (req, res) => {
 //     });
 // });
 
-app.listen(8000, () => console.log(`Server is running on port ${PORT}`));
+app.listen(process.env.PORT || 8000, () => console.log(`Server is running on port ${PORT}`));

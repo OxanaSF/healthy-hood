@@ -66,6 +66,7 @@ Due to time constraints, UX/UI designs were not created, but instead was impleme
 - Semantic HTML5 markup
 - Custom CSS components
 - CSS Flex Box
+- CSS Grid
 - [Abode Stock](stock.adobe.com/)
 - [React](https://reactjs.org/)
 - [Styled Components](https://styled-components.com/)
@@ -74,6 +75,8 @@ Due to time constraints, UX/UI designs were not created, but instead was impleme
 - [React-Framer-Motion](https://www.framer.com/motion/)
 - [React-Google-Maps](https://www.npmjs.com/package/@react-google-maps/api)
 - [React-Router-Dom](https://www.npmjs.com/package/react-router-dom)
+- [EmailJS](https://www.emailjs.com/)
+- [React Spinners](https://www.npmjs.com/package/react-spinners)
 
 **Backend**
 
@@ -95,6 +98,7 @@ Due to time constraints, UX/UI designs were not created, but instead was impleme
   - [LinkedIn](https://www.linkedin.com/in/michael-villa-338a0567/)
 
 - **Oxana Howard - Software Engineer**
+  - [Website](https://oxana-howard.com/)
   - [LinkedIn](https://www.linkedin.com/in/oxana-howard/)
 
 ### What we learned
