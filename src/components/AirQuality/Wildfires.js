@@ -2,7 +2,7 @@ import { Box, Flex, Skeleton } from '@chakra-ui/react';
 import { FaLocationArrow, FaTimes } from 'react-icons/fa';
 
 import { useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api';
-import { defaultTheme } from '../Theme';
+import { defaultTheme } from '../Map/Theme';
 
 const center = { lat: 37.773972, lng: -122.431297 };
 

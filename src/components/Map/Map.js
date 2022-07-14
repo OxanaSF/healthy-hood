@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { GoogleMap } from '@react-google-maps/api';
-import s from './Map.module.css'
+
 
 const containerStyle = {
   width: '100%',
@@ -22,7 +22,7 @@ const Map = ({ center }) => {
   }, []);
 
   return (
-    <div className={s.container}>
+    <div>
       <h1>This is a map</h1>
       <GoogleMap
         mapContainerStyle={containerStyle}
