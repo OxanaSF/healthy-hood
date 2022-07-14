@@ -193,7 +193,7 @@ const AirQualityContainerStyled = styled.section`
     border-radius: 1rem;
     width: 30rem;
     margin: 5rem auto 10rem auto;
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
     text-align: center;
 
     h2 {
@@ -271,7 +271,7 @@ const AirQualityContainerStyled = styled.section`
     color: #8c777c;
     font-size: 1.6rem;
     text-align: center;
-    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
     padding: 2rem;
     border-radius: 3rem;
   }
@@ -360,14 +360,14 @@ const AirQualityContainerStyled = styled.section`
         clip-path: circle(75%);
         height: 10rem;
         width: 20rem;
-        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
       }
       .circle2 {
         animation: circle2 4s;
         clip-path: circle(75%);
         height: 10rem;
         width: 20rem;
-        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
       }
 
       @keyframes circle1 {

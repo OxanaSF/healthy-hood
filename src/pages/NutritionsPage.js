@@ -179,7 +179,7 @@ const NutritionsPageStyled = styled.section`
       color: #8c777c;
       width: 90%;
       margin: auto;
-      box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
 
       .paragraph {
         margin-bottom: 2rem;
@@ -241,6 +241,7 @@ const NutritionsPageStyled = styled.section`
   .intro-nutritions-page-main-content {
     h2 {
       margin: 2rem;
+  
     }
     .intro-nutritions-page-info {
       display: grid;
@@ -282,6 +283,8 @@ const NutritionsPageStyled = styled.section`
   h2 {
     margin-top: 5rem;
     margin-bottom: 5rem;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
     text-align: center;
     font-size: 2.5rem;
     color: #9996b3;
@@ -316,7 +319,7 @@ const NutritionsPageStyled = styled.section`
       height: 10rem;
       width: 30rem;
       background-color: rgb(254, 233, 218);
-      box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
       border-radius: 3rem;
       color: #8c777c;
       font-weight: 600;
@@ -331,7 +334,7 @@ const NutritionsPageStyled = styled.section`
       height: 10rem;
       width: 30rem;
       background-color: rgb(254, 233, 218);
-      box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
       border-radius: 3rem;
       color: #8c777c;
       font-weight: 600;
@@ -408,7 +411,7 @@ const NutritionsPageStyled = styled.section`
   }
   .contact-us {
     background-color: rgb(254, 233, 218);
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
     text-align: center;
     padding: 4rem 8rem;

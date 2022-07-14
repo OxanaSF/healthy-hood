@@ -134,7 +134,7 @@ const MentalHealthPageStyled = styled.section`
     background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
 
     display: flex;
     flex-direction: column;
@@ -158,7 +158,7 @@ const MentalHealthPageStyled = styled.section`
       height: 70rem;
       overflow: auto;
       text-align: justify;
-      box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
 
       h2 {
         margin-bottom: 2.5rem;
@@ -247,7 +247,7 @@ const MentalHealthPageStyled = styled.section`
     background-color: rgb(254, 233, 218);
     border-radius: 1rem;
     width: 30rem;
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
 
     text-align: center;
 
