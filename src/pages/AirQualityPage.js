@@ -122,6 +122,7 @@ const AirQualityPage = (props) => {
               <Outlet />
             </div>
           </div>
+
         </main>
 
         <div className="air-info-display">
@@ -404,9 +405,11 @@ const AirQualityContainerStyled = styled.section`
   }
 
   @media only screen and (max-width: 920px) {
+
     h1 {
       font-size: 2rem;
     }
+
     gap: 2rem;
 
     .air-quality-page-main {
@@ -461,6 +464,7 @@ const AirQualityContainerStyled = styled.section`
           height: 6rem;
           width: 10rem;
         }
+
       }
     }
   }
