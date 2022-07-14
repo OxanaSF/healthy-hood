@@ -14,8 +14,7 @@ import Profile from '../pages/Profile';
 
 import { AnimatePresence } from 'framer-motion';
 
-import { DndProvider } from 'react-dnd';
-import { HTML5Backend } from 'react-dnd-html5-backend';
+
 
 const Pages = () => {
   const [data, setData] = useState([]);
@@ -23,7 +22,7 @@ const Pages = () => {
 
   return (
     <AnimatePresence exitBeforeEnter>
-      <DndProvider backend={HTML5Backend}>
+     
         <Routes location={location} key={location.pathname.split('/')[1]}>
           <Route path="/" element={<Home />} />
           <Route path="/nutritions" element={<NutritionsPage />}>
@@ -50,7 +49,7 @@ const Pages = () => {
           <Route path="/mental-health" element={<MentalHealthPage />} />
           <Route path="/savedpages" element={<Profile />} />
         </Routes>
-      </DndProvider>
+   
     </AnimatePresence>
   );
 };
