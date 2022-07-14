@@ -15,7 +15,6 @@ import Profile from '../pages/Profile';
 import { AnimatePresence } from 'framer-motion';
 
 
-
 const Pages = () => {
   const [data, setData] = useState([]);
   const location = useLocation();

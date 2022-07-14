@@ -6,6 +6,7 @@ import { slidesFromLeftLeaveToRight } from '../../animations/animation';
 
 const HomeDisplay = () => {
   return (
+
     <HomeDisplayStyled>
  
       <motion.div
