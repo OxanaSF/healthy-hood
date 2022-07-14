@@ -21,7 +21,7 @@ This is a desktop and mobile version website that offers information about livin
 
 ### Designs
 
-Due to time constraints, UX/UI designs were not created, but instead was implimented as the website was being built.
+Due to time constraints, UX/UI designs were not created, but instead was implemented as the website was being built.
 
 ### Links
 
@@ -35,7 +35,7 @@ Due to time constraints, UX/UI designs were not created, but instead was implime
 - Semantic HTML5 markup
 - Custom CSS components
 - CSS Flex Box
-- [Abodo Stock](stock.adobe.com/)
+- [Abode Stock](stock.adobe.com/)
 - [React](https://reactjs.org/)
 - [Styled Components](https://styled-components.com/)
 - [React-Redux](https://redux.js.org/usage/)
@@ -63,17 +63,17 @@ Due to time constraints, UX/UI designs were not created, but instead was implime
   - [Website](https://mikegv.github.io/portfolio/)
   - [LinkedIn](https://www.linkedin.com/in/michael-villa-338a0567/)
 
-- **Oxhana Howard - Software Engineer**
+- **Oxana Howard - Software Engineer**
   - [LinkedIn](https://www.linkedin.com/in/oxana-howard/)
 
 ### What we learned
 
 **Johnson Thieu:**
-This was a great opportunity for me to share my knowledge with Github as our Content Management System. Helping my team learn how to manage their branches and merging into our development branch was no easy task. Sitting with them in the hot seat during merge conflicts and explain why they occured, solidified my experience.
+This was a great opportunity for me to share my knowledge with Github as our Content Management System. Helping my team learn how to manage their branches and merging into our development branch was no easy task. Sitting with them in the hot seat during merge conflicts and explain why they occurred, solidified my experience.
 
-I furthured my knowledge by using platforms such as [Firebase](https://firebase.google.com/), to store data for API calls. I learned how to use and add data from the API and render the information in a dropdown and using props to render the content.
+I furthered my knowledge by using platforms such as [Firebase](https://firebase.google.com/), to store data for API calls. I learned how to use and add data from the API and render the information in a dropdown and using props to render the content.
 
 **Mike Villa:**
-This project was a great learning experience for me. Working in a team of three developers I was able to experience using git from a whole new point of view. I was also able to see how different the process of building a website is with multiple developers working on different parts of the project concurrently. For me one of the most valuable experiences was working through my teammates code to help solve problems and to build new features into that code. In addition to all of this I was able to further my experience with using API's and Redux by implementing them into the project.
+This project was a great learning experience for me. Working in a team of three developers I was able to experience using git from a whole new point of view. I was also able to see how different the process of building a website is with multiple developers working on different parts of the project concurrently. For me one of the most valuable experiences was working through the code written by my teammates to help solve problems and to build new features into that code. In addition to all of this I was able to further my experience with using API's and Redux by implementing them into the project.
 
 **Oxana Howard:**

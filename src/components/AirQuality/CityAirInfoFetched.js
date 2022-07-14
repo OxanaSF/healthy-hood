@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import ClockLoader from 'react-spinners/ClockLoader';
 import { useDispatch } from "react-redux"
 import { favoritesActions } from "../../store/store"
+import {StyledButton } from '../Nutrition/StyledComponents'
 const CityAirInfoFetched = (props) => {
   const [loading, setLoading] = useState(false);
   const [color, setColor] = useState('lightblue');
@@ -139,7 +140,7 @@ const CityAirInfoFetched = (props) => {
             >
               AQI: {aqius}
             </div>{' '}
-            <button onClick={addItem}>Add to favorites</button>
+            <StyledButton onClick={addItem}>Add to favorites</StyledButton>
           </div>
         </CityAirInfoFetchedStyled>
       )}

@@ -88,7 +88,9 @@ const Profile = () => {
                   key={item.title}
                   className="response"
                 >
-                  {item.title}
+                  <p>City:{item.title}</p>
+                  <p>Date:{item.date}</p>
+                  <p>AQI:{item.aqi}</p>
                 </Link>
               ))
             ) : (
@@ -119,6 +121,8 @@ const Profile = () => {
 };
 
 const ProfileStyled = styled.div`
+
+  
   .container {
     width: 80%;
     min-height: 100vh;

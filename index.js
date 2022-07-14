@@ -77,32 +77,6 @@ app.get("/question", (req, res) => {
     });
 });
 
-app.get("/nutrition", (req, res) => {
-  const value = req.query.query;
-  console.log(req.query.query)
-   const options = {
-            method: 'GET',
-            url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/videos/search',
-            params: {
-                query: value,
-                minLength: '0',
-                maxLength: '999',
-                number: '15',
-                offset: '0'
-            },
-            headers: {
-                'X-RapidAPI-Key': process.env.REACT_APP_API_KEY_3,
-                'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-            }
-        };
-        console.log(value)
-//   axios.request(options).then(function (response) {
-//     res.json(response.data);
-//     console.log(response.data);
-// }).catch(function (error) {
-//     console.error(error)
-// });
-})
 
 // API Request - get articles about mental health
 
