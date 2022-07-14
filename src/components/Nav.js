@@ -22,7 +22,7 @@ const Nav = () => {
       </div>
       <NavLink to="/savedpages" className="logged-in">
         <div class="button">
-          <span className="text"> go to your profile</span>
+          <span className="text">your profile</span>
         </div>
       </NavLink>
     </NavStyled>
@@ -33,6 +33,7 @@ const NavStyled = styled.nav`
   min-height: 7rem;
   text-align: left;
   background-color: rgb(254, 233, 218);
+  
 
   display: flex;
   justify-content: space-between;
@@ -56,22 +57,22 @@ const NavStyled = styled.nav`
 
   .logged-in {
     .button {
-      margin-right: 5rem;
+      margin-right: 2rem;
       margin-top: 3rem;
-      width: 400px;
-      height: 100px;
+      width: 20rem;
+      height: 6.25rem;
       background: #f3f0f1;
       position: relative;
       background: #f3f0f1;
-      margin-bottom: 25px;
-      border-radius: 32px;
+      margin-bottom: 1.5rem;
+      border-radius: 2rem;
       text-align: center;
       cursor: pointer;
       transition: all 0.1s ease-in-out;
       span {
         line-height: 100px;
         font-family: 'Montserrat', sans-serif;
-        font-size: 32px;
+        font-size: 2rem;
         font-weight: semibold;
       }
       &:nth-child(1) {
@@ -150,11 +151,13 @@ const NavStyled = styled.nav`
   }
 
   @media only screen and (max-width: 1400px) {
+    padding: 0 2rem;
     .nav-links {
       font-size: 1.1rem;
       gap: 1rem;
     }
     .logged-in {
+     
       .button {
         width: 100%;
         margin: auto;
@@ -182,7 +185,7 @@ const NavStyled = styled.nav`
 
 
 
-  @media (max-width: 930px) {
+  @media (max-width: 928px) {
     flex-direction: column;
 
     img {

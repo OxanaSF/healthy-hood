@@ -9,10 +9,12 @@ import {
   slidesFromRightftLeaveToRight,
 } from '../animations/animation';
 import AnimatedPage from '../animations/AnimatedPageTransition';
+import ScrollToTop from '../components/ScrollToTop'
 
 const NutritionsPage = () => {
   return (
     <AnimatedPage>
+      <ScrollToTop />
       <NutritionsPageStyled>
         <h1>Nutritions</h1>
         <motion.div

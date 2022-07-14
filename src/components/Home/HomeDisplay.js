@@ -165,14 +165,14 @@ const HomeDisplayStyled = styled.section`
 
   .img-arrow-right {
     float: right;
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     padding: 1rem;
     cursor: pointer;
   }
   .img-arrow-left {
     float: left;
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     padding: 1rem;
     cursor: pointer;
@@ -191,7 +191,7 @@ const HomeDisplayStyled = styled.section`
     background-color: white;
     background-color: rgb(62, 50, 85);
     background-color: rgb(254, 233, 218);
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+ 
     position: relative;
     img {
       background-color: white;

@@ -9,6 +9,7 @@ import {
   slidesFromRightftLeaveToRight,
 } from '../animations/animation';
 import AnimatedPage from '../animations/AnimatedPageTransition';
+import ScrollToTop from '../components/ScrollToTop'
 
 const AirQualityPage = (props) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -48,7 +49,9 @@ const AirQualityPage = (props) => {
 
   return (
     <AnimatedPage>
+      <ScrollToTop />
       <AirQualityContainerStyled>
+        
         <h1>Air Quality</h1>
 
         <motion.div
@@ -243,7 +246,7 @@ const AirQualityContainerStyled = styled.section`
       align-items: center;
       line-height: 1.9;
       text-align: left;
-      box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
     }
   }
 
@@ -275,7 +278,7 @@ const AirQualityContainerStyled = styled.section`
     color: #8c777c;
     font-size: 1.6rem;
     text-align: center;
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); */
     padding: 2rem;
     border-radius: 3rem;
   }
@@ -319,7 +322,7 @@ const AirQualityContainerStyled = styled.section`
         align-items: center;
         line-height: 1.9;
         text-align: left;
-        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
 
         h3 {
           font-size: 1.6rem;
@@ -333,7 +336,7 @@ const AirQualityContainerStyled = styled.section`
         height: 100%;
         object-fit: cover;
         border-radius: 3rem;
-        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
       }
     }
 
@@ -364,14 +367,14 @@ const AirQualityContainerStyled = styled.section`
         clip-path: circle(75%);
         height: 10rem;
         width: 20rem;
-        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
       }
       .circle2 {
         animation: circle2 4s;
         clip-path: circle(75%);
         height: 10rem;
         width: 20rem;
-        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
       }
 
       @keyframes circle1 {
