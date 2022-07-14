@@ -47,7 +47,7 @@ const DUMMY_DATA = [
 
 const RecipeVideos = () => {
   const [searchValue, setSearchValue] = useState('');
-  const [results, setResults] = useState(DUMMY_DATA);
+  const [results, setResults] = useState([]);
   const [showVideo, setShowVideo] = useState(false);
   const [videoId, setVideoId] = useState('');
   const [loading, setLoading] = useState(false);
@@ -56,6 +56,7 @@ const RecipeVideos = () => {
   const dispatch = useDispatch();
   let location = useLocation();
   let state;
+
 
   useEffect(() => {
     state = location.state;
@@ -156,7 +157,7 @@ const RecipeVideos = () => {
                     <p className="result-title">{result.title.split('-')[0]}</p>
                     <img
                       src={result.thumbnail}
-                      onClick={() => openVideo(result.youTubeId)}
+                      onClick={() => openVideo(result.youTubeId, result.title.split('-')[0])}
                     />
                   </ResultItem>
                 </>

@@ -6,7 +6,7 @@ const MentalHealthArticles = () => {
   const [loading, setLoading] = useState(false);
   const [color, setColor] = useState('#fca0b9');
 
-  useCallback(() => {
+  useEffect(() => {
     getMentalHealthArticle();
   }, []);
 
@@ -33,7 +33,7 @@ const MentalHealthArticles = () => {
 
   return (
     <ArticlesStyled>
-      <button onClick={getMentalHealthArticle}>Click</button>
+      {/* <button onClick={getMentalHealthArticle}>Click</button> */}
       {articles.map((item) => (
         <div key={item.title + item.url} className="article">
           <p>

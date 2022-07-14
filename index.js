@@ -78,7 +78,6 @@ app.get("/question", (req, res) => {
 });
 
 
-
 // API Request - get articles about mental health
 
 app.get("/news", (req, res) => {

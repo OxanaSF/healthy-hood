@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import ClockLoader from 'react-spinners/ClockLoader';
 import { useDispatch } from "react-redux"
 import { favoritesActions } from "../../store/store"
+import {StyledButton } from '../Nutrition/StyledComponents'
 const CityAirInfoFetched = (props) => {
   const [loading, setLoading] = useState(false);
   const [color, setColor] = useState('lightblue');
@@ -17,8 +18,8 @@ const CityAirInfoFetched = (props) => {
 
   let params = useParams();
   
-  const addItem = (id, title) => {
-    dispatch(favoritesActions.addToFavorites({ category: 'aqi', id, title}))
+  const addItem = () => {
+    dispatch(favoritesActions.addToFavorites({ category: 'aqi', id: cityWeatherInfo.city, date: date ,aqi: aqius}))
 }
 
   const getCityWeatherInfo = (cityName) => {
@@ -43,7 +44,6 @@ const CityAirInfoFetched = (props) => {
         setAqius(response.data.data.cities[0].currentMeasurement.aqius);
         // setImg(response.data.data.news[0].contributors.picture);
         setLoading(false);
-        addItem(options.params.q, options.params.q)
       })
       .catch((error) => {
         console.error(error);
@@ -140,6 +140,7 @@ const CityAirInfoFetched = (props) => {
             >
               AQI: {aqius}
             </div>{' '}
+            <StyledButton onClick={addItem}>Add to favorites</StyledButton>
           </div>
         </CityAirInfoFetchedStyled>
       )}

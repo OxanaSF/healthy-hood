@@ -16,7 +16,7 @@ const NutritionsPage = () => {
     <AnimatedPage>
       <ScrollToTop />
       <NutritionsPageStyled>
-        <h1>Nutritions</h1>
+        <h1>Nutrition</h1>
         <motion.div
           className="intro-nutritions-page-img"
           variants={slidesFromLeftLeaveToLeft}

@@ -8,7 +8,7 @@ const HomeDisplay = () => {
   return (
 
     <HomeDisplayStyled>
-
+ 
       <motion.div
         className="categories-container"
         variants={slidesFromLeftLeaveToRight}

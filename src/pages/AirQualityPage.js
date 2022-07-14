@@ -3,6 +3,7 @@ import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
 import { motion } from "framer-motion";
+
 import {
   slidesFromLeftLeaveToLeft,
   slidesFromRightftLeaveToRight,
@@ -401,11 +402,12 @@ const AirQualityContainerStyled = styled.section`
     }
   }
 
-  @media only screen and (max-width: 920px) {
+
+  @media only screen and (max-width: 930px) {
+
     h1 {
       font-size: 2rem;
     }
-
     gap: 2rem;
 
     .air-quality-page-main {

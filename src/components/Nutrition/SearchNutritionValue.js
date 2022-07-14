@@ -120,7 +120,7 @@ const DUMMY_DATA = [
 ];
 
 const SearchNutritionValue = (props) => {
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState(DUMMY_DATA);
   const [loading, setLoading] = useState(false);
   const [nutritionVals, setNutritionVals] = useState({
     minProtein: 0,
@@ -180,20 +180,6 @@ const SearchNutritionValue = (props) => {
   const recipeClickHandler = (id) => {
     setRecipeId(id);
     setShowRecipe(true);
-    // const options = {
-    //     method: 'GET',
-    //     url: `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${id}/information`,
-    //     headers: {
-    //         'X-RapidAPI-Key': process.env.REACT_APP_API_KEY_3,
-    //         'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-    //     }
-    // };
-
-    // axios.request(options).then(function (response) {
-    //     console.log(response.data);
-    // }).catch(function (error) {
-    //     console.error(error);
-    // });
   };
 
   let location = useLocation();
