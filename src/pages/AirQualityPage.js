@@ -1,28 +1,28 @@
-import styled from 'styled-components';
-import { useState } from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import styled from "styled-components";
+import { useState } from "react";
+import { NavLink, Outlet } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import {
   slidesFromLeftLeaveToLeft,
   slidesFromRightftLeaveToRight,
-} from '../animations/animation';
-import AnimatedPage from '../animations/AnimatedPageTransition';
+} from "../animations/animation";
+import AnimatedPage from "../animations/AnimatedPageTransition";
 
 const AirQualityPage = (props) => {
   const [isLoading, setIsLoading] = useState(false);
-  const [err, setErr] = useState('');
+  const [err, setErr] = useState("");
 
   const handleClick = async () => {
     setIsLoading(true);
 
     try {
       const response = await fetch(
-        'https://eonet.gsfc.nasa.gov/api/v3/events/geojson',
+        "https://eonet.gsfc.nasa.gov/api/v3/events/geojson",
         {
-          method: 'GET',
+          method: "GET",
           headers: {
-            Accept: 'application/json',
+            Accept: "application/json",
           },
         }
       );
@@ -33,9 +33,9 @@ const AirQualityPage = (props) => {
 
       const result = await response.json();
 
-      console.log('ORIGINAL DATA is: ', JSON.stringify(result, null, 10));
+      console.log("ORIGINAL DATA is: ", JSON.stringify(result, null, 10));
 
-      props.setData(result['features']);
+      props.setData(result["features"]);
     } catch (err) {
       setErr(err.message);
     } finally {
@@ -62,7 +62,7 @@ const AirQualityPage = (props) => {
             or opportunity to be physically active. People with preexisting
             medical conditions such as asthma, emphysema or COPD are at greater
             risk from poor air quality. Good air quality is an important
-            livability indicator for a healthy community.{' '}
+            livability indicator for a healthy community.{" "}
           </p>
         </div>
 
@@ -113,7 +113,6 @@ const AirQualityPage = (props) => {
               <Outlet />
             </div>
           </div>
-
         </main>
 
         <div className="air-info-display">

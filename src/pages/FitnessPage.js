@@ -75,6 +75,20 @@ const FitnessPageStyled = styled.section`
     font-size: 2rem;
     color: black;
   }
+
+  @media only screen and (max-width: 930px) {
+    .fitness-benefits {
+      margin: 1rem 1rem;
+      color: #8c777c;
+      font-size: 0.9rem;
+      border: 5px solid rgb(254, 233, 218);
+      padding: 0.8rem;
+      border-radius: 2rem;
+    }
+    .top-main-section {
+      display: ;
+    }
+  }
 `;
 
 export default FitnessPage;
