@@ -38,6 +38,23 @@ const NavStyled = styled.nav`
   justify-content: space-between;
   align-items: center;
 
+  img {
+    /* background: red; */
+    box-shadow: 0 2px 5px 0 rgba(3, 6, 26, 0.15);
+    border-radius: 50%;
+    &:hover {
+          opacity: 0.3;
+          box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
+            6px 6px 10px rgba(0, 0, 0, 0.2);
+        }
+        &:active {
+          opacity: 1;
+          box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
+            inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+          color: lightblue;
+        }
+  }
+
   .logged-in {
     .button {
       margin-right: 5rem;
