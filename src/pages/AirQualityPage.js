@@ -1,14 +1,16 @@
-import styled from "styled-components";
-import { useState } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import styled from 'styled-components';
+import { useState } from 'react';
+import { NavLink, Outlet } from 'react-router-dom';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
+
+
 import {
   slidesFromLeftLeaveToLeft,
   slidesFromRightftLeaveToRight,
-} from "../animations/animation";
-import AnimatedPage from "../animations/AnimatedPageTransition";
-import ScrollToTop from "../components/ScrollToTop";
+} from '../animations/animation';
+import AnimatedPage from '../animations/AnimatedPageTransition';
+import ScrollToTop from '../components/ScrollToTop'
 
 const AirQualityPage = (props) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -50,6 +52,7 @@ const AirQualityPage = (props) => {
     <AnimatedPage>
       <ScrollToTop />
       <AirQualityContainerStyled>
+        
         <h1>Air Quality</h1>
 
         <motion.div
@@ -405,7 +408,6 @@ const AirQualityContainerStyled = styled.section`
     h1 {
       font-size: 2rem;
     }
-
     gap: 2rem;
 
     .air-quality-page-main {
