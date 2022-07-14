@@ -120,7 +120,7 @@ const DUMMY_DATA = [
 ];
 
 const SearchNutritionValue = (props) => {
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState(DUMMY_DATA);
   const [loading, setLoading] = useState(false);
   const [nutritionVals, setNutritionVals] = useState({
     minProtein: 0,

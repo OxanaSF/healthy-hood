@@ -68,6 +68,7 @@ const Profile = () => {
               recipeList.map((item) => (
                 <Link
                   to="../nutrition/search-by-nutrition"
+
                   state={{ id: item.id }}
                   key={item.id}
                   className="response"
