@@ -66,7 +66,7 @@ Due to time constraints, UX/UI designs were not created, but instead was implime
 - **Oxhana Howard - Software Engineer**
   - [LinkedIn](https://www.linkedin.com/in/oxana-howard/)
 
-### What I learned
+### What we learned
 
 **Johnson Thieu:**
 This was a great opportunity for me to share my knowledge with Github as our Content Management System. Helping my team learn how to manage their branches and merging into our development branch was no easy task. Sitting with them in the hot seat during merge conflicts and explain why they occured, solidified my experience.
