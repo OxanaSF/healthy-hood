@@ -138,7 +138,7 @@ const RecipeVideos = () => {
           {results.length > 0 && (
             <p className="total-result">Total Results {results.length} </p>
           )}
-          {loading && <p>Loading...</p>}
+          
 
           <br />
           <div className="results-wrapper">
