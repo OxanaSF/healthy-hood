@@ -120,7 +120,7 @@ const DUMMY_DATA = [
 ];
 
 const SearchNutritionValue = (props) => {
-  const [results, setResults] = useState(DUMMY_DATA);
+  const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [nutritionVals, setNutritionVals] = useState({
     minProtein: 0,
@@ -244,8 +244,8 @@ const SearchNutritionValue = (props) => {
         <StyledButton>Submit</StyledButton>
       </FormStyled>
       <ResultsArea>
-        {loading && <p>Loading...</p>}
         <br />
+        <div className='results-wrapper'>
         {loading ? (
           <ClockLoader
             loading={loading}
@@ -271,6 +271,7 @@ const SearchNutritionValue = (props) => {
             </ResultItem>
           ))
         )}
+        </div>
       </ResultsArea>
     </NutritionsPageStyled>
   );
