@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { motion } from "framer-motion";
-
 import {
   slidesFromLeftLeaveToLeft,
   slidesFromRightftLeaveToRight,
