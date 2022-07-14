@@ -2,14 +2,13 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { slidesFromLeftLeaveToRight } from '../../animations/animation';
-import ScrollToTop from '../ScrollToTop'
 
 
 const HomeDisplay = () => {
   return (
 
     <HomeDisplayStyled>
-      <ScrollToTop />
+
       <motion.div
         className="categories-container"
         variants={slidesFromLeftLeaveToRight}
@@ -38,11 +37,13 @@ const HomeDisplay = () => {
               and eventually lead a healthy life.
             </p>
 
-            <img
-              src={`${process.env.PUBLIC_URL}/images/left-arrow.png`}
-              alt="arrow to the left"
-              className="img-arrow-left"
-            />
+            <Link to="/nutritions">
+              <img
+                src={`${process.env.PUBLIC_URL}/images/left-arrow.png`}
+                alt="arrow to the left"
+                className="img-arrow-left"
+              />
+            </Link>
           </div>
         </div>
 
@@ -57,12 +58,13 @@ const HomeDisplay = () => {
               complications, so aiming to reduce the amount of airborne
               pollution is critical for human beings in general.
             </p>
-
-            <img
-              src={`${process.env.PUBLIC_URL}/images/right-arrow.png`}
-              alt="arrow to the right"
-              className="img-arrow-right"
-            />
+            <Link to="/clean-air">
+              <img
+                src={`${process.env.PUBLIC_URL}/images/right-arrow.png`}
+                alt="arrow to the right"
+                className="img-arrow-right"
+              />
+            </Link>
           </div>
 
           <Link to="/clean-air" className="box box2" id="order-2">
@@ -90,11 +92,13 @@ const HomeDisplay = () => {
               Therefore, active adults maintain their independence and quality
               of life longer as they age.
             </p>
-            <img
-              src={`${process.env.PUBLIC_URL}/images/left-arrow.png`}
-              alt="arrow to the left"
-              className="img-arrow-left"
-            />
+            <Link to="/fitness">
+              <img
+                src={`${process.env.PUBLIC_URL}/images/left-arrow.png`}
+                alt="arrow to the left"
+                className="img-arrow-left"
+              />
+            </Link>
           </div>
         </div>
 
@@ -107,12 +111,13 @@ const HomeDisplay = () => {
               choices. Mental health is important at every stage of life, from
               childhood and adolescence through adulthood.
             </p>
-
-            <img
-              src={`${process.env.PUBLIC_URL}/images/right-arrow.png`}
-              alt="arrow to the right"
-              className="img-arrow-right"
-            />
+            <Link to="/mental-health">
+              <img
+                src={`${process.env.PUBLIC_URL}/images/right-arrow.png`}
+                alt="arrow to the right"
+                className="img-arrow-right"
+              />
+            </Link>
           </div>
 
           <Link to="/mental-health" className="box box3" id="order-2">
@@ -161,9 +166,17 @@ const HomeDisplayStyled = styled.section`
 
   .img-arrow-right {
     float: right;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    padding: 1rem;
+    cursor: pointer;
   }
   .img-arrow-left {
     float: left;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    padding: 1rem;
+    cursor: pointer;
   }
 
   .box {
@@ -179,6 +192,7 @@ const HomeDisplayStyled = styled.section`
     background-color: white;
     background-color: rgb(62, 50, 85);
     background-color: rgb(254, 233, 218);
+ 
     position: relative;
     img {
       background-color: white;
@@ -236,51 +250,34 @@ const HomeDisplayStyled = styled.section`
     }
   }
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 930px) {
+    margin: 0;
     background-color: lightblue;
-  }
-
-  @media only screen and (max-width: 500px) {
-    margin-bottom: 0;
     margin-top: 3rem;
-    .container {
-      margin: 0 2rem;
-    }
-
-    .container-description {
-      p {
-        font-size: 1rem;
-        margin: 0;
-        text-align: center;
-        line-height: 1.4;
-        font-weight: 600;
-        text-indent: 0;
-        border-bottom: 5px solid rgb(254, 233, 218);
-        padding-bottom: 1rem;
-      }
-    }
-
-    .box {
-      .text-over {
-        font-size: 2.3rem;
-      }
-    }
-  }
-
-  @media only screen and (max-width: 280px) {
+  
     .container {
       margin: 0 1rem;
+
+      gap: 0;
     }
     .container-description {
+
       p {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
+        padding: 0 1rem 2rem 1rem;
+        border-bottom: 5px solid rgb(254, 233, 218);
+        text-indent: 0;
+        text-align: center;
       }
     }
 
     .box {
+      height: 15rem;
+
       .text-over {
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
+  
     }
   }
 `;

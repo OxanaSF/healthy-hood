@@ -46,6 +46,7 @@ const HeroStyled = styled.section`
     width: 100%;
     overflow: hidden;
     line-height: 0;
+    
 
     svg {
       position: relative;
@@ -53,6 +54,7 @@ const HeroStyled = styled.section`
       width: calc(100% + 1.3px);
       height: 10rem;
       transform: rotateY(180deg);
+    
     }
 
     .svg {

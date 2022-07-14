@@ -1,12 +1,6 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  /* font-family: 'BioRhyme', sans-serif; */
-  /* font-family: 'Inter', sans-/serif; */
-  /* font-family: 'Epilogue', sans-serif; */
-  /* font-family: 'Roboto', sans-serif;
-  font-family: 'Atkinson Hyperlegible'; */
-  /* font-family: 'Work Sans', sans-serif; */
   letter-spacing: 0.1rem;
   color: rgb(62, 50, 85);
 }
@@ -16,8 +10,3 @@ h1 {
   font-size: 7rem;
   font-weight: 700;
 }
-
-
-
-
-
