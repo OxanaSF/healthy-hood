@@ -123,9 +123,8 @@ const Profile = () => {
 
 const ProfileStyled = styled.div`
 
-  
   .container {
-    width: 80%;
+    width: 90%;
     min-height: 100vh;
     margin: 0 auto;
     padding-bottom: 60px;
@@ -133,9 +132,11 @@ const ProfileStyled = styled.div`
 
   .title {
     margin-bottom: 5%;
+ 
 
     .profile-date {
       color: #9996b3;
+      font-size: 1.8rem;
     }
 
     .profile-welcome {
@@ -149,9 +150,10 @@ const ProfileStyled = styled.div`
     text-align: left;
     line-height: 1.3;
     padding: 40px 20px 0 20px;
+    color: red;
   }
   p {
-    text-align: center;
+    text-align: left;
     opacity: 0.8;
     a {
       color: white;
@@ -165,15 +167,15 @@ const ProfileStyled = styled.div`
   }
 
   .cards-wrapper {
-    margin-top: 10rem;
     width: 100%;
-    height: 30rem;
+    min-height: 30rem;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
   }
 
   .card {
+    
     width: 23%;
     margin: 1%;
     background: white;
@@ -185,8 +187,8 @@ const ProfileStyled = styled.div`
     border-radius: 2rem;
     color: lightblue;
     font-weight: 600;
-    font-size: 1.5rem;
-    text-decoration: underline;
+    font-size: 1.3rem;
+ 
 
     h2 {
       color: #9996b3;
@@ -197,10 +199,17 @@ const ProfileStyled = styled.div`
     @media screen and (max-width: 1240px) {
       width: 48%;
     }
-    @media screen and (max-width: 820px) {
+    @media screen and (max-width: 930px) {
+   
       width: 100%;
       margin: 2% auto;
-    }
+
+
+      
+  }
+    
+
+
     &:hover {
       box-shadow: 0px 0px 40px -10px rgba(0, 0, 0, 0.5);
       transform: scale(1.05);
@@ -208,7 +217,10 @@ const ProfileStyled = styled.div`
     p {
       text-align: left;
     }
+  
   }
+
+
 `;
 
 export default Profile;
