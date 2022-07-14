@@ -124,14 +124,17 @@ const ContactStyled = styled.section`
     width: 80%;
   }
 
-  @media (max-width: 500px) {
-    width: 90%;
-  }
 
-  @media only screen and (max-width: 280px) {
+  @media only screen and (max-width: 930px) {
+    width: 95%;
+    height: 30rem;
+    margin: auto;
+    margin-bottom: 2rem;
     h1 {
       font-size: 2rem;
     }
+
+    
   }
 `;
 

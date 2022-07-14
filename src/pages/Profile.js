@@ -35,23 +35,25 @@ const Profile = () => {
 
   return (
     <ProfileStyled>
-      <div class="container">
-        <div class="title">
-          <h1 className='profile-date'>{new Date().toISOString().slice(0, 10)}</h1>
-          <h1 className='profile-welcome'>Welcome to Your Profile!</h1>
+      <div className="container">
+        <div className="title">
+          <h1 className="profile-date">
+            {new Date().toISOString().slice(0, 10)}
+          </h1>
+          <h1 className="profile-welcome">Welcome to Your Profile!</h1>
         </div>
 
-        <div class="cards-wrapper">
-          <div class="card">
+        <div className="cards-wrapper">
+          <div className="card">
             <h2>Videos:</h2>
             {videoList.length > 0 ? (
               videoList.map((item) => (
-                <Link 
-                  to="recipe-videos" 
-                  state={{ id: item.id }} 
+                <Link
+                  to="recipe-videos"
+                  state={{ id: item.id }}
                   key={item.id}
-                  className='response'
-                  >
+                  className="response"
+                >
                   {item.title}
                 </Link>
               ))
@@ -60,7 +62,7 @@ const Profile = () => {
             )}
           </div>
 
-          <div class="card">
+          <div className="card">
             <h2>Recipes:</h2>
             {recipeList.length > 0 ? (
               recipeList.map((item) => (
@@ -68,7 +70,7 @@ const Profile = () => {
                   to="search-by-nutrition"
                   state={{ id: item.id }}
                   key={item.id}
-                  className='response'
+                  className="response"
                 >
                   {item.title}
                 </Link>
@@ -77,15 +79,15 @@ const Profile = () => {
               <p>No Recipes Saved</p>
             )}
           </div>
-          <div class="card">
+          <div className="card">
             <h2>City AQI:</h2>
             {cityList.length > 0 ? (
               cityList.map((item) => (
-                <Link 
-                  to={`/clean-air/search/${item.title}`} 
-                  key={item.title} 
-                  className='response'
-                  >
+                <Link
+                  to={`/clean-air/search/${item.title}`}
+                  key={item.title}
+                  className="response"
+                >
                   {item.title}
                 </Link>
               ))
@@ -93,16 +95,16 @@ const Profile = () => {
               <p>No Cities Saved</p>
             )}
           </div>
-          <div class="card">
+          <div className="card">
             <h2>Exercises:</h2>
             {exerciseList.length > 0 ? (
               exerciseList.map((item) => (
-                <Link 
-                    to={`/fitness`} 
-                    key={item.title} 
-                    state={{ id: item.id }}
-                    className='response'
-                      >
+                <Link
+                  to={`/fitness`}
+                  key={item.title}
+                  state={{ id: item.id }}
+                  className="response"
+                >
                   {item.title}
                 </Link>
               ))
@@ -117,9 +119,7 @@ const Profile = () => {
 };
 
 const ProfileStyled = styled.div`
-
   .container {
-   
     width: 80%;
     min-height: 100vh;
     margin: 0 auto;
@@ -130,11 +130,11 @@ const ProfileStyled = styled.div`
     margin-bottom: 5%;
 
     .profile-date {
-      color:  #9996b3;
+      color: #9996b3;
     }
 
     .profile-welcome {
-      color:  #9996b3;
+      color: #9996b3;
     }
   }
 
@@ -178,19 +178,16 @@ const ProfileStyled = styled.div`
     transition: 0.3s all;
     box-shadow: 0 2px 5px 0 rgba(3, 6, 26, 0.15);
     border-radius: 2rem;
-    color:  lightblue;
+    color: lightblue;
     font-weight: 600;
     font-size: 1.5rem;
     text-decoration: underline;
 
     h2 {
-      color:  #9996b3;
+      color: #9996b3;
       font-size: 2rem;
       font-weight: 600;
-    
     }
-
- 
 
     @media screen and (max-width: 1240px) {
       width: 48%;

@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Link, Outlet } from 'react-router-dom';
 import img from '../components/Nutrition/food.jpeg';
 
-
 import { motion } from 'framer-motion';
 
 import {
@@ -11,82 +10,80 @@ import {
 } from '../animations/animation';
 import AnimatedPage from '../animations/AnimatedPageTransition';
 
-
-
 const NutritionsPage = () => {
   return (
     <AnimatedPage>
-    <NutritionsPageStyled>
-      <h1>Nutritions</h1>
-      <motion.div className="intro-nutritions-page-img"
-       variants={slidesFromLeftLeaveToLeft}
-       initial="hidden"
-       animate="show"
-      
-      ></motion.div>
-
-      <div className="intro-nutritions-page-info"
-
-      >
-        <motion.img
-         variants={slidesFromLeftLeaveToLeft}
-         initial="hidden"
-         animate="show"
-          src={`${process.env.PUBLIC_URL}/images/grossery-bag.jpeg`}
-          alt="grossery bag"
-        />
-
-        <motion.div className="text"
-          variants={slidesFromRightftLeaveToRight}
+      <NutritionsPageStyled>
+        <h1>Nutritions</h1>
+        <motion.div
+          className="intro-nutritions-page-img"
+          variants={slidesFromLeftLeaveToLeft}
           initial="hidden"
           animate="show"
-        >
-          <h3>According to World Health Organization: </h3>
-          <p className="paragraph">
-            A healthy diet is essential for good health and nutrition. It
-            protects you against many chronic noncommunicable diseases, such as
-            heart disease, diabetes and cancer. Eating a variety of foods and
-            consuming less salt, sugars and saturated and industrially-produced
-            trans-fats, are essential for healthy diet. A healthy diet comprises
-            a combination of different foods. These include:
-          </p>
-          <ul>
-            <li>
-              {' '}
-              Staples like cereals (wheat, barley, rye, maize or rice) or
-              starchy tubers or roots (potato, yam, taro or cassava).
-            </li>
-            <li> Legumes (lentils and beans).</li>
-            <li> Fruit and vegetables.</li>
-            <li> Foods from animal sources (meat, fish, eggs and milk).</li>
-          </ul>
-        </motion.div>
-      </div>
+        ></motion.div>
 
-      <div className="intro-nutritions-page-main-content">
-        <h2>
-          Find a Recipe for your healthy <br></br>lifestyle today
-        </h2>
+        <div className="intro-nutritions-page-info">
+          <motion.img
+            variants={slidesFromLeftLeaveToLeft}
+            initial="hidden"
+            animate="show"
+            src={`${process.env.PUBLIC_URL}/images/grossery-bag.jpeg`}
+            alt="grossery bag"
+          />
 
-        <div className="nutritions-page-nav">
-          <Link to="recipe-videos" className="nutritionLink circle1">
-            Find A Video Of A Recipe
-          </Link>
-          <Link to="search-by-nutrition" className="nutritionLink circle2">
-            Find A Recipe By Nutritional Content
+          <motion.div
+            className="text"
+            variants={slidesFromRightftLeaveToRight}
+            initial="hidden"
+            animate="show"
+          >
+            <h3>According to World Health Organization: </h3>
+            <p className="paragraph">
+              A healthy diet is essential for good health and nutrition. It
+              protects you against many chronic noncommunicable diseases, such
+              as heart disease, diabetes and cancer. Eating a variety of foods
+              and consuming less salt, sugars and saturated and
+              industrially-produced trans-fats, are essential for healthy diet.
+              A healthy diet comprises a combination of different foods. These
+              include:
+            </p>
+            <ul>
+              <li>
+                {' '}
+                Staples like cereals (wheat, barley, rye, maize or rice) or
+                starchy tubers or roots (potato, yam, taro or cassava).
+              </li>
+              <li> Legumes (lentils and beans).</li>
+              <li> Fruit and vegetables.</li>
+              <li> Foods from animal sources (meat, fish, eggs and milk).</li>
+            </ul>
+          </motion.div>
+        </div>
+
+        <div className="intro-nutritions-page-main-content">
+          <h2>
+            Find a Recipe for your healthy <br></br>lifestyle today
+          </h2>
+
+          <div className="nutritions-page-nav">
+            <Link to="recipe-videos" className="nutritionLink circle1">
+              Find A Video Of A Recipe
+            </Link>
+            <Link to="search-by-nutrition" className="nutritionLink circle2">
+              Find A Recipe By Nutritional Content
+            </Link>
+          </div>
+          <Outlet />
+        </div>
+
+        <div className="contact-us-wrapper">
+          <Link to="/" className="contact-us">
+            <button>
+              <h2>CONTACT US</h2>
+            </button>
           </Link>
         </div>
-        <Outlet />
-      </div>
-
-      <div className="contact-us-wrapper">
-        <Link to="/" className="contact-us">
-          <button>
-            <h2>CONTACT US</h2>
-          </button>
-        </Link>
-      </div>
-    </NutritionsPageStyled>
+      </NutritionsPageStyled>
     </AnimatedPage>
   );
 };
@@ -135,10 +132,11 @@ const NutritionsPageStyled = styled.section`
 
   @media only screen and (max-width: 930px) {
     .intro-nutritions-page-img {
-      width: 90%;
+      width: 95%;
       min-height: 12rem;
       margin-bottom: 2rem;
       border: 5px solid rgb(254, 233, 218);
+      border-radius: 2rem;
     }
   }
 
@@ -189,15 +187,18 @@ const NutritionsPageStyled = styled.section`
   }
 
   @media only screen and (max-width: 930px) {
+    h1 {
+      font-size: 2rem;
+    }
     .intro-nutritions-page-info {
       grid-template-columns: 1fr;
       gap: 2rem;
-      width: 90%;
+      width: 95%;
       margin: auto;
       padding: 0;
 
       h3 {
-        font-size: 2rem;
+        font-size: 1.7rem;
         font-weight: 600;
         margin-bottom: 2rem;
       }
@@ -227,12 +228,12 @@ const NutritionsPageStyled = styled.section`
         .paragraph {
           margin-bottom: 2rem;
           line-height: 1.9;
-          font-size: 0.8rem;
+          font-size: 0.7rem;
           padding: 0;
         }
 
         ul li {
-          font-size: 0.8rem;
+          font-size: 0.7rem;
         }
       }
     }
@@ -241,7 +242,6 @@ const NutritionsPageStyled = styled.section`
   .intro-nutritions-page-main-content {
     h2 {
       margin: 2rem;
-  
     }
     .intro-nutritions-page-info {
       display: grid;
@@ -385,7 +385,6 @@ const NutritionsPageStyled = styled.section`
         border-radius: 2rem;
         font-size: 1rem;
         text-align: center;
-
       }
       .circle2 {
         animation: circle2 4s;
@@ -397,7 +396,6 @@ const NutritionsPageStyled = styled.section`
         border-radius: 2rem;
         font-size: 1rem;
         text-align: center;
-     
       }
     }
   }
@@ -407,7 +405,9 @@ const NutritionsPageStyled = styled.section`
   /* Start Contact section */
 
   .contact-us-wrapper {
-    margin: 10rem 0;
+    margin: 5rem 0;
+    margin-bottom: 4rem;
+  
   }
   .contact-us {
     background-color: rgb(254, 233, 218);
@@ -425,10 +425,11 @@ const NutritionsPageStyled = styled.section`
   }
 
   @media only screen and (max-width: 930px) {
+
     .contact-us {
       width: 90%;
       margin: auto;
-      padding: 1rem;
+      padding: 2rem;
 
       h2 {
         font-size: 1.1rem;

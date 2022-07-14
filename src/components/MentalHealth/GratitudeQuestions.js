@@ -61,7 +61,7 @@ const GratitudeQuestions = () => {
 };
 
 const ButtonStyled = styled.div`
-   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -97,7 +97,8 @@ const ButtonStyled = styled.div`
     color: #3e4981;
   }
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 930px) {
+    border: 5px solid rgb(254, 233, 218);
     h2 {
       font-size: 1.2rem;
     }
@@ -108,7 +109,6 @@ const ButtonStyled = styled.div`
       border-radius: 1rem;
       border: none;
       font-weight: 600;
-
     }
 
     .gratitude-question {

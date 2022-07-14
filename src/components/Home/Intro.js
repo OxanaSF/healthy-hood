@@ -37,24 +37,19 @@ const IntroStyled = styled.section`
     font-weight: 400;
   }
 
-  @media only screen and (max-width: 700px) {
-    background-color: lightblue;
-  }
+
 
   @media only screen and (max-width: 500px) {
+    background-color: lightblue;
     border-radius: 3rem;
     border: 5px solid rgb(254, 233, 218);
-    margin: 3rem 2rem 0 2rem;
+    margin: 3rem 1rem 0 1rem;
     padding: 2rem;
-    font-size: 1rem;
+    font-size: 0.7rem;
     font-weight: 500;
   }
 
-  @media only screen and (max-width: 280px) {
-    margin: 3rem 1rem 0 1rem;
-    padding: 1rem;
-    font-size: 0.8rem;
-  }
+
 `;
 
 export default Intro;

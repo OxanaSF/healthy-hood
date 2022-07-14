@@ -285,6 +285,9 @@ const MentalHealthPageStyled = styled.section`
   }
 
   @media only screen and (max-width: 930px) {
+    .mental-health-hero {
+    border: 5px solid rgb(254, 233, 218);
+    }
     h1 {
       font-size: 2rem;
     }
@@ -294,7 +297,11 @@ const MentalHealthPageStyled = styled.section`
       margin: auto;
       margin-top: 2rem;
 
+    
+   
+
       .health-care-tips {
+        border: 5px solid rgb(254, 233, 218);
         height: 30rem;
         h2 {
           font-size: 1rem;
@@ -306,7 +313,13 @@ const MentalHealthPageStyled = styled.section`
       }
 
       .right-col {
+        
+        .iframe {
+        border: 5px solid rgb(254, 233, 218);
+        height: 15rem;
+        }
         .iframe-container {
+          
           h2 {
             font-size: 1.2rem;
             margin-bottom: 1rem;
@@ -324,10 +337,15 @@ const MentalHealthPageStyled = styled.section`
       }
     }
 
+    .contact-us-wrapper {
+      margin-bottom: 2rem;
+    }
+
     .contact-us {
       width: 90%;
       margin: auto;
-      padding: 1rem;
+      padding: 2rem;
+    
 
       h2 {
         font-size: 1.1rem;

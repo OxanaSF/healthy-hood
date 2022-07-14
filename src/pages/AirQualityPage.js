@@ -51,11 +51,12 @@ const AirQualityPage = (props) => {
       <AirQualityContainerStyled>
         <h1>Air Quality</h1>
 
-        <motion.div className="air-quality-page-intro"
+        <motion.div
+          className="air-quality-page-intro"
           variants={slidesFromLeftLeaveToLeft}
           initial="hidden"
           animate="show"
-          >
+        >
           <p>
             Having clean air to breathe is necessary for good health. Poor air
             quality reduces quality of life. Some air pollutants are irritants.
@@ -118,7 +119,6 @@ const AirQualityPage = (props) => {
               <Outlet />
             </div>
           </div>
-
         </main>
 
         <div className="air-info-display">
@@ -212,6 +212,10 @@ const AirQualityContainerStyled = styled.section`
       width: 90%;
       margin: 5rem auto;
       text-align: center;
+
+      h2 {
+        font-size: 1.1rem;
+      }
     }
   }
 
@@ -257,7 +261,7 @@ const AirQualityContainerStyled = styled.section`
         width: 90%;
         margin: 0 auto;
         height: 100%;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         padding: 1rem;
         text-align: center;
       }
@@ -280,7 +284,7 @@ const AirQualityContainerStyled = styled.section`
     .air-quality-page-intro {
       margin: 0 1rem;
       color: #8c777c;
-      font-size: 0.9rem;
+      font-size: 0.7rem;
       border: 5px solid rgb(254, 233, 218);
       padding: 0.8rem;
       border-radius: 3rem;
@@ -397,7 +401,9 @@ const AirQualityContainerStyled = styled.section`
   }
 
   @media only screen and (max-width: 920px) {
-    /* background: red; */
+    h1 {
+      font-size: 2rem;
+    }
     gap: 2rem;
 
     .air-quality-page-main {
@@ -410,13 +416,13 @@ const AirQualityContainerStyled = styled.section`
         .list-clean-air-benefits {
           border-radius: 3rem;
           border: 5px solid rgb(254, 233, 218);
-          font-size: 1rem;
+          font-size: 0.7rem;
           padding: 1.2rem;
           line-height: 1.7;
           text-align: left;
 
           h3 {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 500;
           }
         }
@@ -452,8 +458,6 @@ const AirQualityContainerStyled = styled.section`
           height: 6rem;
           width: 10rem;
         }
-
-     
       }
     }
   }

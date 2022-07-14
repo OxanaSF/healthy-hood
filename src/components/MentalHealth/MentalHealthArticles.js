@@ -95,14 +95,14 @@ const ArticlesStyled = styled.div`
     padding-top: 2rem;
   }
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 930px) {
     gap: 1.5rem;
     margin-bottom: 3rem;
     padding: 0;
     height:  30rem;
+    border: 5px solid rgb(254, 233, 218);
 
     .article {
-      border-bottom: 2px solid rgb(254, 233, 218);
       margin: 1rem;
       padding-bottom: 1rem;
     }
@@ -120,6 +120,23 @@ const ArticlesStyled = styled.div`
       text-decoration: underline;
       color: #9fcfd7;
     }
+  }
+
+
+
+  @media only screen and (max-width: 930px) {
+    gap: 0;
+ 
+    .url {
+      font-size: 0.7rem;
+    }
+
+    .source {
+      font-size: 0.9rem;
+  
+    }
+
+
   }
 `;
 

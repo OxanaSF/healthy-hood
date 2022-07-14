@@ -22,7 +22,7 @@ const Nav = () => {
       </div>
       <NavLink to="/savedpages" className="logged-in">
         <div class="button">
-          <span> go to your profile</span>
+          <span className="text"> go to your profile</span>
         </div>
       </NavLink>
     </NavStyled>
@@ -39,20 +39,19 @@ const NavStyled = styled.nav`
   align-items: center;
 
   img {
-    /* background: red; */
     box-shadow: 0 2px 5px 0 rgba(3, 6, 26, 0.15);
     border-radius: 50%;
     &:hover {
-          opacity: 0.3;
-          box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
-            6px 6px 10px rgba(0, 0, 0, 0.2);
-        }
-        &:active {
-          opacity: 1;
-          box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
-            inset 8px 8px 16px rgba(0, 0, 0, 0.1);
-          color: lightblue;
-        }
+      opacity: 0.3;
+      box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
+        6px 6px 10px rgba(0, 0, 0, 0.2);
+    }
+    &:active {
+      opacity: 1;
+      box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
+        inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+      color: lightblue;
+    }
   }
 
   .logged-in {
@@ -111,15 +110,7 @@ const NavStyled = styled.nav`
     }
   }
 
-  @media only screen and (max-width: 930px) {
-    .logged-in {
-      .button {
-        width: 90%;
-        margin: auto;
-      }
-    }
-  }
-
+ 
   .nav-links {
     margin-right: 5rem;
     display: flex;
@@ -145,7 +136,12 @@ const NavStyled = styled.nav`
     display: none;
   }
 
-  @media (max-width: 1050px) {
+
+
+
+
+
+  @media (max-width: 1530px) {
     /* background-color: red; */
     .nav-links {
       font-size: 1.5rem;
@@ -153,16 +149,40 @@ const NavStyled = styled.nav`
     }
   }
 
-  @media (max-width: 860px) {
-    /* background-color: green; */
-
+  @media only screen and (max-width: 1400px) {
     .nav-links {
       font-size: 1.1rem;
       gap: 1rem;
     }
+    .logged-in {
+      .button {
+        width: 100%;
+        margin: auto;
+        margin-right: 0;
+        height: 4.5rem;
+        border-radius: 1rem;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        .text {
+          font-size: 1.2rem;
+        }
+
+        &:nth-child(1) {
+          box-shadow: -2px -2px 2px rgba(255, 255, 255, 0.8),
+            2px 2px 2px rgba(0, 0, 0, 0.2);
+          color: #9996b3;
+        }
+      }
+    }
   }
 
-  @media (max-width: 700px) {
+
+
+
+  @media (max-width: 930px) {
     flex-direction: column;
 
     img {
@@ -178,7 +198,7 @@ const NavStyled = styled.nav`
     }
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 800px) {
     img {
       width: 5rem;
       margin: 1rem;
