@@ -57,6 +57,7 @@ const RecipeVideos = () => {
   let location = useLocation();
   let state;
 
+
   useEffect(() => {
     state = location.state;
     if (state !== null) {
@@ -156,7 +157,7 @@ const RecipeVideos = () => {
                     <p className="result-title">{result.title.split('-')[0]}</p>
                     <img
                       src={result.thumbnail}
-                      onClick={() => openVideo(result.youTubeId)}
+                      onClick={() => openVideo(result.youTubeId, result.title.split('-')[0])}
                     />
                   </ResultItem>
                 </>

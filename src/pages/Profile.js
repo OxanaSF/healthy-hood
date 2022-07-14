@@ -23,7 +23,7 @@ const Profile = () => {
         recipeList.push({ id: item.id, title: item.title });
         break;
       case 'aqi':
-        cityList.push({ title: item.title });
+        cityList.push({ title: item.id, date: item.date, aqi: item.aqi });
         break;
       case 'exercise':
         exerciseList.push({ ...item });
@@ -32,7 +32,7 @@ const Profile = () => {
   });
 
   const getTodayDate = () => {};
-
+  console.log(cityList)
   return (
     <ProfileStyled>
       <div className="container">
@@ -49,7 +49,7 @@ const Profile = () => {
             {videoList.length > 0 ? (
               videoList.map((item) => (
                 <Link
-                  to="recipe-videos"
+                  to="../nutritions/recipe-videos"
                   state={{ id: item.id }}
                   key={item.id}
                   className="response"
@@ -67,7 +67,7 @@ const Profile = () => {
             {recipeList.length > 0 ? (
               recipeList.map((item) => (
                 <Link
-                  to="search-by-nutrition"
+                  to="../nutritions/search-by-nutrition"
                   state={{ id: item.id }}
                   key={item.id}
                   className="response"
@@ -88,7 +88,9 @@ const Profile = () => {
                   key={item.title}
                   className="response"
                 >
-                  {item.title}
+                  <p>City:{item.title}</p>
+                  <p>Date:{item.date}</p>
+                  <p>AQI:{item.aqi}</p>
                 </Link>
               ))
             ) : (
