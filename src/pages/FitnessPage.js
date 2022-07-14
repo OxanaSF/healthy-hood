@@ -1,8 +1,8 @@
-import { calculateSize } from '@iconify/react';
-import styled from 'styled-components';
-import AnimatedPageTransition from '../animations/AnimatedPageTransition';
-import FitnessSelect from '../components/FitnessSection/FitnessSearch';
-import ScrollToTop from '../components/ScrollToTop'
+import { calculateSize } from "@iconify/react";
+import styled from "styled-components";
+import AnimatedPageTransition from "../animations/AnimatedPageTransition";
+import FitnessSelect from "../components/FitnessSection/FitnessSearch";
+import ScrollToTop from "../components/ScrollToTop";
 
 const FitnessPage = () => {
   return (
@@ -25,7 +25,7 @@ const FitnessPage = () => {
             requires your body to burn calories. There are many types of
             physical activity, including swimming, running, jogging, walking,
             and dancing, to name a few. Being active has been shown to have many
-            health benefits, both physically and mentally.{' '}
+            health benefits, both physically and mentally.{" "}
             <b>It may even help you live longer.</b>
           </p>
         </div>
@@ -33,13 +33,13 @@ const FitnessPage = () => {
           className="select-fitness"
           style={{
             backgroundImage: `url(${
-              process.env.PUBLIC_URL + '/images/fitness.png'
+              process.env.PUBLIC_URL + "/images/fitness.png"
             })`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            borderRadius: '20px',
-            margin: '0 10vw',
-            height: '30vh',
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            borderRadius: "20px",
+            margin: "0 10vw",
+            height: "30vh",
           }}
         >
           <h2 className="select">Choose an Exercise</h2>
@@ -86,9 +86,6 @@ const FitnessPageStyled = styled.section`
       border: 5px solid rgb(254, 233, 218);
       padding: 0.8rem;
       border-radius: 2rem;
-    }
-    .top-main-section {
-      display: ;
     }
   }
 `;
