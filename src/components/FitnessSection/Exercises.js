@@ -52,10 +52,6 @@ const Exercises = (props) => {
 
 const FitnessStyle = styled.section`
   .fitness-info-display {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-
     .top-main-section {
       margin: 5rem 10rem 0 10rem;
       display: grid;
@@ -94,6 +90,19 @@ const FitnessStyle = styled.section`
         object-fit: cover;
         border-radius: 3rem;
         border: 2px solid;
+      }
+    }
+  }
+  @media only screen and (max-width: 930px) {
+    .fitness-info-display {
+      .top-main-section {
+        display: block;
+        .fitness-gif {
+          border-radius: 3rem;
+          color: #8c777c;
+          border: 10px solid lightblue;
+          width: 100%;
+        }
       }
     }
   }

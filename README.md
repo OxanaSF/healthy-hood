@@ -23,6 +23,37 @@ This is a desktop and mobile version website that offers information about livin
 
 Due to time constraints, UX/UI designs were not created, but instead was implemented as the website was being built.
 
+### Screenshots
+
+<table>
+  <tr>
+    <td><b>Home Page</td>     
+  </tr>
+  <tr>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/38548029/179036015-a580da45-4264-45c2-b31c-eb9610e89e94.png" width="300" /></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/38548029/179036089-3016abe7-ecab-46ce-9c0b-e6f8160d233f.png" width="300" /></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/38548029/179036104-e38e722d-6d42-497e-8420-32f30f41ecce.png" width="300" /></td>
+  </tr>
+  <tr>
+    <td><b>Air Quaility Page</td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/38548029/179036104-e38e722d-6d42-497e-8420-32f30f41ecce.png" width="300" /></td>
+  </tr>
+  <tr>
+    <td><b>Nutrition Page</td>     
+  </tr>
+  <tr>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/38548029/179036117-d0cb9977-8b44-4294-a969-f45266062fe1.png" width="300" /></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/38548029/179050441-2f44de96-d52c-4d4b-bb47-20b400e58c97.png" width="300" /></td>
+  </tr>
+  <tr>
+    <td><b>Fitness Page</td>
+  <tr>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/38548029/179036140-d582cd07-d2d8-4884-a1db-7828a9aff7df.png" width="300" /></td>
+  </tr>
+ </table>
+
 ### Links
 
 - Repository URL: [https://github.com/OxanaSF/healthy-hood](https://github.com/OxanaSF/healthy-hood)
