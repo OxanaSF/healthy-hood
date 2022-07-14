@@ -405,6 +405,7 @@ const AirQualityContainerStyled = styled.section`
 
   @media only screen and (max-width: 930px) {
 
+ 
     h1 {
       font-size: 2rem;
     }
