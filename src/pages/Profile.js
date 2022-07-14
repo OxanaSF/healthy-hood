@@ -1,7 +1,6 @@
 import { NutritionsPageStyled as StyleDiv } from '../components/Nutrition/StyledComponents'
 import { useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom'
-import ExerciseList from '../components/FitnessSection/ExerciseList';
 
 const Profile = () => {
     const location = useLocation()
@@ -20,7 +19,7 @@ const Profile = () => {
                 recipeList.push({id: item.id, title: item.title})
                 break;
             case 'aqi':
-                cityList.push({title: item.title})
+                cityList.push({item})
                 break;
             case 'exercise':
                 exerciseList.push({...item})
@@ -48,9 +47,18 @@ const Profile = () => {
             <p>City AQI:</p>
             {
             cityList.length > 0 ?
-                cityList.map(item => <Link to={`/clean-air/search/${item.title}`} key={item.title}>{item.title}</Link>) :
+                cityList.map((item, index) => 
+                    <Link 
+                        to={`/clean-air/search/${item.title}`} 
+                        key={index}
+                    >
+                        <p>City: {item.id}</p>
+                        <p>Date: {item.date}</p>
+                        <p>AQI: {item.aqi}</p>
+                    </Link>) :
                 <p>No Cities Saved</p>
             }
+            
             <p>Exercises:</p>
             {
             exerciseList.length > 0 ?

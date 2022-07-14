@@ -122,12 +122,12 @@ const DUMMY_DATA = [
 
 
 const SearchNutritionValue = (props) => {
-    const [results, setResults] = useState([])
+    const [results, setResults] = useState(DUMMY_DATA)
     const [loading, setLoading] = useState(false)
     const [nutritionVals, setNutritionVals] = useState({ minProtein: 0, maxCals: 0, maxCarbs: 0 })
     const [showRecipe, setShowRecipe] = useState(false)
     const [recipeId, setRecipeId] = useState(0)
-    
+
 
 
     const nutritionChangeHandler = (e) => {
@@ -200,25 +200,25 @@ const SearchNutritionValue = (props) => {
 
     }
 
-    let location = useLocation()    
+    let location = useLocation()
     let state
 
-useEffect(()=>{
-    state = location.state
-    if(state !== null){
-        setRecipeId(state.id)
-        setShowRecipe(true)
-        state = null
-      }
-},[])
+    useEffect(() => {
+        state = location.state
+        if (state !== null) {
+            setRecipeId(state.id)
+            setShowRecipe(true)
+            state = null
+        }
+    }, [])
 
-    if(showRecipe){
-        return(
-            <>
-            <RecipeDetals id={recipeId} />
-            
-            <StyledButton onClick={()=>setShowRecipe(false)}>Back To All Results</StyledButton>
-            </>
+    if (showRecipe) {
+        return (
+            <NutritionsPageStyled>
+                <RecipeDetals id={recipeId} />
+
+                <StyledButton onClick={() => setShowRecipe(false)}>Back To All Results</StyledButton>
+            </NutritionsPageStyled>
         )
     }
 
@@ -239,31 +239,33 @@ useEffect(()=>{
                 <StyledButton>Submit</StyledButton>
             </FormStyled>
             <ResultsArea>
-            {loading && <p>Loading...</p>}
-            <br />
-            {
-                loading ?
-                    <ClockLoader
-                        loading={loading}
-                        size={150}
-                        color='orange'
-                        display="flex"
-                    /> :
-                    results.length > 0 &&
-                    results.map(item =>
-                        <ResultItem key={item.id}>
+                {loading && <p>Loading...</p>}
+                <br />
+                <div className="results-wrapper">
+                    {
+                        loading ?
+                            <ClockLoader
+                                loading={loading}
+                                size={150}
+                                color='orange'
+                                display="flex"
+                            /> :
+                            results.length > 0 &&
+                            results.map(item =>
+                                <ResultItem key={item.id}>
 
-                                <h3>{item.title}</h3>
-                                <img src={item.image} onClick={() => recipeClickHandler(item.id)} />
+                                    <p className="result-title">{item.title}</p>
+                                    <img src={item.image} onClick={() => recipeClickHandler(item.id)} />
 
-                                <br />
-                                <span>{`${item.calories} calories ${item.protein} protein ${item.carbs} carbs ${item.fat} fat`}</span>
-                            
-                            <br />
-                            <br />
-                        </ResultItem>)
+                                    <br />
+                                    <span>{`${item.calories} calories ${item.protein} protein ${item.carbs} carbs ${item.fat} fat`}</span>
 
-            }
+                                    <br />
+                                    <br />
+                                </ResultItem>)
+
+                    }
+                </div>
             </ResultsArea>
         </NutritionsPageStyled>
     );

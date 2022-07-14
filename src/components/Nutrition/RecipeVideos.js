@@ -67,33 +67,53 @@ useEffect(()=>{
 
     const getVideos = (value) => {
 
-        const options = {
-            method: 'GET',
-            url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/videos/search',
-            params: {
-                query: value,
-                minLength: '0',
-                maxLength: '999',
-                number: '15',
-                offset: '0'
-            },
-            headers: {
-                'X-RapidAPI-Key': process.env.REACT_APP_API_KEY_3,
-                'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-            }
-        };
-
+        console.log(value)
+    const options = {
+        method: 'GET',
+        url: `http://localhost:8000/nutrition`,
+        params: {
+                    query: value,
+                    minLength: '0',
+                    maxLength: '999',
+                    number: '15',
+                    offset: '0'
+                },
+      };
 
         axios.request(options).then(function (response) {
             console.log(response.data);
-            console.log(response.data.videos)
-            setLoading(false)
-            setResults(response.data.videos)
-            setSearchValue('')
         }).catch(function (error) {
             console.error(error)
-            setLoading(false)
         });
+
+
+        // const options = {
+        //     method: 'GET',
+        //     url: 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/videos/search',
+        //     params: {
+        //         query: value,
+        //         minLength: '0',
+        //         maxLength: '999',
+        //         number: '15',
+        //         offset: '0'
+        //     },
+        //     headers: {
+        //         'X-RapidAPI-Key': process.env.REACT_APP_API_KEY_3,
+        //         'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
+        //     }
+        // };
+
+
+        // axios.request(options).then(function (response) {
+        //     console.log(response.data);
+        //     console.log(response.data.videos)
+        //     setLoading(false)
+        //     setResults(response.data.videos)
+        //     setSearchValue('')
+        // }).catch(function (error) {
+        //     console.error(error)
+        //     setLoading(false)
+        // });
 
 
     }

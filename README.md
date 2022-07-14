@@ -60,6 +60,7 @@ Due to time constraints, UX/UI designs were not created, but instead was implime
 
 - **Mike Villa - Software Engineer**
 
+  - [Website](https://mikegv.github.io/portfolio/)
   - [LinkedIn](https://www.linkedin.com/in/michael-villa-338a0567/)
 
 - **Oxhana Howard - Software Engineer**
@@ -73,5 +74,6 @@ This was a great opportunity for me to share my knowledge with Github as our Con
 I furthured my knowledge by using platforms such as [Firebase](https://firebase.google.com/), to store data for API calls. I learned how to use and add data from the API and render the information in a dropdown and using props to render the content.
 
 **Mike Villa:**
+This project was a great learning experience for me. Working in a team of three developers I was able to experience using git from a whole new point of view. I was also able to see how different the process of building a website is with multiple developers working on different parts of the project concurrently. For me one of the most valuable experiences was working through my teammates code to help solve problems and to build new features into that code. In addition to all of this I was able to further my experience with using API's and Redux by implementing them into the project.
 
 **Oxana Howard:**
