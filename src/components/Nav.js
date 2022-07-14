@@ -19,6 +19,10 @@ const Nav = () => {
         <NavLink to="/fitness">fitness</NavLink>
         <NavLink to="/clean-air">clean-air</NavLink>
         <NavLink to="/mental-health">mental health</NavLink>
+        <NavLink to="/savedpages" className="logged-in">
+          
+          go to your profile
+        </NavLink>
       </div>
       <div
         className={`nav-toggle ${isOpen && 'open'}`}
@@ -52,6 +56,17 @@ const NavStyled = styled.nav`
 
     a.active {
       border-bottom: 5px solid lightblue;
+    }
+    .logged-in {
+      background-color: lightblue;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      border-radius: 1rem;
+      font-weight: 600;
+      color: #9996b3;
     }
   }
 

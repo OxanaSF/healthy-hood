@@ -2,19 +2,45 @@ import styled from 'styled-components';
 import { Link, Outlet } from 'react-router-dom';
 import img from '../components/Nutrition/food.jpeg';
 
+
+import { motion } from 'framer-motion';
+
+import {
+  slidesFromLeftLeaveToLeft,
+  slidesFromRightftLeaveToRight,
+} from '../animations/animation';
+import AnimatedPage from '../animations/AnimatedPageTransition';
+
+
+
 const NutritionsPage = () => {
   return (
+    <AnimatedPage>
     <NutritionsPageStyled>
       <h1>Nutritions</h1>
-      <div className="intro-nutritions-page-img"></div>
+      <motion.div className="intro-nutritions-page-img"
+       variants={slidesFromLeftLeaveToLeft}
+       initial="hidden"
+       animate="show"
+      
+      ></motion.div>
 
-      <div className="intro-nutritions-page-info">
-        <img
+      <div className="intro-nutritions-page-info"
+
+      >
+        <motion.img
+         variants={slidesFromLeftLeaveToLeft}
+         initial="hidden"
+         animate="show"
           src={`${process.env.PUBLIC_URL}/images/grossery-bag.jpeg`}
           alt="grossery bag"
         />
 
-        <div className="text">
+        <motion.div className="text"
+          variants={slidesFromRightftLeaveToRight}
+          initial="hidden"
+          animate="show"
+        >
           <h3>According to World Health Organization: </h3>
           <p className="paragraph">
             A healthy diet is essential for good health and nutrition. It
@@ -34,11 +60,13 @@ const NutritionsPage = () => {
             <li> Fruit and vegetables.</li>
             <li> Foods from animal sources (meat, fish, eggs and milk).</li>
           </ul>
-        </div>
+        </motion.div>
       </div>
 
       <div className="intro-nutritions-page-main-content">
-        <h2>Find a Recipe for your healthy <br></br>lifestyle today</h2>
+        <h2>
+          Find a Recipe for your healthy <br></br>lifestyle today
+        </h2>
 
         <div className="nutritions-page-nav">
           <Link to="recipe-videos" className="nutritionLink circle1">
@@ -59,6 +87,7 @@ const NutritionsPage = () => {
         </Link>
       </div>
     </NutritionsPageStyled>
+    </AnimatedPage>
   );
 };
 
@@ -84,16 +113,15 @@ const NutritionsPageStyled = styled.section`
   }
   /* End h1 */
 
-
   h3 {
     font-size: 2.3rem;
     color: #8c777c;
-
   }
 
   /* Start intro-nutritions-page-img */
 
   .intro-nutritions-page-img {
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
     min-height: 34rem;
     width: 80%;
     margin: auto;
@@ -137,6 +165,7 @@ const NutritionsPageStyled = styled.section`
       border-radius: 3rem;
       display: flex;
       align-items: center;
+      box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
     }
 
     .text {
@@ -150,6 +179,7 @@ const NutritionsPageStyled = styled.section`
       color: #8c777c;
       width: 90%;
       margin: auto;
+      box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
 
       .paragraph {
         margin-bottom: 2rem;
@@ -189,8 +219,6 @@ const NutritionsPageStyled = styled.section`
         border-radius: 3rem;
         color: #8c777c;
         font-size: 1.1rem;
-     
-      
 
         h3 {
           font-size: 1.2rem;
@@ -219,8 +247,6 @@ const NutritionsPageStyled = styled.section`
       grid-template-columns: 1fr 1fr;
       margin: 4rem 10rem;
       margin-bottom: 0;
-
-  
 
       h3 {
         font-size: 2rem;
@@ -260,19 +286,13 @@ const NutritionsPageStyled = styled.section`
     font-size: 2.5rem;
     color: #9996b3;
     font-weight: 600;
-    
   }
 
   @media only screen and (max-width: 930px) {
-
-
-
-
     h2 {
       font-size: 1rem;
       margin: 2rem;
       color: #9996b3;
-     
     }
   }
 
@@ -283,20 +303,12 @@ const NutritionsPageStyled = styled.section`
     font-size: 1.5rem;
   }
 
-
-
-
-
   /* Start nutritions-page-nav */
   .nutritions-page-nav {
-
     gap: 3rem;
     display: flex;
     justify-content: center;
     margin-bottom: 2rem;
-
-
-   
 
     .circle1 {
       animation: circle1 3s;
@@ -304,6 +316,7 @@ const NutritionsPageStyled = styled.section`
       height: 10rem;
       width: 30rem;
       background-color: rgb(254, 233, 218);
+      box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
       border-radius: 3rem;
       color: #8c777c;
       font-weight: 600;
@@ -311,7 +324,6 @@ const NutritionsPageStyled = styled.section`
       justify-content: center;
       align-items: center;
       margin: 0;
-  
     }
     .circle2 {
       animation: circle2 4s;
@@ -319,6 +331,7 @@ const NutritionsPageStyled = styled.section`
       height: 10rem;
       width: 30rem;
       background-color: rgb(254, 233, 218);
+      box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
       border-radius: 3rem;
       color: #8c777c;
       font-weight: 600;
@@ -356,7 +369,7 @@ const NutritionsPageStyled = styled.section`
 
   @media only screen and (max-width: 930px) {
     .nutritions-page-nav {
-     flex-direction: column;
+      flex-direction: column;
       gap: 2rem;
 
       .circle1 {
@@ -369,6 +382,7 @@ const NutritionsPageStyled = styled.section`
         border-radius: 2rem;
         font-size: 1rem;
         text-align: center;
+
       }
       .circle2 {
         animation: circle2 4s;
@@ -380,6 +394,7 @@ const NutritionsPageStyled = styled.section`
         border-radius: 2rem;
         font-size: 1rem;
         text-align: center;
+     
       }
     }
   }
@@ -390,15 +405,13 @@ const NutritionsPageStyled = styled.section`
 
   .contact-us-wrapper {
     margin: 10rem 0;
-   
   }
   .contact-us {
-    /* width: 40rem; */
     background-color: rgb(254, 233, 218);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
     border-radius: 1rem;
     text-align: center;
     padding: 4rem 8rem;
-   
 
     h2 {
       color: #8c777c;

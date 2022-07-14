@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+
 import { motion } from 'framer-motion';
 
 import {
@@ -50,7 +51,11 @@ const AirQualityPage = (props) => {
       <AirQualityContainerStyled>
         <h1>Air Quality</h1>
 
-        <div className="air-quality-page-intro">
+        <motion.div className="air-quality-page-intro"
+          variants={slidesFromLeftLeaveToLeft}
+          initial="hidden"
+          animate="show"
+          >
           <p>
             Having clean air to breathe is necessary for good health. Poor air
             quality reduces quality of life. Some air pollutants are irritants.
@@ -64,7 +69,7 @@ const AirQualityPage = (props) => {
             risk from poor air quality. Good air quality is an important
             livability indicator for a healthy community.{' '}
           </p>
-        </div>
+        </motion.div>
 
         <main className="air-quality-page-main">
           <div className="top-main-section">
@@ -188,6 +193,7 @@ const AirQualityContainerStyled = styled.section`
     border-radius: 1rem;
     width: 30rem;
     margin: 5rem auto 10rem auto;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
     text-align: center;
 
     h2 {
@@ -233,6 +239,7 @@ const AirQualityContainerStyled = styled.section`
       align-items: center;
       line-height: 1.9;
       text-align: left;
+      box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
     }
   }
 
@@ -264,6 +271,9 @@ const AirQualityContainerStyled = styled.section`
     color: #8c777c;
     font-size: 1.6rem;
     text-align: center;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    border-radius: 3rem;
   }
 
   @media only screen and (max-width: 930px) {
@@ -305,6 +315,7 @@ const AirQualityContainerStyled = styled.section`
         align-items: center;
         line-height: 1.9;
         text-align: left;
+        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
 
         h3 {
           font-size: 1.6rem;
@@ -318,6 +329,7 @@ const AirQualityContainerStyled = styled.section`
         height: 100%;
         object-fit: cover;
         border-radius: 3rem;
+        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
       }
     }
 
@@ -348,12 +360,14 @@ const AirQualityContainerStyled = styled.section`
         clip-path: circle(75%);
         height: 10rem;
         width: 20rem;
+        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
       }
       .circle2 {
         animation: circle2 4s;
         clip-path: circle(75%);
         height: 10rem;
         width: 20rem;
+        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
       }
 
       @keyframes circle1 {
@@ -439,29 +453,7 @@ const AirQualityContainerStyled = styled.section`
           width: 10rem;
         }
 
-        /* @keyframes circle1 {
-          0% {
-            clip-path: circle(75%);
-          }
-          50% {
-            clip-path: circle(25%);
-          }
-          100% {
-            clip-path: circle(75%);
-          }
-        } */
-
-        /* @keyframes circle2 {
-          0% {
-            clip-path: circle(75%);
-          }
-          50% {
-            clip-path: circle(25%);
-          }
-          100% {
-            clip-path: circle(75%);
-          }
-        } */
+     
       }
     }
   }

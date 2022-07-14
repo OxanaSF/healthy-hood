@@ -61,6 +61,7 @@ const GratitudeQuestions = () => {
 };
 
 const ButtonStyled = styled.div`
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: center;

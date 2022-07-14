@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import styled from 'styled-components';
 import emailjs from '@emailjs/browser';
 
+
 const YOUR_SERVICE_ID = process.env.REACT_APP_YOUR_SERVICE_ID;
 const YOUR_TEMPLATE_ID = process.env.REACT_APP_YOUR_TEMPLATE_ID;
 const YOUR_PUBLIC_KEY = process.env.REACT_APP_API_KEY_GMAIL;
@@ -32,6 +33,7 @@ const Contact = () => {
 
   return (
     <ContactStyled>
+
       <h1>Contact us</h1>
       <div className="form-wrapper">
         <form ref={form} onSubmit={sendEmail}>
@@ -54,6 +56,7 @@ const ContactStyled = styled.section`
   margin-bottom: 5rem;
   border-radius: 3rem;
   border: 5px solid rgb(254, 233, 218);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
 
   color: #9996b3;
   font-size: 3rem;
