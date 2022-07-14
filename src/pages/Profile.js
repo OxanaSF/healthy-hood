@@ -49,7 +49,7 @@ const Profile = () => {
             {videoList.length > 0 ? (
               videoList.map((item) => (
                 <Link
-                  to="../nutritions/recipe-videos"
+                  to="../nutrition/recipe-videos"
                   state={{ id: item.id }}
                   key={item.id}
                   className="response"
@@ -67,7 +67,7 @@ const Profile = () => {
             {recipeList.length > 0 ? (
               recipeList.map((item) => (
                 <Link
-                  to="../nutritions/search-by-nutrition"
+                  to="../nutrition/search-by-nutrition"
                   state={{ id: item.id }}
                   key={item.id}
                   className="response"

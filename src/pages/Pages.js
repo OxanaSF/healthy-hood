@@ -24,7 +24,7 @@ const Pages = () => {
      
         <Routes location={location} key={location.pathname.split('/')[1]}>
           <Route path="/" element={<Home />} />
-          <Route path="/nutritions" element={<NutritionsPage />}>
+          <Route path="/nutrition" element={<NutritionsPage />}>
             <Route path="recipe-videos" element={<RecipeVideos />} />
             <Route
               path="search-by-nutrition"

@@ -47,7 +47,7 @@ const DUMMY_DATA = [
 
 const RecipeVideos = () => {
   const [searchValue, setSearchValue] = useState('');
-  const [results, setResults] = useState(DUMMY_DATA);
+  const [results, setResults] = useState([]);
   const [showVideo, setShowVideo] = useState(false);
   const [videoId, setVideoId] = useState('');
   const [loading, setLoading] = useState(false);
