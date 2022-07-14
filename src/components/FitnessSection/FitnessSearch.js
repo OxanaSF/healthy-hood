@@ -74,7 +74,7 @@ const FitnessSelect = (props) => {
 
   let content = <p>You have not selected and exercise.</p>;
   const scrollToBottom = () => {
-    scroll.scrollToBottom();
+    scroll.scrollToBottom(0, 0);
   };
   const handleChange = (e) => {
     e.preventDefault();
