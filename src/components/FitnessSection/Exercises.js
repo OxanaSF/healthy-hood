@@ -97,11 +97,13 @@ const FitnessStyle = styled.section`
     .fitness-info-display {
       .top-main-section {
         display: block;
+        margin: 1rem;
         .fitness-gif {
           border-radius: 3rem;
           color: #8c777c;
-          border: 10px solid lightblue;
           width: 100%;
+          border: 5px solid rgb(254, 233, 218);
+          padding: 0px;
         }
       }
     }
