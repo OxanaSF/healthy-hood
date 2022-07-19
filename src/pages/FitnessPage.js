@@ -38,7 +38,7 @@ const FitnessPage = () => {
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             borderRadius: "20px",
-            margin: "0 10vw",
+            margin: "0 1rem",
             height: "30vh",
           }}
         >
@@ -79,6 +79,9 @@ const FitnessPageStyled = styled.section`
   }
 
   @media only screen and (max-width: 930px) {
+    h1 {
+      font-size: 1.5rem;
+    }
     .fitness-benefits {
       margin: 1rem 1rem;
       color: #8c777c;

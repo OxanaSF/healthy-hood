@@ -74,7 +74,7 @@ const FitnessSelect = (props) => {
 
   let content = <p>You have not selected and exercise.</p>;
   const scrollToBottom = () => {
-    scroll.scrollToBottom();
+    scroll.scrollTo(1380);
   };
   const handleChange = (e) => {
     e.preventDefault();
@@ -99,7 +99,7 @@ const FitnessSelect = (props) => {
       <AnimatedPage>
         <SelectSection>
           <select
-            className="dropdown"
+            className="dropdown select2 narrow wrap"
             onChange={handleChange}
             defaultValue={"default"}
           >
@@ -108,8 +108,8 @@ const FitnessSelect = (props) => {
             </option>
             {items.map((item, i) => {
               return (
-                <option key={item.id} value={i}>
-                  {item.name}
+                <option key={item.id} value={i} style={{ width: "400px" }}>
+                  {i + 1}. {item.name}
                 </option>
               );
             })}
@@ -132,6 +132,15 @@ const SelectSection = styled.section`
     border: 3px solid rgb(254, 233, 218);
     border-radius: 3rem;
     width: fit-content;
+  }
+  @media only screen and (max-width: 930px) {
+    select {
+      width: 90%;
+      font-weight: 700;
+    }
+    option {
+      font-weight: 700;
+    }
   }
 `;
 
