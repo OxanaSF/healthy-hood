@@ -2,6 +2,9 @@ import { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 
 const MentalHealthArticles = () => {
+  console.log('render')
+
+
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [color, setColor] = useState('#fca0b9');
