@@ -9,7 +9,7 @@ import {
   slidesFromRightftLeaveToRight,
 } from "../animations/animation";
 import AnimatedPage from "../animations/AnimatedPageTransition";
-import ScrollToTop from "../components/ScrollToTop";
+// import ScrollToTop from "../components/ScrollToTop";
 
 const AirQualityPage = (props) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -49,7 +49,7 @@ const AirQualityPage = (props) => {
 
   return (
     <AnimatedPage>
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <AirQualityContainerStyled>
         <h1>Air Quality</h1>
 

@@ -12,12 +12,12 @@ import {
   slidesFromRightftLeaveToRight,
 } from '../animations/animation';
 import AnimatedPage from '../animations/AnimatedPageTransition';
-import ScrollToTop from '../components/ScrollToTop'
+// import ScrollToTop from '../components/ScrollToTop'
 
 const MentalHealthPage = () => {
   return (
     <AnimatedPage>
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <MentalHealthPageStyled>
         <h1>Mental Health</h1>
         <motion.div
