@@ -5,11 +5,26 @@
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What We learned](#what-i-learned)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
+  - [Design](#designs)
+  - [Screenshots](#screenshots)
+- [Our process](#our-process)
+  - [What We Learned](#what-we-learned) 
+
+## Authors
+
+- **Johnson Thieu - Software Engineer**
+
+  - [Website](https://mynameisjohnson.github.io/react-portfolio/)
+  - [LinkedIn](https://www.linkedin.com/in/johnson-thieu/)
+
+- **Mike Villa - Software Engineer**
+
+  - [Website](https://mikegv.github.io/portfolio/)
+  - [LinkedIn](https://www.linkedin.com/in/michael-villa-338a0567/)
+
+- **Oxana Howard - Software Engineer**
+  - [Website](https://oxana-howard.com/)
+  - [LinkedIn](https://www.linkedin.com/in/oxana-howard/)
 
 ## Overview
 
@@ -21,7 +36,7 @@ This is a desktop and mobile version website that offers information about livin
 
 ### Designs
 
-Due to time constraints, UX/UI designs were not created, but instead was implemented as the website was being built.
+Due to time constraints, UX/UI designs were not created, but instead was implemented as the website was being built. Big thanks to [Oxhana](https://oxana-howard.com/) for initiating the designs. 
 
 ### Screenshots
 
@@ -84,22 +99,6 @@ Due to time constraints, UX/UI designs were not created, but instead was impleme
 - [Cors](https://www.npmjs.com/package/cors)
 - [Express](https://www.npmjs.com/package/express)
 - [Firebase](https://firebase.google.com/)
-
-## Author
-
-- **Johnson Thieu - Software Engineer**
-
-  - [Website](https://mynameisjohnson.github.io/react-portfolio/)
-  - [LinkedIn](https://www.linkedin.com/in/johnson-thieu/)
-
-- **Mike Villa - Software Engineer**
-
-  - [Website](https://mikegv.github.io/portfolio/)
-  - [LinkedIn](https://www.linkedin.com/in/michael-villa-338a0567/)
-
-- **Oxana Howard - Software Engineer**
-  - [Website](https://oxana-howard.com/)
-  - [LinkedIn](https://www.linkedin.com/in/oxana-howard/)
 
 ### What we learned
 
