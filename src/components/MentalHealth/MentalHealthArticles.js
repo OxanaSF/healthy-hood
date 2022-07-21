@@ -7,13 +7,11 @@ const MentalHealthArticles = () => {
 
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [color, setColor] = useState('#fca0b9');
+  const [error, setError] = useState(null);
 
-  useEffect(() => {
-    getMentalHealthArticle();
-  }, []);
 
-  const getMentalHealthArticle = () => {
+
+  const getMentalHealthArticle =  useCallback(() => {
     setLoading(true);
     const axios = require('axios');
 
@@ -30,13 +28,18 @@ const MentalHealthArticles = () => {
         setLoading(false);
       })
       .catch(function (error) {
+        setError(error)
         console.error(error);
       });
-  };
+  });
+
+  useEffect(() => {
+    getMentalHealthArticle();
+  }, []);
 
   return (
-    <ArticlesStyled>
-      {/* <button onClick={getMentalHealthArticle}>Click</button> */}
+    <>
+   { !loading && <ArticlesStyled>
       {articles.map((item) => (
         <div key={item.title + item.url} className="article">
           <p>
@@ -48,8 +51,24 @@ const MentalHealthArticles = () => {
         </div>
       ))}
     </ArticlesStyled>
+}
+
+{error && <div>{error}</div>}
+{loading && <LoadingStyled>Loading...</LoadingStyled>}
+
+
+
+
+
+    </>
   );
 };
+
+const LoadingStyled = styled.div`
+text-align: center;
+font-size: 1.5rem;
+color: #8c777c;
+`
 
 const ArticlesStyled = styled.div`
    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
