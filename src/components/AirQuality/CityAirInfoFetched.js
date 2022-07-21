@@ -140,7 +140,7 @@ const CityAirInfoFetched = (props) => {
             >
               AQI: {aqius}
             </div>{' '}
-            <StyledButton onClick={addItem}>Add to favorites</StyledButton>
+            <StyledButton className='add-btn' onClick={addItem}>Add to favorites</StyledButton>
           </div>
         </CityAirInfoFetchedStyled>
       )}
@@ -194,6 +194,7 @@ const RequestDisplayStyled = styled.div`
 `;
 
 const CityAirInfoFetchedStyled = styled.div`
+
   font-size: 1.8rem;
 
   display: flex;
@@ -205,6 +206,11 @@ const CityAirInfoFetchedStyled = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+
+    .add-btn {
+      background: red;
+    }
   }
 `;
 

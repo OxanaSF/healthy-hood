@@ -2,12 +2,12 @@ import { calculateSize } from "@iconify/react";
 import styled from "styled-components";
 import AnimatedPageTransition from "../animations/AnimatedPageTransition";
 import FitnessSelect from "../components/FitnessSection/FitnessSearch";
-import ScrollToTop from "../components/ScrollToTop";
+// import ScrollToTop from "../components/ScrollToTop";
 
 const FitnessPage = () => {
   return (
     <AnimatedPageTransition>
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <FitnessPageStyled>
         <h1>The Benefits of Exercise</h1>
         <div className="fitness-benefits">
