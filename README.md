@@ -1,4 +1,4 @@
-# [Live Healthy](https://deploy-preview-37--we-live-healthy.netlify.app/)
+# [Live Healthy](https://we-live-healthy.netlify.app/)
 
 ## Table of contents
 
@@ -72,7 +72,7 @@ Due to time constraints, UX/UI designs were not created, but instead was impleme
 ### Links
 
 - Repository URL: [https://github.com/OxanaSF/healthy-hood](https://github.com/OxanaSF/healthy-hood)
-- Live Site URL: [https://deploy-preview-37--we-live-healthy.netlify.app/](https://deploy-preview-37--we-live-healthy.netlify.app/)
+- Live Site URL: [https://we-live-healthy.netlify.app/](https://we-live-healthy.netlify.app/)
 
 ## Our process
 
