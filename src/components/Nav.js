@@ -21,7 +21,7 @@ const Nav = () => {
         <NavLink to="/mental-health">mental health</NavLink>
       </div>
       <NavLink to="/savedpages" className="logged-in">
-        <div class="button">
+        <div className='button'>
           <span className="text">your profile</span>
         </div>
       </NavLink>
