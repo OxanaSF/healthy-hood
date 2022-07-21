@@ -9,6 +9,7 @@ const MentalHealthArticles = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+
   useEffect(() => {
     getMentalHealthArticle();
   }, []);
@@ -30,9 +31,11 @@ const MentalHealthArticles = () => {
         setLoading(false);
       })
       .catch(function (error) {
+        setError(error)
         console.error(error);
       });
   };
+
 
   return (
     <>
