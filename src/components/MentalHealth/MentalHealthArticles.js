@@ -26,7 +26,7 @@ const MentalHealthArticles = () => {
     axios
       .request(options)
       .then(function (response) {
-        console.log(response.data);
+        console.log(JSON.stringify(response.data));
         setArticles(response.data);
         setLoading(false);
       })
