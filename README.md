@@ -92,6 +92,8 @@ Due to time constraints, UX/UI designs were not created, but instead was impleme
 - [React-Router-Dom](https://www.npmjs.com/package/react-router-dom)
 - [EmailJS](https://www.emailjs.com/)
 - [React Spinners](https://www.npmjs.com/package/react-spinners)
+- [Netlify](https://www.netlify.com/)
+- [Heroku](https://www.heroku.com)
 
 **Backend**
 
