@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ClockLoader from 'react-spinners/ClockLoader';
-import { useDispatch } from "react-redux"
-import { favoritesActions } from "../../store/store"
-import {StyledButton } from '../Nutrition/StyledComponents'
+import { useDispatch } from 'react-redux';
+import { favoritesActions } from '../../store/store';
+import { StyledButton } from '../Nutrition/StyledComponents';
 const CityAirInfoFetched = (props) => {
   const [loading, setLoading] = useState(false);
   const [color, setColor] = useState('lightblue');
@@ -14,22 +14,29 @@ const CityAirInfoFetched = (props) => {
   const [date, setDate] = useState('');
   const [aqius, setAqius] = useState(0);
   const [img, setImg] = useState('');
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   let params = useParams();
-  
+
   const addItem = () => {
-    dispatch(favoritesActions.addToFavorites({ category: 'aqi', id: cityWeatherInfo.city, date: date ,aqi: aqius}))
-}
+    dispatch(
+      favoritesActions.addToFavorites({
+        category: 'aqi',
+        id: cityWeatherInfo.city,
+        date: date,
+        aqi: aqius,
+      })
+    );
+  };
 
   const getCityWeatherInfo = (cityName) => {
     const axios = require('axios');
 
     const options = {
       method: 'GET',
-      // url: `http://localhost:8000/search`,
+      url: `http://localhost:8000/search`,
       // url: `${process.env.PORT}/search`,
-      url: 'https://gentle-shore-78455.herokuapp.com/search',
+      // url: 'https://gentle-shore-78455.herokuapp.com/search',
       params: {
         q: cityName,
       },
@@ -142,7 +149,9 @@ const CityAirInfoFetched = (props) => {
             >
               AQI: {aqius}
             </div>{' '}
-            <StyledButton className='add-btn' onClick={addItem}>Add to favorites</StyledButton>
+            <StyledButton className="add-btn" onClick={addItem}>
+              Add to favorites
+            </StyledButton>
           </div>
         </CityAirInfoFetchedStyled>
       )}
@@ -172,6 +181,31 @@ const RequestDisplayStyled = styled.div`
     gap: 3rem;
   }
 
+  @media only screen and (max-width: 700px) {
+    display: block;
+    text-align: center;
+
+    grid-template-columns: 1fr;
+    margin: 2rem;
+
+    img {
+      width: 100%;
+      border-radius: 3rem;
+      border: 5px solid rgb(254, 233, 218);
+      padding: 1rem;
+    }
+
+    .display-details {
+      display: flex;
+      align-items: center;
+
+      .city-country,
+      .city-date {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
   @media only screen and (max-width: 280px) {
     margin: 2rem 2rem;
     img {
@@ -196,7 +230,6 @@ const RequestDisplayStyled = styled.div`
 `;
 
 const CityAirInfoFetchedStyled = styled.div`
-
   font-size: 1.8rem;
 
   display: flex;
@@ -209,9 +242,16 @@ const CityAirInfoFetchedStyled = styled.div`
     flex-direction: column;
     justify-content: center;
 
-
     .add-btn {
-      background: red;
+      margin: 0;
+      margin-top: 5rem;
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    .add-btn {
+      margin-top: 0;
+      font-size: 1.2rem;
     }
   }
 `;
