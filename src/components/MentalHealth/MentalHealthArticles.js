@@ -21,7 +21,8 @@ const MentalHealthArticles = () => {
     const options = {
       method: 'GET',
       // url: 'http://localhost:8000/news',
-      url: `${process.env.PORT}/news`
+      // url: `${process.env.PORT}/news`
+      url: 'https://gentle-shore-78455.herokuapp.com/news',
     };
 
     axios

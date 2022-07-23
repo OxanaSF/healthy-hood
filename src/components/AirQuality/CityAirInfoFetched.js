@@ -28,7 +28,8 @@ const CityAirInfoFetched = (props) => {
     const options = {
       method: 'GET',
       // url: `http://localhost:8000/search`,
-      url: `${process.env.PORT}/search`,
+      // url: `${process.env.PORT}/search`,
+      url: 'https://gentle-shore-78455.herokuapp.com/search',
       params: {
         q: cityName,
       },
