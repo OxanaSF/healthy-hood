@@ -27,7 +27,8 @@ const CityAirInfoFetched = (props) => {
 
     const options = {
       method: 'GET',
-      url: `http://localhost:8000/search`,
+      // url: `http://localhost:8000/search`,
+      url: `${process.env.PORT}/search`,
       params: {
         q: cityName,
       },

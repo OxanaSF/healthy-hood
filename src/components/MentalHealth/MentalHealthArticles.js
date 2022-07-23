@@ -20,7 +20,8 @@ const MentalHealthArticles = () => {
 
     const options = {
       method: 'GET',
-      url: 'http://localhost:8000/news',
+      // url: 'http://localhost:8000/news',
+      url: `${process.env.PORT}/news`
     };
 
     axios

@@ -17,7 +17,9 @@ const GratitudeQuestions = () => {
 
     const options = {
       method: 'GET',
-      url: 'http://localhost:8000/question',
+      // url: 'http://localhost:8000/question',
+      url: `${process.env.PORT}/question`,
+      
     };
 
     axios
