@@ -1,54 +1,79 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { v4 as uuidv4 } from 'uuid';
+
 
 const MentalHealthArticles = () => {
-  console.log('render')
-
+  console.log('component mounts');
 
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
 
+
   useEffect(() => {
+    console.log('effect runs!');
     getMentalHealthArticle();
+
+    
   }, []);
 
   const getMentalHealthArticle = () => {
-    setLoading(true);
-    const axios = require('axios');
+    console.log('articles: ', articles)
+    const check = localStorage.getItem('articles');
+    if (check) {
+      console.log('LOCAL STORAGE')
+      setArticles(JSON.parse(check));
+    } else {
+      localStorage.clear()
+      console.log('NO localStorage, first time!')
+      setLoading(true);
+      const axios = require('axios');
 
-    const options = {
-      method: 'GET',
-      // url: 'http://localhost:8000/news',
-      // url: `${process.env.PORT}/news`
-      url: 'https://gentle-shore-78455.herokuapp.com/news',
-    };
+      const options = {
+        method: 'GET',
+        // url: 'http://localhost:8000/news',
+        // url: `${process.env.PORT}/news`
+        url: 'https://gentle-shore-78455.herokuapp.com/news',
+    
+      };
 
-    axios
-      .request(options)
-      .then(function (response) {
-        console.log(JSON.stringify(response.data));
-        setArticles(response.data);
-        setLoading(false);
-      })
-      .catch(function (error) {
-        setError(error)
-        console.error(error);
-      });
+      axios
+        .request(options)
+        .then((response) => {
+          localStorage.setItem(
+            'articles',
+            JSON.stringify(response.data)
+            
+          )
+          
+          
+          setArticles(response.data);
+          console.log('response.data: ', response.data)
+          setLoading(false);
+        })
+        .catch((error) =>{
+            setError(error);
+            console.error('ERROR!!!!!:',error);
+          })
+    }
   };
-
 
   return (
     <>
-
-
-{!loading && (
+      {!loading && (
         <ArticlesStyled>
           {articles.map((item) => (
-            <div key={item.title + item.url} className="article">
+            <div key={uuidv4()} className="article">
               <p>
-                <a href={item.url} target="_blank" className="url">
+                <a
+                  href={item.url}
+                  target="_blank"
+                  className="url"
+                  without
+                  rel="noreferrer"
+                >
                   {item.title}
                 </a>
               </p>
@@ -58,15 +83,11 @@ const MentalHealthArticles = () => {
         </ArticlesStyled>
       )}
 
-
-
-    {error && <div>{error}</div>}
+      {error && <div>{error}</div>}
       {loading && <LoadingStyled>Loading...</LoadingStyled>}
     </>
   );
 };
-
-
 
 const LoadingStyled = styled.div`
   text-align: center;
@@ -74,11 +95,8 @@ const LoadingStyled = styled.div`
   color: #8c777c;
 `;
 
-
-
-
 const ArticlesStyled = styled.div`
-   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -121,7 +139,7 @@ const ArticlesStyled = styled.div`
     gap: 1.5rem;
     margin-bottom: 3rem;
     padding: 0;
-    height:  30rem;
+    height: 30rem;
     border: 5px solid rgb(254, 233, 218);
     .article {
       margin: 1rem;
@@ -141,13 +159,12 @@ const ArticlesStyled = styled.div`
   }
   @media only screen and (max-width: 930px) {
     gap: 0;
- 
+
     .url {
       font-size: 0.7rem;
     }
     .source {
       font-size: 0.9rem;
-  
     }
   }
 `;
