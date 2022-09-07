@@ -2,13 +2,10 @@ import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { GoogleMap } from '@react-google-maps/api';
 
-
 const containerStyle = {
   width: '100%',
   height: '100%',
 };
-
-
 
 const Map = ({ center }) => {
   const mapRef = React.useRef(undefined);
