@@ -54,6 +54,9 @@ Due to time constraints, UX/UI designs were not created, but instead was impleme
   </tr>
   <tr>
     <td valign="top"><img src="https://user-images.githubusercontent.com/38548029/179036104-e38e722d-6d42-497e-8420-32f30f41ecce.png" width="300" /></td>
+     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/188961709-613dd10d-0d79-4d0b-8b96-d83bd112672a.png" width="300" /></td>
+   
+
   </tr>
   <tr>
     <td><b>Nutrition Page</td>     
