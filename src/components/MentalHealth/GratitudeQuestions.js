@@ -20,7 +20,6 @@ const GratitudeQuestions = () => {
       // url: 'http://localhost:8000/question',
       // url: `${process.env.PORT}/question`,
       url: 'https://gentle-shore-78455.herokuapp.com/question',
-      
     };
 
     axios
