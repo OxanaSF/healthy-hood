@@ -58,6 +58,14 @@ Due to time constraints, UX/UI designs were not created, but instead was impleme
   </tr>
 
 
+   <tr>
+    <td><b>Mental Health Page</td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/188969739-b124a6aa-4dcd-41c9-919a-f760b1955e0d.png" width="300" /></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/188969811-5ed03e6b-7424-4733-a614-1ea58a7e3bce.png" width="300" /></td>
+  </tr>
+
 
   <tr>
     <td><b>Nutrition Page</td>     
