@@ -54,10 +54,10 @@ Due to time constraints, UX/UI designs were not created, but instead was impleme
   </tr>
   <tr>
     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/188966348-11775b57-ca9e-43c4-bd90-9d76a303a2ed.png" width="300" /></td>
-    <td valign="top"><img src="https://user-images.githubusercontent.com/38548029/179050441-2f44de96-d52c-4d4b-bb47-20b400e58c97.png" width="300" /></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/188966566-0d72263d-c998-4d7d-88f7-657e3d17777c.png" width="300" /></td>
   </tr>
-  
- 
+
+
 
   <tr>
     <td><b>Nutrition Page</td>     
