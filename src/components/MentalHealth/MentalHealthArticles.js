@@ -12,6 +12,8 @@ const MentalHealthArticles = () => {
   useEffect(() => {
     console.log('effect runs!');
     getMentalHealthArticle();
+
+    
   }, []);
 
   const getMentalHealthArticle = () => {
@@ -23,6 +25,14 @@ const MentalHealthArticles = () => {
     } else {
       localStorage.clear();
       console.log('NO localStorage, first time!');
+    console.log('articles: ', articles)
+    const check = localStorage.getItem('articles');
+    if (check) {
+      console.log('LOCAL STORAGE')
+      setArticles(JSON.parse(check));
+    } else {
+      localStorage.clear()
+      console.log('NO localStorage, first time!')
       setLoading(true);
       const axios = require('axios');
 
@@ -46,6 +56,21 @@ const MentalHealthArticles = () => {
           setError(error);
           console.error('ERROR!!!!!:', error);
         });
+          localStorage.setItem(
+            'articles',
+            JSON.stringify(response.data)
+            
+          )
+          
+          
+          setArticles(response.data);
+          console.log('response.data: ', response.data)
+          setLoading(false);
+        })
+        .catch((error) =>{
+            setError(error);
+            console.error('ERROR!!!!!:',error);
+          })
     }
   };
 
