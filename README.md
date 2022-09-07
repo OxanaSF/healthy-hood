@@ -36,7 +36,7 @@ This is a desktop and mobile version website that offers information about livin
 
 ### Designs
 
-Due to time constraints, UX/UI designs were not created, but instead was implemented as the website was being built. Big thanks to [Oxhana](https://oxana-howard.com/) for initiating the designs. 
+Due to time constraints, UX/UI designs were not created, but instead was implemented as the website was being built. Big thanks to [Oxana](https://oxana-howard.com/) for initiating the designs. 
 
 ### Screenshots
 
