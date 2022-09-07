@@ -53,15 +53,12 @@ Due to time constraints, UX/UI designs were not created, but instead was impleme
     <td><b>Air Quaility Page</td>
   </tr>
   <tr>
-   
-     <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/188961709-613dd10d-0d79-4d0b-8b96-d83bd112672a.png" width="300" /></td>
-
-    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/188965794-cfbff74f-5048-41f5-972d-0fa624e0754a.png" width="300" /></td>
-
-
-
-
+    <td valign="top"><img src="https://user-images.githubusercontent.com/49917973/188966348-11775b57-ca9e-43c4-bd90-9d76a303a2ed.png" width="300" /></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/38548029/179050441-2f44de96-d52c-4d4b-bb47-20b400e58c97.png" width="300" /></td>
   </tr>
+  
+ 
+
   <tr>
     <td><b>Nutrition Page</td>     
   </tr>
